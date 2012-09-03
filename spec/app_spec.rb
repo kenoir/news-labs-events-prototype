@@ -1,4 +1,4 @@
-require 'app'
+require 'events'
 require 'rack/test'
 
 set :environment, :test
