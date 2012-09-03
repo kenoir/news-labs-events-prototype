@@ -7,11 +7,11 @@ def app
   Sinatra::Application
 end
 
-describe 'Juicy Timeline' do
+describe 'Events' do
   include Rack::Test::Methods
 
   it "should say hi" do
-    get '/hi'
+    get '/events'
     last_response.should be_ok
   end
 

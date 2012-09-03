@@ -1,5 +1,6 @@
 require 'sinatra'
 
-get '/hi' do
-  "Hello World!"
+get '/events' do
+  @content = "Hello, World!"
+  erb :index
 end
