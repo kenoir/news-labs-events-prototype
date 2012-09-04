@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 
-class Events < Sinatra::Base
+class Application < Sinatra::Base
 
   get '/events' do
     @content = "Hello, World!"

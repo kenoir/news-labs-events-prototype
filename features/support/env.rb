@@ -2,20 +2,20 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', '..', 'events_app.rb')
+require File.join(File.dirname(__FILE__), '..', '..', 'application.rb')
 
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
-Capybara.app = Events
+Capybara.app = Application 
 
-class EventsWorld
+class ApplicationWorld
   include Capybara::DSL
   include RSpec::Expectations
   include RSpec::Matchers
 end
 
 World do
-  EventsWorld.new
+  ApplicationWorld.new
 end
