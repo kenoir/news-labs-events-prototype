@@ -1,2 +1,2 @@
-require './application'
-Application.run!
+require './application.rb'
+run Application
