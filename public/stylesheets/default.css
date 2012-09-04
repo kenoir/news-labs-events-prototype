@@ -1,0 +1,194 @@
+body {
+	font: 100%/1.2 Helvetica, Arial, sans-serif;
+	color: #000;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+p {
+	margin-bottom: 0.25em;
+}
+
+.blq-hide {
+	position: absolute;
+	left: -9999px;
+}
+
+#global-header, #events-header, #footer-content {
+	max-width: 976px;
+	margin: 0 auto;
+}
+
+/* Page header */
+
+header {
+	background-color: #cd0102;
+}
+
+#global-header {
+	padding: 0.5em;
+	background-color: #520000;
+}
+
+#global-header img {
+	display: block;
+}
+
+#events-header {
+	color: #fff;
+	font-family: "Gill Sans";
+	text-transform: uppercase;
+}
+
+#events-header a {
+	color: #fff;
+	font-size: 4em;
+}
+
+#events-header .location {
+	font-size: 2em;
+	margin-left: 0.5em;
+}
+
+
+/* Page layout */
+
+#container {
+	overflow: hidden;
+	max-width: 976px;
+	margin: 0 auto;
+}
+
+section {
+	overflow: hidden;
+}
+
+[role="main"] {
+	float: left;
+	width: 65.983606557377%; /* 644 / 976 */
+	margin-top: 1em;
+}
+
+[role="complementary"] {
+	float: right;
+	width: 31.9672131147541%; /* 312 / 976 */
+	margin-top: 1em;
+}
+
+[role="main"] article {
+	margin-right: 2.0491803278689%; /* 20 / 976 */
+}
+
+[role="main"] .lead-item {
+	/*margin-right: 0;*/
+}
+
+h2 {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+}
+
+/* News stories */
+
+article {
+	overflow: hidden;
+	margin-bottom: 1em;
+}
+
+article img {
+	float: left;
+	max-width: 100%;
+	margin: 0 1em 1em 0;
+}
+
+article p {
+	overflow: hidden;
+}
+
+article h3 {
+	color: #1f4f82;
+	font-size: 1.5em;
+	margin-bottom: 0.25em;
+}
+
+.lead-item h3 {
+	font-size: 2.25em;
+}
+
+article .published {
+	color: #6daa17;
+	font-style: italic;
+}
+
+article .new {
+	color: #c1272d;
+	text-transform: uppercase;
+}
+
+/* Fluid images */
+
+article .image {
+	width: 22.360248447205%;
+}
+
+.lead-item .image {
+	width: 47.2049689440994%;
+}
+
+/* Sidebar */
+
+[role="complementary"] {
+	margin-bottom: 1em;
+}
+
+[role="complementary"] section {
+	padding: 0.5em;
+	background-color: #ededed;
+}
+
+[role="complementary"] h2 {
+	color: #1f4f82;
+}
+
+[role="complementary"] article {
+
+}
+
+[role="complementary"] h3 {
+	font-size: 1em;
+}
+
+[role="complementary"] .lead-item h3 {
+	font-size: 1.2em;
+}
+
+[role="complementary"] p {
+	color: #000;
+}
+
+[role="complementary"] .published {
+	color: #6daa17
+}
+
+/* Footer */
+
+footer {
+	color: #fff;
+	background-color: #666;
+}
+
+#footer-content {
+	padding: 1em 0;
+}
+
+#footer-content p {
+	margin: 0;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1024px) {
+	/* TODO */
+}

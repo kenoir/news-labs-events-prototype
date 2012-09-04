@@ -1,6 +1,49 @@
+<!doctype html> 
 <html>
+<head>
+        <meta charset="utf-8">
+        <title>BBC News - Events</title>
 
-  <h1>Events</h1>
-  <%= @content %>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-</html>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
+
+        <script type="text/javascript" src="/javascripts/jquery-1.7.2.min.js"></script>
+
+</head>
+
+        <body>
+
+                <div id='results'></div>
+
+                <header role="banner">
+                        <div id="global-header">
+                                <a href="http://www.bbc.co.uk">
+                                        <img src="/images/bbc_blocks.png" width="84" height="24" alt="British Broadcasting Corporation" />
+                                </a>
+                        </div>
+                        <div id="events-header">
+                                <h1>
+                                  <a href="http://www.bbc.co.uk/news">News</a>
+                                </h1>
+                        </div>
+                </header>
+
+                <div id="container">
+
+                  <%= @content %>
+
+                </div>
+
+                <footer>
+                        <div id="footer-content">
+                                <p>BBC &copy; 2012</p>
+                        </div>
+                </footer>
+
+               </body>
+</html> 
+

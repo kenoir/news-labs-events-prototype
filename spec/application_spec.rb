@@ -1,13 +1,13 @@
-require 'events'
+require 'Application'
 require 'rack/test'
 
 set :environment, :test
 
 def app
-  Sinatra::Application
+  Application
 end
 
-describe 'Events' do
+describe 'Application' do
   include Rack::Test::Methods
 
   it "should say hi" do
