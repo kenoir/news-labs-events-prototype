@@ -1,0 +1,32 @@
+/* Events */
+.tabs {
+  position: relative;
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.tabs ul {
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  padding: 0 8px 0 4px;
+}
+.tabs li {
+  display: inline;
+  float: left;
+  margin:2px 2px 0px 0px;
+  padding:10px;
+  background-color: lightgrey;
+}
+.tabs li a {
+  color:black;
+}
+.tabs li.open{
+  background-color:white;   
+}
+.solid{
+  background-color: darkgrey;
+}
+#tab-wrapper{
+  padding-top: 20px;
+}

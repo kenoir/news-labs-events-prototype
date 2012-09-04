@@ -1,155 +1,155 @@
 body {
-	font: 100%/1.2 Helvetica, Arial, sans-serif;
-	color: #000;
+  font: 100%/1.2 Helvetica, Arial, sans-serif;
+  color: #000;
 }
 
 a, a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 p {
-	margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 .blq-hide {
-	position: absolute;
-	left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 #global-header, #events-header, #footer-content {
-	max-width: 976px;
-	margin: 0 auto;
+  max-width: 976px;
+  margin: 0 auto;
 }
 
 /* Page header */
 
-header {
-	background-color: #cd0102;
+header.banner{
+  background-color: #cd0102;
 }
 
 #global-header {
-	padding: 0.5em;
-	background-color: #520000;
+  padding: 0.5em;
+  background-color: #520000;
 }
 
 #global-header img {
-	display: block;
+  display: block;
 }
 
 #events-header {
-	color: #fff;
-	font-family: "Gill Sans";
-	text-transform: uppercase;
+  color: #fff;
+  font-family: "Gill Sans";
+  text-transform: uppercase;
 }
 
 #events-header a {
-	color: #fff;
-	font-size: 4em;
+  color: #fff;
+  font-size: 4em;
 }
 
 #events-header .location {
-	font-size: 2em;
-	margin-left: 0.5em;
+  font-size: 2em;
+  margin-left: 0.5em;
 }
 
 
 /* Page layout */
 
-#container {
-	overflow: hidden;
-	max-width: 976px;
-	margin: 0 auto;
+.container {
+  overflow: hidden;
+  max-width: 976px;
+  margin: 0 auto;
 }
 
 section {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 [role="main"] {
-	float: left;
-	width: 65.983606557377%; /* 644 / 976 */
-	margin-top: 1em;
+  float: left;
+  width: 65.983606557377%; /* 644 / 976 */
+  margin-top: 1em;
 }
 
 [role="complementary"] {
-	float: right;
-	width: 31.9672131147541%; /* 312 / 976 */
-	margin-top: 1em;
+  float: right;
+  width: 31.9672131147541%; /* 312 / 976 */
+  margin-top: 1em;
 }
 
 [role="main"] article {
-	margin-right: 2.0491803278689%; /* 20 / 976 */
+  margin-right: 2.0491803278689%; /* 20 / 976 */
 }
 
 [role="main"] .lead-item {
-	/*margin-right: 0;*/
+  /*margin-right: 0;*/
 }
 
 h2 {
-	font-size: 1.5em;
-	margin-bottom: 1em;
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
 /* News stories */
 
 article {
-	overflow: hidden;
-	margin-bottom: 1em;
+  overflow: hidden;
+  margin-bottom: 1em;
 }
 
 article img {
-	float: left;
-	max-width: 100%;
-	margin: 0 1em 1em 0;
+  float: left;
+  max-width: 100%;
+  margin: 0 1em 1em 0;
 }
 
 article p {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 article h3 {
-	color: #1f4f82;
-	font-size: 1.5em;
-	margin-bottom: 0.25em;
+  color: #1f4f82;
+  font-size: 1.5em;
+  margin-bottom: 0.25em;
 }
 
 .lead-item h3 {
-	font-size: 2.25em;
+  font-size: 2.25em;
 }
 
 article .published {
-	color: #6daa17;
-	font-style: italic;
+  color: #6daa17;
+  font-style: italic;
 }
 
 article .new {
-	color: #c1272d;
-	text-transform: uppercase;
+  color: #c1272d;
+  text-transform: uppercase;
 }
 
 /* Fluid images */
 
 article .image {
-	width: 22.360248447205%;
+  width: 22.360248447205%;
 }
 
 .lead-item .image {
-	width: 47.2049689440994%;
+  width: 47.2049689440994%;
 }
 
 /* Sidebar */
 
 [role="complementary"] {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 [role="complementary"] section {
-	padding: 0.5em;
-	background-color: #ededed;
+  padding: 0.5em;
+  background-color: #ededed;
 }
 
 [role="complementary"] h2 {
-	color: #1f4f82;
+  color: #1f4f82;
 }
 
 [role="complementary"] article {
@@ -157,38 +157,47 @@ article .image {
 }
 
 [role="complementary"] h3 {
-	font-size: 1em;
+  font-size: 1em;
 }
 
 [role="complementary"] .lead-item h3 {
-	font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 [role="complementary"] p {
-	color: #000;
+  color: #000;
 }
 
 [role="complementary"] .published {
-	color: #6daa17
+  color: #6daa17
 }
 
 /* Footer */
 
 footer {
-	color: #fff;
-	background-color: #666;
+  color: #fff;
+  background-color: #666;
 }
 
 #footer-content {
-	padding: 1em 0;
+  padding: 1em 0;
 }
 
 #footer-content p {
-	margin: 0;
+  margin: 0;
 }
 
 /* Media queries */
 
 @media screen and (max-width: 1024px) {
-	/* TODO */
+  /* TODO */
+}
+
+/* Article */
+article header{
+  padding-top:20px;
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
 }
