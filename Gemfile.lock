@@ -24,6 +24,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
+    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     builder (3.0.0)
     capybara (1.1.2)
@@ -70,6 +71,10 @@ GEM
     rack-test (0.6.1)
       rack (>= 1.0)
     rake (0.9.2.2)
+    relish (0.6)
+      archive-tar-minitar (>= 0.5.2)
+      json (>= 1.4.6)
+      rest-client (>= 1.6.1)
     rest-assured (1.1.9)
       activerecord (~> 3.2.0)
       activeresource (~> 3.2.0)
@@ -126,6 +131,7 @@ DEPENDENCIES
   rack
   rack-test
   rake
+  relish
   rest-assured
   rest-client
   rspec
