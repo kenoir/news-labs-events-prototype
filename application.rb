@@ -9,8 +9,9 @@ class Application < Sinatra::Base
   end
   
   get '/event' do
+    @title = ""
     @content = "Hello, World!"
-    erb :event-portal
+    erb :eventportal
   end
   
   get '/article' do
