@@ -1,5 +1,6 @@
-PATH
-  remote: ../assured-runner/
+GIT
+  remote: https://github.com/BBC-Knowlearn/assured-runner-gem.git
+  revision: 4a759b4332d2de41b4a3bc81f3343ba88dc42886
   specs:
     assured-runner (0.0.2)
       rest-assured (>= 1.1.9)

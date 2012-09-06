@@ -1,4 +1,4 @@
-require 'Application'
+require './application'
 require 'rack/test'
 
 set :environment, :test
