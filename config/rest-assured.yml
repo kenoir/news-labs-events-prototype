@@ -1,2 +1,4 @@
 paths:
-  "/events/1" : "config/data/events/1.json"
+  "/events/1" : 
+    file_location : "config/data/events/1.json"
+    content-type: "application/json"
