@@ -6,6 +6,10 @@ gem 'rest-client'
 gem 'rack'
 
 group :development,:test do
+  gem 'rest-assured'
+  gem 'assured-runner', :git => 'https://github.com/kenoir/assured-runner-gem.git'
+  gem 'sqlite3'
+  gem 'thin'
   gem 'cucumber'
   gem 'cucumber-sinatra'
   gem 'capybara'
