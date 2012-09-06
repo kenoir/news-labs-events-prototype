@@ -1,8 +1,7 @@
-GIT
-  remote: https://github.com/kenoir/assured-runner-gem.git
-  revision: 456d0dbcd6040290b1e06212f9b0de006de513d6
+PATH
+  remote: ../assured-runner/
   specs:
-    assured-runner (0.0.1)
+    assured-runner (0.0.2)
       rest-assured (>= 1.1.9)
       rest-client (>= 1.6.7)
 
