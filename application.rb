@@ -8,14 +8,14 @@ class Application < Sinatra::Base
     erb :index
   end
   
-  get '/event' do
+  get '/events/:id' do |id|
     @title = ""
-    @content = "Hello, World!"
-    erb :eventportal
+    @content = "Hello, #{id}!"
+    erb :event
   end
   
-  get '/article' do
-    @content = "Hello, World!"
+  get '/articles/:id' do |id|
+    @content = "Hello #{id}!"
     erb :article
   end
 

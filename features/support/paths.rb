@@ -12,8 +12,13 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /^the events home\s?page$/
-          '/events'
+
+    when /^an event page$/
+          '/events/2345'
+
+    when /^an article page$/
+          '/articles/2345'
+ 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
