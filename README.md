@@ -1,4 +1,4 @@
 Events Labs
 ===========
 
-[![Build Status](https://secure.travis-ci.org/bbc-knowlearn/news-labs-events-prototype.png?branch=master)](http://travis-ci.org/bbc-knowlearn/news-labs-events-prototype)
+[![Build Status](https://secure.travis-ci.org/BBC-Knowlearn/news-labs-events-prototype.png?branch=master)](http://travis-ci.org/BBC-Knowlearn/news-labs-events-prototype)
