@@ -3,7 +3,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', '..', 'application.rb')
-require File.join(File.dirname(__FILE__), 'helpers.rb')
+require File.join(File.dirname(__FILE__), 'events_labs_helpers.rb')
 
 require 'capybara'
 require 'capybara/cucumber'
@@ -17,7 +17,7 @@ class ApplicationWorld
   include RSpec::Matchers
 end
 
-World(Helpers)
+World(EventsLabsHelpers)
 
 World do
   ApplicationWorld.new
