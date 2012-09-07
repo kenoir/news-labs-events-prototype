@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 
-class Application < Sinatra::Base
+class Routes < Sinatra::Base
 
   get '/' do
     @content = "Hello, World!"

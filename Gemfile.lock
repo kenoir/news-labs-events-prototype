@@ -9,6 +9,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.8.2)
     activemodel (3.2.8)
       activesupport (= 3.2.8)
       builder (~> 3.0.0)
@@ -26,6 +27,9 @@ GEM
     addressable (2.3.2)
     archive-tar-minitar (0.5.2)
     arel (3.0.2)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
+    autotest-growl (0.2.16)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -124,6 +128,8 @@ PLATFORMS
 
 DEPENDENCIES
   assured-runner!
+  autotest (~> 4.4.6)
+  autotest-growl
   capybara
   cucumber
   cucumber-sinatra
