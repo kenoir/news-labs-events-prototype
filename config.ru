@@ -1,2 +1,2 @@
-require './application.rb'
+require './routes.rb'
 run Application
