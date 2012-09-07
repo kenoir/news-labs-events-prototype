@@ -1,5 +1,5 @@
-define(["./mustache","text!./templates/slider.html"],
-  function(Mustache,t){
+define(["jquery","./mustache","text!./templates/slider.html"],
+  function($,Mustache,t){
     var sliderise = function(selector){
       var elements = $(selector)
       for(var i = 0; i < elements.length; i++){
