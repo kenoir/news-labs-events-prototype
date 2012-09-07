@@ -13,12 +13,16 @@ define(["jquery","./mustache","text!./templates/slider.html"],
         var sectionTitle = head.html();
         var updatedHead = $(template({title: sectionTitle}));
 
-        updatedHead.bind('click',function(){
-          $(content).slideToggle();
+        $(head).replaceWith(updatedHead);
+        $(updatedHead).bind('click',function(){
 
+          $(content).slideToggle();
+          //$(content).animate({height:'200px'}, 500);
+
+          $('html,body').animate({"scrollTop": updatedHead.offset().top}, 2000);
           return false;
         });
-        $(head).replaceWith(updatedHead);
+
         $(content).slideUp();
 
         return element;
