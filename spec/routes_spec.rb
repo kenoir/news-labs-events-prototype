@@ -1,13 +1,13 @@
-require './application'
+require './routes'
 require 'rack/test'
 
 set :environment, :test
 
 def app
-  Application
+  Routes
 end
 
-describe 'Application' do
+describe 'Routes' do
   include Rack::Test::Methods
 
   it "should provide article pages" do
