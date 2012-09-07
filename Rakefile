@@ -5,7 +5,7 @@ require 'assured-runner'
 
 desc 'Start REST-Assured (Mock API)'
 task :mockapi do
-    AssuredRunner.run
+  AssuredRunner.run
 end
 
 desc 'Default: run cukes  & specs.'
@@ -20,6 +20,11 @@ desc "Run specs"
 RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb" 
 end
+
+desc "Run autotest"
+task :autotest do 
+  system 'autotest' 
+end 
 
 begin
   require 'jasmine'
