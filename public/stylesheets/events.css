@@ -131,7 +131,7 @@ div#news-lab-events nav.breadcrumb a {
 	color: #505050;	
 	background-color: #dcdcdc;
 	padding: 6px;
-	height: 26px;
+	height: 20px;
 }
 div#news-lab-events nav.breadcrumb a:after {
 	position: absolute;
@@ -140,7 +140,7 @@ div#news-lab-events nav.breadcrumb a:after {
 	content: ' ';
 	width: 0;
 	height: 0;		
-	border: 19px solid transparent;
+	border: 16px solid transparent;
 	border-left-color: #dcdcdc;
 }
 div#news-lab-events section {
@@ -172,6 +172,7 @@ div#news-lab-events section header.section h2 {
 	padding: 13px 0 11px 11px;
 	position: relative;
 }
+/*
 div#news-lab-events section header h2:after {
 	position: absolute;
 	top: 20px;
@@ -181,6 +182,7 @@ div#news-lab-events section header h2:after {
 	height: 0;	
 	border: 19px solid transparent;
 }
+*/
 div#news-lab-events section header.section h2 a {
 	color: #505050;
 }
@@ -195,6 +197,15 @@ div#news-lab-events section.closed header h2:after {
 div#news-lab-events section.people li {
 	background-color: #f0f0f0;
 	margin-bottom: 5px;
+}
+div#news-lab-events section.articles li a {
+	display: block;
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: #156292;
+	background-color: #f0f0f0;	
+	margin-bottom: 1px;
+	padding: 16px 0 11px 7px;
 }
 
 /* Polymap */
