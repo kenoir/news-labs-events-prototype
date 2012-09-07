@@ -20,5 +20,8 @@ describe 'Routes' do
     last_response.should be_ok
   end
 
+  it "should initialise EventsController with the id passed" do
+    pending
+  end
 
 end

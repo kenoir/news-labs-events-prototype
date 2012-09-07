@@ -15,6 +15,7 @@ group :development,:test do
   gem 'cucumber-sinatra'
   gem 'capybara'
   gem 'rspec'
+  gem 'rspec-mocks'
   gem 'rack-test'
   gem 'jasmine'
   gem 'autotest', '~> 4.4.6'
