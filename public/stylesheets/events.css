@@ -116,6 +116,10 @@ div#news-lab-events h1{
 	font-size: 4.8rem;
 	font-weight: 800;
 }
+div#news-lab-events h2{
+	/*font-size: 4.8rem;*/
+	font-weight: 800;
+}
 div#news-lab-events nav.breadcrumb {
     font-size: inherit;
     width: 15%;
@@ -164,7 +168,6 @@ div#news-lab-events section.articles {
 	border-top-color: #cc0000;
 }
 div#news-lab-events section header.section h2 {
-	color: #505050;
 	background-color: #dcdcdc;
 	padding: 13px 0 11px 11px;
 	position: relative;
@@ -178,15 +181,17 @@ div#news-lab-events section header h2:after {
 	height: 0;	
 	border: 19px solid transparent;
 }
-
+div#news-lab-events section header.section h2 a {
+	color: #505050;
+}
 div#news-lab-events section.open header h2:after {	
-	border-top-color: #505050;	
+	/* Show arrow pointing down*/
+	/*border-top-color: #505050;*/	
 }
-
 div#news-lab-events section.closed header h2:after {	
-	border-bottom-color: #505050;	
+	/* Show arrow pointing up*/
+	/*border-bottom-color: #505050;*/	
 }
-
 div#news-lab-events section.people li {
 	background-color: #f0f0f0;
 	margin-bottom: 5px;
