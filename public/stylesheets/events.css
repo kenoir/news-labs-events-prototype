@@ -4,6 +4,10 @@ a, a:hover {
 p {
   margin-bottom: 0.25em;
 }
+figcaption {
+	position: absolute;
+    left: -9999px;
+}
 .blq-hide {
   position: absolute;
   left: -9999px;
@@ -100,29 +104,23 @@ footer {
 html {
 	font-size: 10px;
 }
-
 body {
 	font-family: Arial,Verdana,Geneva,Helvetica,Sans-Serif;
 	font-size: 1.4rem;
-	-webkit-font-smoothing: antialiased;
-	
+	-webkit-font-smoothing: antialiased;	
 }
-
 div#news-lab-events {
 	font-size: 1.8rem;
 }
-
 div#news-lab-events h1{
 	font-size: 4.8rem;
 	font-weight: 800;
 }
-
 div#news-lab-events nav.breadcrumb {
     font-size: inherit;
     width: 15%;
     margin: 6px 0 6px 4px;    
 }
-
 div#news-lab-events nav.breadcrumb a {
 	display: block;
 	position: relative;
@@ -131,7 +129,6 @@ div#news-lab-events nav.breadcrumb a {
 	padding: 6px;
 	height: 26px;
 }
-
 div#news-lab-events nav.breadcrumb a:after {
 	position: absolute;
 	top: 0;
@@ -142,39 +139,36 @@ div#news-lab-events nav.breadcrumb a:after {
 	border: 19px solid transparent;
 	border-left-color: #dcdcdc;
 }
-
 div#news-lab-events section {
 	font-size: inherit;
 	color: #505050;
+	margin-bottom: 4px;
 }
 div#news-lab-events section.intro header{
 	position: absolute;
-	top: -1000px;
-	left: 0;
+    left: -9999px;
 }
-div#news-lab-events section.places {
-	border-top-style: solid;
-	border-top-width: 3px;	
+div#news-lab-events section.places {	
+    border-top-style: solid;
+	border-top-width: 3px;   
     border-top-color: #fdb515;
 }
 div#news-lab-events section.people, div#news-lab-events section.timeline {
 	border-top-style: solid;
-	border-top-width: 3px;	
+	border-top-width: 3px;
 	border-top-color: #759b75;
 }
 div#news-lab-events section.articles {
 	border-top-style: solid;
-	border-top-width: 3px;	
+	border-top-width: 3px;
 	border-top-color: #cc0000;
 }
-
 div#news-lab-events section header.section h2 {
 	color: #505050;
 	background-color: #dcdcdc;
 	padding: 13px 0 11px 11px;
 	position: relative;
 }
-
 div#news-lab-events section header h2:after {
 	position: absolute;
 	top: 20px;
@@ -206,17 +200,14 @@ svg {
     height: 70%; 
     background: transparent;
 }
-
 .compass .back {
   fill: #eee;
   fill-opacity: .8;
 }
-
 .compass .fore {
   stroke: #999;
   stroke-width: 1.5px;
 }
-
 .compass rect.back.fore {
   fill: #999;
   fill-opacity: .3;
@@ -224,29 +215,23 @@ svg {
   stroke-width: 1px;
   shape-rendering: crispEdges;
 }
-
 .compass .direction {
   fill: none;
 }
-
 .compass .chevron {
   fill: none;
   stroke: #999;
   stroke-width: 5px;
 }
-
 .compass .zoom .chevron {
   stroke-width: 4px;
 }
-
 .compass .active .chevron, .compass .chevron.active {
   stroke: #fff;
 }
-
 .compass.active .active .direction {
   fill: #999;
 }
-
 .tweet-container,
 text {       
   fill: white;
@@ -254,7 +239,6 @@ text {
   text-shadow: 1px 1px 1px #000; 
   font: 18px/1.5 sans-serif;
 }
-
 circle {
   fill: red;
 }
