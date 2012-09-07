@@ -1,2 +1,2 @@
 require './routes.rb'
-run Application
+run Routes
