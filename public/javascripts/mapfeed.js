@@ -1,4 +1,4 @@
-define(["jquery","./polymaps"],
+define(["jquery","./lib/polymaps"],
   function($){
 
     var mapfeed = function(places){
