@@ -14,10 +14,10 @@ module NavigationHelpers
       '/'
 
     when /^an event page$/
-          '/events/2345'
+          '/event/1'
 
     when /^an article page$/
-          '/articles/2345'
+          '/article/1'
  
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

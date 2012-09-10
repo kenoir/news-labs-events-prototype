@@ -14,3 +14,15 @@ module EventsLabsHelpers
   end
 
 end
+
+def events_endpoint
+  'events/1'
+end
+
+def events_json
+  file_location = File.join(File.dirname(__FILE__), '..', '..', 'data/events/1.json')
+  file = File.open(file_location, "rb")
+  contents = file.read
+end
+
+

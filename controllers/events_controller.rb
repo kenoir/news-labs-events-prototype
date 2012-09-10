@@ -15,7 +15,6 @@ class EventsController
   end
 
   def run! 
-    puts events_uri
     @parser.load(events_uri)
     @event = @parser.parse
     

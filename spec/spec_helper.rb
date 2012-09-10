@@ -59,7 +59,7 @@ def event_json_location
 end
 
 def events_api_endpoint
-  '/event/1234'
+  '/event/1'
 end
 
 def event_json
