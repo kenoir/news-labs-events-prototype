@@ -16,7 +16,7 @@ module EventsLabsHelpers
 end
 
 def events_endpoint
-  'events/1'
+  '/events/1'
 end
 
 def events_json
