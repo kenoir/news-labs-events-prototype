@@ -195,7 +195,7 @@ div#news-lab-events section header.section h2 a {
 div#news-lab-events section.open header h2 {	
 	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 300px 0; 
 }
-div#news-lab-events section.closed header h2 {	
+div#news-lab-events section header h2 {	
 	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 300px -44px;
 }
 div#news-lab-events section.places {	
@@ -272,11 +272,18 @@ div#news-lab-events section.articles ol li:nth-child(n) a:after {
 	counter-increment: li;
 	position: absolute;
 	top: 10px;
-	left: 75%;
+	left: 300px;
 	font-size: 2.4rem;
 	font-weight: 700;
 	color: #f68b23;
 }
+/*
+div#news-lab-events section.timeline figure, 
+div#news-lab-events section.timeline a{
+	font-size: 2rem;
+	text-align: center;	
+}
+*/
 /* Footer */
 footer {
   color: #fff;
