@@ -1,0 +1,327 @@
+html {
+	font-size: 10px;
+}
+body {
+	font-family: Helmet,Freesans,sans-serif;
+	font-weight: 400;
+	line-height: 1.4;
+	max-width: 640px;
+	background: none repeat scroll 0 0 #ffffff;
+	margin: 0 auto;	
+}
+#blq-main {
+    clear: both;
+    margin-top: -1px;
+    position: relative;
+}
+a, a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+p {
+  margin-bottom: 0.25em;
+}
+figcaption {
+	position: absolute;
+    left: -9999px;
+}
+.blq-hide {
+  position: absolute;
+  left: -9999px;
+}
+#global-header, #events-header, #footer-content {
+  max-width: 976px;
+  margin: 0 auto;
+}
+
+/* Page header */
+header.banner{
+  background-color: #cd0102;
+}
+#global-header {
+  padding: 0.5em;
+  background-color: #520000;
+}
+#global-header img {
+  display: block;
+}
+#events-header {
+  color: #fff;
+  font-family: "Gill Sans";
+  text-transform: uppercase;
+}
+#events-header a {
+  color: #fff;
+  font-size: 4em;
+}
+#events-header .location {
+  font-size: 2em;
+  margin-left: 0.5em;
+}
+
+/* Tabs */
+.tabs {
+  position: relative;
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.tabs ul {
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  padding: 0 8px 0 4px;
+}
+.tabs li {
+  display: inline;
+  float: left;
+  margin:2px 2px 0px 0px;
+  padding:10px;
+  background-color: lightgrey;
+}
+.tabs li a {
+  color:black;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.0425em;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 0.4rem;
+}
+.tabs li.open{
+  background-color:white;   
+}
+.solid{
+  background-color: darkgrey;
+}
+#tab-wrapper{
+  padding-top: 20px;
+}
+
+/* Page layout */
+.container {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 6px 0;
+}
+section {
+  overflow: hidden;
+}
+div#news-lab-events nav.breadcrumb {
+    font-size: inherit;
+    margin-bottom: 6px;    
+}
+div#news-lab-events nav.breadcrumb a {
+	display: block;
+	position: relative;
+	font-size: 1.2rem;
+	font-weight: 800;
+	color: #505050;	
+	background-color: #dcdcdc;
+	padding: 4px 0 4px 9px;
+	width: 20%;
+}
+div#news-lab-events nav.breadcrumb a:after {
+	position: absolute;
+	top: 0;
+	left: 100%;	
+	content: ' ';
+	width: 0;
+	height: 0;		
+	border: 13px solid transparent;
+	border-left-color: #dcdcdc;
+}
+div#news-lab-events section, div#news-lab-events article {
+	font-size: inherit;
+	color: #505050;
+	margin-bottom: 4px;
+}
+div#news-lab-events article.intro {
+	position: relative;
+}
+div#news-lab-events article.intro header{
+	position: absolute;
+	color: #000000;
+    background: #ffffff;
+    top: 141px;
+    width: 70%;
+}
+div#news-lab-events h1{
+	font-size: 3.2rem;
+	font-weight: 800;
+	padding: 4px 5px 0 10px;	
+}
+div#news-lab-events h2{
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+div#news-lab-events article.intro p {
+	width: 75%;
+	font-size: 1.6rem;
+	line-height: 1.2;
+	margin: 6px 0 0 10px;	
+}
+div#news-lab-events .cta {
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 800;
+	margin: 5px 0 17px 10px;
+}
+div#news-lab-events .icon.live {
+	position: relative;
+	background-color: #cc0101;
+	font-size: 1rem;
+	color: #ffffff;
+	font-weight: 400;	
+	letter-spacing: -0.0425em;
+    line-height: 1em;    
+	padding: 0.2em 0.33em 0 0.33em;
+	top: -2px;	
+}
+div#news-lab-events .cta time {
+	font-weight: 400;
+	color: #6daa17;
+	font-style: italic;
+}
+div#news-lab-events section header.section h2 {
+	padding: 8px 0 8px 11px;
+	background-color: #dcdcdc;
+}
+div#news-lab-events section header.section h2 a {
+	display: block;
+	position: relative;
+	color: #505050;		
+}
+div#news-lab-events section.open header h2 {	
+	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 300px 0; 
+}
+div#news-lab-events section.closed header h2 {	
+	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 300px -44px;
+}
+div#news-lab-events section.places {	
+    border-top-style: solid;
+	border-top-width: 3px;   
+    border-top-color: #fdb515;
+}
+div#news-lab-events section.people, div#news-lab-events section.timeline {
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: #759b75;
+}
+div#news-lab-events section.people ul {
+	background-color: #f0f0f0;
+    padding: 10px 0 0 10px;
+}
+div#news-lab-events section.people ul li {	
+	margin: 10px 0 5px 10px;	
+}
+div#news-lab-events section.people article {
+	position: relative;
+}
+div#news-lab-events section.people article header{
+    position: absolute;
+    left: -9999px;	
+}
+div#news-lab-events section.people article ul {
+	font-size: 1.3rem;
+	width: 50%;
+	padding: 0;
+}
+div#news-lab-events section.people article li {
+    margin: 0;
+}
+div#news-lab-events section.people article a.profile {
+    clear: all;	
+}
+div#news-lab-events section.articles {
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: #cc0000;
+}
+div#news-lab-events section.articles li a {
+	display: block;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #156292;
+	background-color: #f0f0f0;	
+	margin-bottom: 1px;
+	padding: 16px 0 11px 7px;
+}
+div#news-lab-events section.articles ol {
+	counter-reset: li;
+}
+div#news-lab-events section.articles ol li {
+	position: relative;
+}
+div#news-lab-events section.articles ol li:nth-child(n) a:after {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	top: 10px;
+	left: 75%;
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: #f68b23;
+}
+/* Footer */
+footer {
+  color: #fff;
+  background-color: #666;
+}
+#footer-content {
+  padding: 1em 0;
+}
+#footer-content p {
+  margin: 0;
+}
+
+/* Polymap */
+svg {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 70%; 
+    background: transparent;
+}
+.compass .back {
+  fill: #eee;
+  fill-opacity: .8;
+}
+.compass .fore {
+  stroke: #999;
+  stroke-width: 1.5px;
+}
+.compass rect.back.fore {
+  fill: #999;
+  fill-opacity: .3;
+  stroke: #eee;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.compass .direction {
+  fill: none;
+}
+.compass .chevron {
+  fill: none;
+  stroke: #999;
+  stroke-width: 5px;
+}
+.compass .zoom .chevron {
+  stroke-width: 4px;
+}
+.compass .active .chevron, .compass .chevron.active {
+  stroke: #fff;
+}
+.compass.active .active .direction {
+  fill: #999;
+}
+.tweet-container,
+text {       
+  fill: white;
+  font-family: arial, sans-serif;
+  text-shadow: 1px 1px 1px #000; 
+  font: 18px/1.5 sans-serif;
+}
+circle {
+  fill: red;
+}
