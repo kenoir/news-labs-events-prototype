@@ -18,6 +18,9 @@ group :development,:test do
   gem 'rspec-mocks'
   gem 'rack-test'
   gem 'jasmine'
+end
+
+group :development do
   gem 'autotest', '~> 4.4.6'
   gem 'autotest-growl'
 end

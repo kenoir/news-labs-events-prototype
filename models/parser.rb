@@ -9,9 +9,6 @@ class Parser
   end
 
   def load(uri)
-
-puts uri
-
     response = @rest_client.get(uri)
     @json = response.to_str
 
