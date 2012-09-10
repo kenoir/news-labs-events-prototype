@@ -247,7 +247,22 @@ div#news-lab-events section.articles li a {
 	margin-bottom: 1px;
 	padding: 16px 0 11px 7px;
 }
-
+div#news-lab-events section.articles ol {
+	counter-reset: li;
+}
+div#news-lab-events section.articles ol li {
+	position: relative;
+}
+div#news-lab-events section.articles ol li:nth-child(n) a:after {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	top: 10px;
+	left: 75%;
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: #f68b23;
+}
 /* Footer */
 footer {
   color: #fff;
