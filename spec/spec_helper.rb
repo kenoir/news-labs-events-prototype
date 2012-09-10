@@ -1,8 +1,17 @@
+ENV['RACK_ENV'] = 'test'
+
+require './app'
+require 'rack/test'
+require 'rest-assured'
+require 'json'
+
 require_relative '../models/parser.rb'
 require_relative '../models/event.rb'
 require_relative '../controllers/events_controller.rb'
 
-require 'json'
+def app
+  Application 
+end
 
 def dummy_rest_client
   if defined? @dummy_rest_client 
@@ -18,6 +27,17 @@ def dummy_rest_client
   @dummy_rest_client = dummy_rest_client
 end
 
+def dummy_events_base_path
+  'http://www.example.com/events/'
+end
+
+def dummy_event_uri
+  'http://www.example.com/id'
+end
+
+def dummy_id
+  1234
+end
 
 def dummy_url
   'http://www.example.com'
@@ -36,6 +56,10 @@ end
 
 def event_json_location
   File.dirname(__FILE__) + '/data/events.json'
+end
+
+def events_api_endpoint
+  '/event/1234'
 end
 
 def event_json

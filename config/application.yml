@@ -1,0 +1,6 @@
+development:
+  event_base_path: "http://localhost:7899/events/"
+test:
+  event_base_path: "http://localhost:6666/events/"
+production:
+  event_base_path: "http://juicer.responsivenews.co.uk/api/events/"
