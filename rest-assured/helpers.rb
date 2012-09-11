@@ -7,7 +7,7 @@ module RestAssuredHelpers
   end
 
   def event_json_location
-    File.join(File.dirname(__FILE__), '..', 'spec/data/event.json')
+    File.join(File.dirname(__FILE__), '/data/event.json')
   end
 
   def events_api_endpoint
@@ -31,7 +31,7 @@ module RestAssuredHelpers
   end
 
   def resource_xml_location
-    File.join(File.dirname(__FILE__), '..', 'spec/data/resource.xml')
+    File.join(File.dirname(__FILE__), '/data/resource.xml')
   end
 
   def resource_xml
