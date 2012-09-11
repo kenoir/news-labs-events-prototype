@@ -5,6 +5,9 @@ gem 'sinatra'
 gem 'rest-client'
 gem 'rack'
 gem 'json'
+gem 'rdf'
+gem 'rdf-rdfxml'
+gem 'equivalent-xml'
 
 group :development,:test do
   gem 'relish'

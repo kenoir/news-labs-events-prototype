@@ -1,7 +1,7 @@
 paths:
-  "/events/1" : 
-    file_location : "data/events/1.json"
+  "/api/events/1" : 
+    file_location : "spec/data/event.json"
     content-type: "application/json"
-  "/events/3" : 
-    file_location : "data/events/3.json"
-    content-type: "application/json"
+  "/rdf?identifier=http://dbpedia.org/resource/resource_name" : 
+    file_location : "spec/data/resource.xml"
+    content-type: "application/rdf+xml"

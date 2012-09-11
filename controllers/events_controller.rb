@@ -4,6 +4,7 @@ class EventsController
   attr :event
   attr :id,true
   attr :events_base_path,true
+  attr :rdf_base_path,true
   attr :rest_client,true
   attr :parser, true
 
@@ -12,6 +13,7 @@ class EventsController
     @rest_client = RestClient
     @parser = Parser.new(@rest_client)    
     @events_base_path = events_base_path
+    @rdf_base_path = rdf_base_path
   end
 
   def run! 

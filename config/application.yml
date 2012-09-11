@@ -1,6 +1,9 @@
 development:
-  event_base_path: "http://127.0.0.1:7899/events/"
+  event_base_path: "http://127.0.0.1:7899/api/events/"
+  rdf_base_path: "http://127.0.0.1:7899/rdf?identifier="
 test:
-  event_base_path: "http://127.0.0.1:6666/events/"
+  event_base_path: "http://127.0.0.1:6666/api/events/"
+  rdf_base_path: "http://127.0.0.1:6666/rdf?identifier="
 production:
   event_base_path: "http://juicer.responsivenews.co.uk/api/events/"
+  rdf_base_path: "http://juicer.responsivenews.co.uk/rdf?identifier="

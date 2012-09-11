@@ -39,7 +39,7 @@ def events_endpoint
 end
 
 def events_json
-  file_location = File.join(File.dirname(__FILE__), '..', '..', 'data/events/1.json')
+  file_location = File.join(File.dirname(__FILE__), '..', '..', 'spec/data/event.json')
   file = File.open(file_location, "rb")
   contents = file.read
 end

@@ -51,8 +51,10 @@ describe Parser, "#parse_people" do
     parser = Parser.new(dummy_rest_client)
     people = parser.parse_people(parsed_event_json['agents'])
 
+    parsed_event_json_first_agent = parsed_event_json['agents'].pop
+
     person = people.pop
-    person.name.should == "NASA"
+    person.name.should == parsed_event_json_first_agent['label'] 
   end
 
 end
@@ -78,8 +80,8 @@ describe Parser, "#parse" do
 
     event = parser.parse(event_json)
 
-    event.title.should == "Curiosity Rover lands on Mars"
-    event.description.should == "Curiosity Rover makes perfect landing on Mars, August 6th 2012"
+    event.title.should == parsed_event_json['title'] 
+    event.description.should == parsed_event_json['description'] 
 
   end
 

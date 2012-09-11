@@ -1,4 +1,4 @@
-describe Event, '#initialize' do
+describe Person, '#initialize' do
 
   it 'should not fail' do
     pending
