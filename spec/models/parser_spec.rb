@@ -7,7 +7,7 @@ describe Parser, '#initialize' do
 end
 
 describe Parser, "#load" do
-  
+
   it 'should GET data from a given URI' do
     parser = Parser.new(dummy_rest_client)
 
@@ -27,6 +27,36 @@ describe Parser, "#load" do
 
 end
 
+describe Parser, "#parse_event" do
+  it 'should return an event' do
+    parser = Parser.new(dummy_rest_client)
+    event = parser.parse_event(parsed_event_json)
+
+    event.should be_an_instance_of(Event)
+  end
+
+end
+
+describe Parser, "#parse_people" do
+  it 'should return an array of people' do
+    parser = Parser.new(dummy_rest_client)
+    people = parser.parse_people(parsed_event_json['agents'])
+
+    people.each{ | person | 
+      person.should be_an_instance_of(Person)
+    }
+  end
+
+  it 'should return people with the correct values' do
+    parser = Parser.new(dummy_rest_client)
+    people = parser.parse_people(parsed_event_json['agents'])
+
+    person = people.pop
+    person.name.should == "NASA"
+  end
+
+end
+
 describe Parser, "#parse" do
   it 'should accept JSON data and return an event' do
     parser = Parser.new(dummy_rest_client)
@@ -39,7 +69,7 @@ describe Parser, "#parse" do
     parser = Parser.new(dummy_rest_client)
     parser.json = dummy_json
     event = parser.parse
-  
+
     event.should be_an_instance_of(Event)
   end
 
@@ -53,4 +83,16 @@ describe Parser, "#parse" do
 
   end
 
+  it 'should return an event containing people' do
+    parser = Parser.new(dummy_rest_client)
+    event = parser.parse(event_json)
+
+    event.people.each{ |person|
+      person.should be_an_instance_of Person
+    }
+  end
+
+
+
 end
+

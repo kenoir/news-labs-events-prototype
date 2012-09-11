@@ -4,13 +4,14 @@
 </header>
 <div class="content">
 <ul>
+  <% @event.people.each do | person | %>
   <li>
       <article>
           <header class="article">
-              <h3>Bashar al-Assad</h3>
+          <h3><%= person.name %></h3>
           </header>
           <ul>
-             <li><b>Name:</b> Bashar al-Assad</li>
+            <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
              <li><b>Role:</b> President of Syria</li>
              <li><b>Description:</b> President Bashar al-Assad of Syria is facing the most serious challenge 
              to his rule since he came to power in 2000 following the death of his father, Hafez.</li>
@@ -22,42 +23,7 @@
           <a href="http://www.bbc.co.uk/news/10338256" title="Profile of Bashar al-Assad" class="profile">Profile</a>
       </article>      
   </li>
-  <li>
-      <article>
-          <header class="article">
-              <h3>Lakhdar Brahimi</h3>
-          </header>
-          <ul>
-             <li><b>Name:</b> Lakhdar Brahimi</li>
-             <li><b>Role:</b> UN Trouble-shooter</li>
-             <li><b>Description:</b> The 78-year-old is an experienced operator in the Arab and Islamic worlds.</li>
-          </ul>      
-          <figure>
-              <img src="/images/event/lakhdar-brahimi.jpg" width="95" height="95" alt="Lakhdar Brahimi" />
-              <figcaption><a href="http://www.bbc.co.uk/news/world-middle-east-13216195">Lakhdar Brahimi</a></figcaption>
-          </figure>
-          <a href="#" title="Profile of Lakhdar Brahimi" class="profile">Profile</a>
-      </article>
-  </li>
-   <li>
-      <article>
-          <header class="article">
-              <h3>Rami Makhlouf</h3>
-          </header> 
-          <ul>
-             <li><b>Name:</b> Rami Makhlouf</li>
-             <li><b>Role:</b> The most powerful economic figure in Syria</li>
-             <li><b>Description:</b> Born in 1969, Mr Makhlouf took over the businesses built up by his father, Mohammed, 
-             the brother of Hafez al-Assad's wife, Anisa Makhlouf. After Bashar became president in 2000, Mr Makhlouf's 
-             financial empire expanded..</li>
-          </ul>      
-          <figure>
-              <img src="/images/event/rami-makhlouf.jpg" width="95" height="95" alt="Rami Makhlouf" />
-              <figcaption><a href="http://www.bbc.co.uk/news/world-middle-east-13216195">Rami Makhlouf</a></figcaption>
-          </figure>
-          <a href="#" title="Profile of Rami Makhlouf" class="profile">Profile</a>
-      </article>
-  </li>
+  <% end %>
 </ul>
 </div>
 </section>

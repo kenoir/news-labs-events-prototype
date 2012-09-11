@@ -24,6 +24,7 @@ class Application < Sinatra::Base
   end
 
   get '/article/:id' do |id|
+
     erb :article
   end
 

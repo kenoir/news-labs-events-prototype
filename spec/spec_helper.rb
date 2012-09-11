@@ -65,3 +65,7 @@ end
 def event_json
   read_from_file(event_json_location)
 end
+
+def parsed_event_json
+  JSON.parse(event_json)
+end

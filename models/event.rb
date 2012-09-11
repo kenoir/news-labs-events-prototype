@@ -1,11 +1,9 @@
-class Event
+require_relative './rdf_sourced_object'
 
-  attr :uri
+class Event < RDFSourcedObject
+
+  attr :people, true
   attr :title, true
   attr :description, true
-
-  def initialize(uri)
-    @uri = uri
-  end
 
 end
