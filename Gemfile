@@ -4,6 +4,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'rest-client'
 gem 'rack'
+gem 'json'
 
 group :development,:test do
   gem 'relish'

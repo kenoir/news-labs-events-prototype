@@ -134,6 +134,7 @@ DEPENDENCIES
   cucumber
   cucumber-sinatra
   jasmine
+  json
   rack
   rack-test
   rake
