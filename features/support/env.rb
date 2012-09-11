@@ -5,9 +5,14 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rest-assured'
 require 'rspec'
+require 'rest-client'
 
 require File.join(File.dirname(__FILE__), '..', '..', 'app.rb')
 require File.join(File.dirname(__FILE__), 'events_labs_helpers.rb')
+require File.join(File.dirname(__FILE__), '..', '..', 'rest-assured','helpers.rb')
+
+include RestAssuredHelpers
+start_test_api
 
 Capybara.app = Application
 
@@ -18,12 +23,6 @@ class ApplicationWorld
 end
 
 World(EventsLabsHelpers)
-
-RestAssured::Server.start(:port =>6666)
-RestAssured::Double.create(
-  :fullpath => events_endpoint, 
-  :content => events_json 
-)
 
 World do
   ApplicationWorld.new

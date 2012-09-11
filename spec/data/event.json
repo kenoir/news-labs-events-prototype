@@ -17,7 +17,7 @@
             "label": "Military dictatorship",
             "title": "Military_dictatorship",
             "updated_at": "2012-09-03T15:30:50Z",
-            "uri": "http://dbpedia.org/resource/Military_dictatorship"
+            "uri": "http://dbpedia.org/resource/resource_name"
         }
     ],
     "places": [
@@ -28,7 +28,7 @@
             "label": "Syria",
             "title": "Syria",
             "updated_at": "2012-08-24T09:20:14Z",
-            "uri": "http://dbpedia.org/resource/Syria"
+            "uri": "http://dbpedia.org/resource/resource_name"
         }
     ],
     "agents": [
@@ -39,7 +39,7 @@
             "label": "Kofi Annan",
             "title": "Kofi_Annan",
             "updated_at": "2012-09-04T11:27:49Z",
-            "uri": "http://dbpedia.org/resource/Kofi_Annan"
+            "uri": "http://dbpedia.org/resource/resource_name"
         }
     ],
     "articles": [

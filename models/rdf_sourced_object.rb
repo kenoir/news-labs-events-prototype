@@ -12,8 +12,6 @@ class RDFSourcedObject
     @base_uri = Application.config["rdf_base_path"]
     @uri = uri
 
-    puts "#{@base_uri}#{@uri}"
-
     @graph = RDF::Graph.new("#{@base_uri}#{@uri}")
   end
 
