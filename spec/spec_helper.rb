@@ -44,11 +44,15 @@ def dummy_id
 end
 
 def dummy_url
-  'http://www.example.com'
+  'http://www.example.com/events/1234'
 end
 
 def dummy_json
+  parsed_dummy_json.to_json
+end
+
+def parsed_dummy_json
   {
     'key' => 'value'
-  }.to_json
+  }
 end

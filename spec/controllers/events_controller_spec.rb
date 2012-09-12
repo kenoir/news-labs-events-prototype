@@ -25,25 +25,42 @@ describe EventsController, "#initialize" do
 
 end
 
-describe EventsController, "#run" do
+describe EventsController, "#load" do
 
-  it 'should call load, then build on the set builder' do
+  it 'should GET data from a given URI' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
-    builder = double('Builder')
+    events_controller.rest_client = dummy_rest_client
 
-    builder.should_receive(:load).ordered
-    builder.should_receive(:build).ordered
+    dummy_rest_client.should_receive(:get).with(dummy_url)
 
-    events_controller.builder = builder
-    events_controller.run!
+    events_controller.load
   end
 
-  it 'should call load with the correct event URI' do
+  it 'should return, parse and set the JSON GET response' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
+    events_controller.rest_client = dummy_rest_client
+
+    json = events_controller.load
+
+    events_controller.json.should == parsed_dummy_json
+    json.should == parsed_dummy_json
+  end
+
+end
+
+
+
+describe EventsController, "#run" do
+
+  it 'should call populate then build_array_of_type twice in the set builder' do
+    events_controller = EventsController.new(dummy_id,dummy_events_base_path)
+    events_controller.rest_client = dummy_rest_client
+
     builder = double('Builder')
 
-    builder.should_receive(:load).with(events_controller.events_uri)
-    builder.should_receive(:build)
+    builder.should_receive(:populate).ordered
+    builder.should_receive(:build_array_of_type).ordered
+    builder.should_receive(:build_array_of_type).ordered
 
     events_controller.builder = builder
     events_controller.run!
@@ -51,17 +68,16 @@ describe EventsController, "#run" do
 
   it 'should return and set an event' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
-    builder = double('Builder') 
-    event = double('Event')
+    events_controller.rest_client = dummy_rest_client
 
-    builder.should_receive(:load)
-    builder.should_receive(:build).and_return(event)
+    builder = double('Builder') 
+    builder.stub(:populate)
+    builder.stub(:build_array_of_type)
 
     events_controller.builder = builder
-    actual_event = events_controller.run!
 
-    actual_event.should == event
-    events_controller.event.should == event
+    actual_event = events_controller.run!
+    actual_event.should be_an_instance_of(Event)
   end
 
 end

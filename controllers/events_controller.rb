@@ -1,7 +1,9 @@
 class EventsController
   require 'rest_client'
+  require 'json'
 
   attr :event
+  attr :json
   attr :id,true
   attr :events_base_path,true
   attr :rdf_base_path,true
@@ -11,14 +13,26 @@ class EventsController
   def initialize(id,events_base_path)
     @id = id
     @rest_client = RestClient
-    @builder = Builder.new(@rest_client)    
+    @builder = Builder.new
     @events_base_path = events_base_path
     @rdf_base_path = rdf_base_path
   end
 
+  def load
+    response = @rest_client.get(events_uri)
+    @json = JSON.parse(response.to_str)
+
+    @json
+  end
+ 
   def run! 
-    @builder.load(events_uri)
-    @event = @builder.build
+    load
+    @event = Event.new(@json['uri'])
+
+    @builder.populate(event)
+
+    @event.people = @builder.build_array_of_type('Person','uri',@json['agents'])
+    @event.articles =  @builder.build_array_of_type('Article','url',@json['articles'])
 
     @event
   end

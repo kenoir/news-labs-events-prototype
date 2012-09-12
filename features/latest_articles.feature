@@ -10,3 +10,7 @@ Feature: Latest articles
   Scenario: Viewing a list of latest articles on an event page
     When I go to an event page
     Then I should see a list of latest articles associated with that event
+
+  Scenario: Viewing the latest articles within a person module
+    When I go to an event page
+    Then I should see a list of latest articles within the person module for each person
