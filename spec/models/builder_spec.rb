@@ -27,49 +27,57 @@ describe Builder, "#load" do
 
 end
 
-describe Builder, "#build_event" do
-  it 'should return an event' do
-    builder = Builder.new(dummy_rest_client)
-    event = builder.build_event(parsed_event_json)
-
-    event.should be_an_instance_of(Event)
-  end
-
-end
-
 describe Builder, "#build_people" do
   it 'should return an array of people' do
     builder = Builder.new(dummy_rest_client)
     people = builder.build_people(parsed_event_json['agents'])
 
-    people.each{ | person | 
+    people.each { | person | 
       person.should be_an_instance_of(Person)
     }
   end
 
-  it 'should return people with the correct values' do
+end
+
+describe Builder, "#build_person" do
+
+  it 'should call load! and then populate! on the passed Person' do
     builder = Builder.new(dummy_rest_client)
-    people = builder.build_people(parsed_event_json['agents'])
+    person = double('Person')
 
-    parsed_event_json_first_agent = parsed_event_json['agents'].pop
+    person.should_receive(:load!).ordered
+    person.should_receive(:populate!).ordered
 
-    person = people.pop
-    person.name.should == parsed_event_json_first_agent['label'] 
+    builder.build_person(person)
+  end
+
+end
+
+describe Builder, "#build_event" do
+  it 'should call load! and then populate! on the passed Event' do
+    builder = Builder.new(dummy_rest_client)
+    event = double('Event')
+
+    event.should_receive(:load!).ordered
+    event.should_receive(:populate!).ordered
+
+    builder.build_event(event)
   end
 
 end
 
 describe Builder, "#build" do
+
   it 'should accept JSON data and return an event' do
     builder = Builder.new(dummy_rest_client)
-    event = builder.build(dummy_json)
+    event = builder.build(event_json)
 
     event.should be_an_instance_of(Event)
   end
 
   it 'should use set json if available and return an event' do
     builder = Builder.new(dummy_rest_client)
-    builder.json = dummy_json
+    builder.json = event_json 
     event = builder.build
 
     event.should be_an_instance_of(Event)
@@ -80,9 +88,7 @@ describe Builder, "#build" do
 
     event = builder.build(event_json)
 
-    event.title.should == parsed_event_json['title'] 
-    event.description.should == parsed_event_json['description'] 
-
+    event.name.should == parsed_event_json['title'] 
   end
 
   it 'should return an event containing people' do
@@ -93,8 +99,6 @@ describe Builder, "#build" do
       person.should be_an_instance_of Person
     }
   end
-
-
 
 end
 

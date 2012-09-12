@@ -16,22 +16,16 @@ class Builder
   end
   
   def build(json = nil)
+
     if not json.nil?
       @json = json 
     end
 
     @parsed_json = JSON.parse(@json)
 
-    event = build_event(@parsed_json)
+    event = Event.new(@parsed_json['uri'])
+    event = build_event(event)
     event.people = build_people(@parsed_json['agents'])
-
-    event
-  end
-
-  def build_event(parsed_event_json)
-    event = Event.new(parsed_event_json["uri"])
-    event.title = parsed_event_json["title"]
-    event.description = parsed_event_json["description"]
 
     event
   end
@@ -44,16 +38,24 @@ class Builder
 
     parsed_people_json.each { | parsed_person_json |
       person = Person.new(parsed_person_json['uri'])
-      person.name = parsed_person_json['label']  
-
-      # REFACTOR ME SRSLY GUYS
-      person.load!
-      person.content
-
+      build_person(person)
       people.push(person)
     }
 
     people
   end
 
+  def build_event(event)
+    event.load!
+    event.populate!
+
+    event
+  end
+
+  def build_person(person)
+      person.load!
+      person.populate!
+
+      person
+  end
 end
