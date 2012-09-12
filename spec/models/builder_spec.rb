@@ -38,30 +38,6 @@ describe Builder, "#build_array_of_type" do
   end
 end
 
-describe Builder, "#build_people" do
-  it 'should return an array of people' do
-    builder = Builder.new(dummy_rest_client)
-    people = builder.build_people(parsed_event_json['agents'])
-
-    people.each { | person | 
-      person.should be_an_instance_of(Person)
-    }
-  end
-
-end
-
-describe Builder, "#build_articles" do
-  it 'should return an array of articles' do
-    builder = Builder.new(dummy_rest_client)
-    articles = builder.build_articles(parsed_event_json['articles'])
-
-    articles.each { | article | 
-      article.should be_an_instance_of(Article)
-    }
- 
-  end
-end
-
 describe Builder, "#populate" do
   it 'should call load! and then populate! on the passed object' do
     builder = Builder.new(dummy_rest_client)

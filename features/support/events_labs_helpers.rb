@@ -33,10 +33,11 @@ module EventsLabsHelpers
   end
 
   # Latest articles module
-  def latest_article_module_should_have_List_of_articles
+  def latest_article_module_should_have_list_of_articles
     within('section.articles') do
       parsed_event_json['articles'] .each { |article|
         page.should have_content(article['title'])
+        page.should have_xpath "//a[contains(@href,'#{article['url']}')]"
       }
     end
  

@@ -60,7 +60,7 @@
 <rdf:Description rdf:about="http://www.bbc.co.uk/news/world-us-canada-19446801">
         <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/asset/Story"/>
         <rdf:type rdf:resource="http://data.press.net/ontology/tag/Taggable"/>
-        <dc-term:title xml:lang="en">Funeral held for Neil Armstrong, first man on Moon</dc-term:title>
+        <dc-term:title xml:lang="en">Article Title</dc-term:title>
         <dc-term:description xml:lang="en">A private funeral service is held for the first man on the Moon, US astronaut Neil Armstrong, who died last week at the age of 82.</dc-term:description>
         <dc-term:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-31T22:29:46Z</dc-term:created>
         <dc-term:subject xml:lang="en">US &amp; Canada</dc-term:subject>

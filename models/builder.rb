@@ -26,8 +26,8 @@ class Builder
     event = Event.new(@parsed_json['uri'])
     event = populate(event)
 
-    event.people = build_people(@parsed_json['agents'])
-    event.articles = build_articles(@parsed_json['articles']) 
+    event.people = build_array_of_type('Person','uri',@parsed_json['agents'])
+    event.articles = build_array_of_type('Article','url',@parsed_json['articles'])
 
     event
   end
@@ -39,7 +39,7 @@ class Builder
     end
 
     parsed_json.each { | item |
-      instantiation_string = "#{type}.new(item[key])"
+      instantiation_string = "#{type}.new(item['#{key}'])"
       concept = eval(instantiation_string)
       populate(concept)
       concepts.push(concept)
@@ -47,36 +47,6 @@ class Builder
 
     concepts
 
-  end
-
-  def build_articles(parsed_articles_json)
-    articles = Array.new
-    if not parsed_articles_json.kind_of?(Array) 
-      return articles
-    end
-
-    parsed_articles_json.each { | parsed_article_json |
-      article  = Article.new(parsed_article_json['url'])
-      populate(article)
-      articles.push(article)
-    }
-
-    articles
-  end
-
-  def build_people(parsed_people_json)
-    people = Array.new
-    if not parsed_people_json.kind_of?(Array) 
-      return people
-    end
-
-    parsed_people_json.each { | parsed_person_json |
-      person = Person.new(parsed_person_json['uri'])
-      populate(person)
-      people.push(person)
-    }
-
-    people
   end
 
   def populate(object)

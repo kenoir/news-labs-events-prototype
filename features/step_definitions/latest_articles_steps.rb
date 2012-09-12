@@ -4,5 +4,5 @@ Then /^I should see the latest articles module$/ do
 end
 
 Then /^I should see a list of latest articles associated with that event$/ do
-  latest_article_module_should_have_List_of_articles
+  latest_article_module_should_have_list_of_articles
 end

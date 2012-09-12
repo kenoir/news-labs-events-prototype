@@ -8,3 +8,6 @@ paths:
   "/rdf?identifier=http://juicer.responsivenews.co.uk/events/1" : 
     file_location : "rest-assured/data/event_resource.xml"
     content-type: "application/rdf+xml"
+  "/rdf?identifier=http://www.bbc.co.uk/news/article-1234" : 
+    file_location : "rest-assured/data/article_resource.xml"
+    content-type: "application/rdf+xml"
