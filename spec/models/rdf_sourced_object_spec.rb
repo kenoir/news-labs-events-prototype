@@ -18,6 +18,10 @@ end
 
 describe RDFSourcedObject, '#populate!' do
   it 'should throw an UnimplementedError' do
-    pending
+    rdf_sourced_object = RDFSourcedObject.new(rdf_person_resource_uri)
+
+    proc {
+      rdf_sourced_object.populate!
+    }.should raise_error(NotImplementedError)
   end
 end

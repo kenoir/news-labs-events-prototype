@@ -20,7 +20,7 @@ class RDFSourcedObject
   end
 
   def populate! 
-
+    raise NotImplementedError.new
   end
 
 end

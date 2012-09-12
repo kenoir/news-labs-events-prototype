@@ -14,9 +14,11 @@ class Event < RDFSourcedObject
     })
 
     solutions = query.execute(@graph)
-    solution_hash = solutions.first.to_hash
+    if solutions.count > 0
+      solution_hash = solutions.first.to_hash
 
-    @name = solution_hash[:name]
+      @name = solution_hash[:name]
+    end
   end
 
 end
