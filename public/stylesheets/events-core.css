@@ -88,7 +88,7 @@ header.banner{
 .tabs li a {
   color:black;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   letter-spacing: -0.0425em;
   -webkit-font-smoothing: antialiased;
@@ -243,7 +243,7 @@ div#news-lab-events section.people ul li {
 }div#news-lab-events section.people ul li:last-child {
 	margin-bottom: 0;
 }
-div#news-lab-events section.people article header{
+div#news-lab-events section.people ul article header{
     position: absolute;
     left: -9999px;	
 }
@@ -316,23 +316,21 @@ div#news-lab-events section.articles ol li:nth-child(n) a:after {
 	font-weight: 700;
 	color: #f68b23;
 }
-/*
-div#news-lab-events section.people section.articles header.section h2 {
-	padding: 8px 0 8px 11px;
-	background-color: #dcdcdc;
-	padding: 0;
+
+
+div#news-lab-events section.people ul li section.articles header{
+    position: static;
+    margin-top: 10px;
 }
-div#news-lab-events section.people section.articles header.section h2 a {
-	display: block;
-	position: static;
-	color: #505050;		
+div#news-lab-events section.people ul li section.articles header h2 {	
+	font-size: 1.4rem;
+	font-weight: 400;
+	background: #dcdcdc;
+	padding: 5px 5px 5px 10px;	
+	margin-right: 10px;
 }
-*/
-div#news-lab-events section.open header h2 {	
-	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
-}
-div#news-lab-events section header h2 {	
-	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -44px;
+div#news-lab-events section.people ul li section.articles header.section h2 a {
+	
 }
 div#news-lab-events section.people ul section.articles {
 	clear: both;
@@ -341,11 +339,15 @@ div#news-lab-events section.people ul section.articles {
 div#news-lab-events section.people ul section.articles li {
 	padding: 0;
 	margin-bottom: 0;
+	margin-right: 10px;
 }
 div#news-lab-events section.people ul section.articles ol li a {
-	background-color: #dcdcdc;	
+	font-size: 1.4rem;
+	font-weight: 400;
+	background-color: #969696;	
 	margin-bottom: 1px;
 	padding: 5px 5px 5px 10px;
+	color: #ffffff;	
 }
 div#news-lab-events section.people ul section.articles ol li {
 	overflow: hidden;
@@ -353,11 +355,6 @@ div#news-lab-events section.people ul section.articles ol li {
 div#news-lab-events section.people ul section.articles ol li:nth-child(n) a:after {
 	content: none;
 }
-
-
-
-
-
 
 
 

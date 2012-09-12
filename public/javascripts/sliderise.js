@@ -7,8 +7,8 @@ define(["jquery","./mustache","text!./templates/slider.html"],
       }
 
       function slider(element){
-        var head = $(element).find('h2');
-        var content = $(element).find('.content');
+        var head = $(element).find('h2').filter(":first");
+        var content = $(element).find('.content').filter(":first");
 
         var sectionTitle = head.html();
         var updatedHead = $(template({title: sectionTitle}));
