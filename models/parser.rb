@@ -46,6 +46,10 @@ class Parser
       person = Person.new(parsed_person_json['uri'])
       person.name = parsed_person_json['label']  
 
+      # REFACTOR ME SRSLY GUYS
+      person.load!
+      person.content
+
       people.push(person)
     }
 

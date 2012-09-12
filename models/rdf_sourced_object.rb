@@ -8,14 +8,18 @@ class RDFSourcedObject
   attr :uri
   attr :graph
 
+  attr :thumbnail
+  attr :abstract
+
   def initialize(uri)
     @base_uri = Application.config["rdf_base_path"]
     @uri = uri
+
     @graph = RDF::Graph.new("#{@base_uri}#{@uri}")
   end
 
   def load!
-    graph.load!
+    @graph.load!
   end
 
   def content 
@@ -27,9 +31,14 @@ class RDFSourcedObject
       }
     })
 
-    solutions = query.execute(graph)
+    solutions = query.execute(@graph)
     solutions.filter { |solution| solution.abstract.language == :en }
+    solution_hash = solutions.first.to_hash
 
-    solutions.first.to_hash
+    # REFACTOR ME SRSLY GUYS
+    @abstract = solution_hash[:abstract]
+    @thumbnail = solution_hash[:thumbnail]
+
+    solution_hash
   end
 end

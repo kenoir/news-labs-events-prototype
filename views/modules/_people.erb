@@ -13,11 +13,10 @@
           <ul>
             <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
              <li><b>Role:</b> President of Syria</li>
-             <li><b>Description:</b> President Bashar al-Assad of Syria is facing the most serious challenge 
-             to his rule since he came to power in 2000 following the death of his father, Hafez.</li>
+             <li><b>Description:</b> <%= person.abstract %></li>
           </ul>     
           <figure>
-              <img src="/images/event/bashar-al-assad.jpg" width="95" height="95" alt="Bashar al-Assad" />
+          <img src="<%= person.thumbnail %>" width="95" height="95" alt="Bashar al-Assad" />
               <figcaption>Bashar al-Assad</a></figcaption>
           </figure>
           <a href="http://www.bbc.co.uk/news/10338256" title="Profile of Bashar al-Assad" class="profile">Profile</a>
