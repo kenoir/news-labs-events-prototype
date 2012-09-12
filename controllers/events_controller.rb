@@ -6,19 +6,19 @@ class EventsController
   attr :events_base_path,true
   attr :rdf_base_path,true
   attr :rest_client,true
-  attr :parser, true
+  attr :builder, true
 
   def initialize(id,events_base_path)
     @id = id
     @rest_client = RestClient
-    @parser = Parser.new(@rest_client)    
+    @builder = Builder.new(@rest_client)    
     @events_base_path = events_base_path
     @rdf_base_path = rdf_base_path
   end
 
   def run! 
-    @parser.load(events_uri)
-    @event = @parser.parse
+    @builder.load(events_uri)
+    @event = @builder.build
 
     @event
   end

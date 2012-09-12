@@ -1,4 +1,4 @@
-class Parser
+class Builder
   require 'json'
 
   attr :json, true 
@@ -15,20 +15,20 @@ class Parser
     @json
   end
   
-  def parse(json = nil)
+  def build(json = nil)
     if not json.nil?
       @json = json 
     end
 
     @parsed_json = JSON.parse(@json)
 
-    event = parse_event(@parsed_json)
-    event.people = parse_people(@parsed_json['agents'])
+    event = build_event(@parsed_json)
+    event.people = build_people(@parsed_json['agents'])
 
     event
   end
 
-  def parse_event(parsed_event_json)
+  def build_event(parsed_event_json)
     event = Event.new(parsed_event_json["uri"])
     event.title = parsed_event_json["title"]
     event.description = parsed_event_json["description"]
@@ -36,7 +36,7 @@ class Parser
     event
   end
 
-  def parse_people(parsed_people_json)
+  def build_people(parsed_people_json)
     people = Array.new
     if not parsed_people_json.kind_of?(Array) 
       return people
