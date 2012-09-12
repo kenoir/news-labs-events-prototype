@@ -7,9 +7,14 @@ define(["jquery","./mustache","text!./templates/slider.html"],
       }
 
       function slider(element){
-        var head = $(element).find('h2');
-        var content = $(element).find('.content');
+    	// Check for a parent section element with id -- should do for now
+        if( $(element).parents().filter('section').attr('class') ) {
+         return false;
+        }
 
+    	var head = $(element).find('h2').filter(":first");
+        var content = $(element).find('.content').filter(":first");
+        
         var sectionTitle = head.html();
         var updatedHead = $(template({title: sectionTitle}));
 

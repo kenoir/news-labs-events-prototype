@@ -4,6 +4,7 @@ require(["./sliderise","./mapfeed"], function(sliderise,mapfeed) {
         sliderise('section.articles');
         sliderise('section.timeline');
 
-        mapfeed('section.places');
+        mapfeed('section.places');        
+        //truncate('section.people ul.info');
 });
 
