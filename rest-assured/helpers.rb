@@ -30,12 +30,28 @@ module RestAssuredHelpers
     'http://dbpedia.org/resource/person_resource_name'
   end
 
+  def rdf_article_resource_uri
+    'http://www.bbc.co.uk/news/article-1234'
+  end
+
   def rdf_person_api_endpoint
     "/rdf?identifier=#{rdf_person_resource_uri}"
   end
 
   def rdf_event_api_endpoint
     "/rdf?identifier=#{rdf_event_resource_uri}"
+  end
+
+  def rdf_article_api_endpoint
+    "/rdf?identifier=#{rdf_article_resource_uri}"
+  end
+
+  def article_resource_xml_location
+    File.join(File.dirname(__FILE__), '/data/article_resource.xml')
+  end
+
+  def article_resource_xml
+    read_from_file(article_resource_xml_location)
   end
 
   def person_resource_xml_location
@@ -68,6 +84,11 @@ module RestAssuredHelpers
       :fullpath => rdf_event_api_endpoint,
       :content => event_resource_xml 
     )
+    RestAssured::Double.create(
+      :fullpath => rdf_article_api_endpoint,
+      :content => article_resource_xml 
+    )
+
   end
 
 end

@@ -3,6 +3,8 @@ require_relative './rdf_sourced_object'
 class Event < RDFSourcedObject
 
   attr :people, true
+  attr :articles, true
+
   attr :name
   attr :description
 

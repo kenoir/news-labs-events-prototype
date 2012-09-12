@@ -34,7 +34,12 @@ module EventsLabsHelpers
 
   # Latest articles module
   def latest_article_module_should_have_List_of_articles
-
+    within('section.articles') do
+      parsed_event_json['articles'] .each { |article|
+        page.should have_content(article['title'])
+      }
+    end
+ 
   end
 end
 

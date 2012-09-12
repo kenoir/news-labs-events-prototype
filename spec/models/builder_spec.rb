@@ -27,6 +27,17 @@ describe Builder, "#load" do
 
 end
 
+describe Builder, "#build_array_of_type" do
+  it 'should return an array of the passed type' do
+    builder = Builder.new(dummy_rest_client)
+    people = builder.build_array_of_type('Person','uri',parsed_event_json['agents'])
+
+    people.each { | person | 
+      person.should be_an_instance_of(Person)
+    }
+  end
+end
+
 describe Builder, "#build_people" do
   it 'should return an array of people' do
     builder = Builder.new(dummy_rest_client)
@@ -39,29 +50,27 @@ describe Builder, "#build_people" do
 
 end
 
-describe Builder, "#build_person" do
-
-  it 'should call load! and then populate! on the passed Person' do
+describe Builder, "#build_articles" do
+  it 'should return an array of articles' do
     builder = Builder.new(dummy_rest_client)
-    person = double('Person')
+    articles = builder.build_articles(parsed_event_json['articles'])
 
-    person.should_receive(:load!).ordered
-    person.should_receive(:populate!).ordered
-
-    builder.build_person(person)
+    articles.each { | article | 
+      article.should be_an_instance_of(Article)
+    }
+ 
   end
-
 end
 
-describe Builder, "#build_event" do
-  it 'should call load! and then populate! on the passed Event' do
+describe Builder, "#populate" do
+  it 'should call load! and then populate! on the passed object' do
     builder = Builder.new(dummy_rest_client)
-    event = double('Event')
+    object = double('Dummy')
 
-    event.should_receive(:load!).ordered
-    event.should_receive(:populate!).ordered
+    object.should_receive(:load!).ordered
+    object.should_receive(:populate!).ordered
 
-    builder.build_event(event)
+    builder.populate(object)
   end
 
 end
@@ -97,6 +106,15 @@ describe Builder, "#build" do
 
     event.people.each{ |person|
       person.should be_an_instance_of Person
+    }
+  end
+
+  it 'should return an event containing articles' do
+    builder = Builder.new(dummy_rest_client)
+    event = builder.build(event_json)
+
+    event.articles.each{ |article|
+      article.should be_an_instance_of Article
     }
   end
 
