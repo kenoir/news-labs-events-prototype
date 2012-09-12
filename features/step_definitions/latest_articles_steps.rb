@@ -7,5 +7,5 @@ Then /^I should see a list of latest articles associated with that event$/ do
 end
 
 Then /^I should see a list of latest articles within the person module for each person$/ do
-    pending # express the regexp above with the code you wish you had
+  person_should_have_a_list_of_articles
 end

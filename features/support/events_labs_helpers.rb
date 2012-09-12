@@ -40,7 +40,17 @@ module EventsLabsHelpers
         page.should have_xpath "//a[contains(@href,'#{article['url']}')]"
       }
     end
- 
+  end
+
+  def person_should_have_a_list_of_articles
+    within('section.people ul li section.articles') do
+      # http://juicer.responsivenews.co.uk/articles/19485798.json
+      # Need to get for above
+      parsed_article_json['articles'] .each { |article|
+        page.should have_content(article['title'])
+        page.should have_xpath "//a[contains(@href,'#{article['url']}')]"
+      }
+    end
   end
 end
 
