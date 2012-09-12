@@ -17,47 +17,47 @@ describe EventsController, "#initialize" do
     events_controller.rest_client.should == RestClient 
   end
 
-  it 'should set parser as an instance of Parser' do
+  it 'should set builder as an instance of Builder' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
 
-    events_controller.parser.should be_an_instance_of(Parser)
+    events_controller.builder.should be_an_instance_of(Builder)
   end
 
 end
 
 describe EventsController, "#run" do
 
-  it 'should call load, then parse on the set parser' do
+  it 'should call load, then build on the set builder' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
-    parser = double('Parser')
+    builder = double('Builder')
 
-    parser.should_receive(:load).ordered
-    parser.should_receive(:parse).ordered
+    builder.should_receive(:load).ordered
+    builder.should_receive(:build).ordered
 
-    events_controller.parser = parser
+    events_controller.builder = builder
     events_controller.run!
   end
 
   it 'should call load with the correct event URI' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
-    parser = double('Parser')
+    builder = double('Builder')
 
-    parser.should_receive(:load).with(events_controller.events_uri)
-    parser.should_receive(:parse)
+    builder.should_receive(:load).with(events_controller.events_uri)
+    builder.should_receive(:build)
 
-    events_controller.parser = parser
+    events_controller.builder = builder
     events_controller.run!
   end
 
   it 'should return and set an event' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
-    parser = double('Parser') 
+    builder = double('Builder') 
     event = double('Event')
 
-    parser.should_receive(:load)
-    parser.should_receive(:parse).and_return(event)
+    builder.should_receive(:load)
+    builder.should_receive(:build).and_return(event)
 
-    events_controller.parser = parser
+    events_controller.builder = builder
     actual_event = events_controller.run!
 
     actual_event.should == event

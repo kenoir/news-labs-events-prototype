@@ -5,7 +5,7 @@ require 'rack/test'
 require 'rest-assured'
 require 'json'
 
-require_relative '../models/parser.rb'
+require_relative '../models/builder.rb'
 require_relative '../models/event.rb'
 require_relative '../controllers/events_controller.rb'
 require_relative '../rest-assured/helpers.rb'

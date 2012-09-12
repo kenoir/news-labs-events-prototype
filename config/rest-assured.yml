@@ -1,7 +1,10 @@
 paths:
   "/api/events/1" : 
-    file_location : "spec/data/event.json"
+    file_location : "rest-assured/data/event.json"
     content-type: "application/json"
-  "/rdf?identifier=http://dbpedia.org/resource/resource_name" : 
-    file_location : "spec/data/resource.xml"
+  "/rdf?identifier=http://dbpedia.org/resource/person_resource_name" : 
+    file_location : "rest-assured/data/person_resource.xml"
+    content-type: "application/rdf+xml"
+  "/rdf?identifier=http://juicer.responsivenews.co.uk/events/1" : 
+    file_location : "rest-assured/data/event_resource.xml"
     content-type: "application/rdf+xml"

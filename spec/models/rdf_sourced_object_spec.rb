@@ -7,24 +7,21 @@ describe RDFSourcedObject, '#initialize' do
 
 end
 
-describe RDFSourcedObject, '#load' do
+describe RDFSourcedObject, '#load!' do
   it 'should load graph from the set uri' do
-    rdf_sourced_object = RDFSourcedObject.new(rdf_resource_uri)
+    rdf_sourced_object = RDFSourcedObject.new(rdf_person_resource_uri)
     rdf_sourced_object.load!
 
     rdf_sourced_object.graph.count.should be > 0
   end
 end
 
+describe RDFSourcedObject, '#populate!' do
+  it 'should throw an UnimplementedError' do
+    rdf_sourced_object = RDFSourcedObject.new(rdf_person_resource_uri)
 
-describe RDFSourcedObject, '#content' do
-  it 'should extract dbpedia content' do
-    rdf_sourced_object = RDFSourcedObject.new(rdf_resource_uri)
-    rdf_sourced_object.load!
-
-    content = rdf_sourced_object.content
-
-    content[:thumbnail].should_not be_nil
-    content[:abstract].should_not be_nil
+    proc {
+      rdf_sourced_object.populate!
+    }.should raise_error(NotImplementedError)
   end
 end

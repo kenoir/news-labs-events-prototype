@@ -5,7 +5,6 @@ module EventsLabsHelpers
   def page_should_be_valid_events_page
     find('h1').should have_content('News')
     find('header.section h1').should have_content(parsed_event_json['title'])
-    find('article.intro p').should have_content(parsed_event_json['description'])
   end
 
   def page_should_be_valid_news_page

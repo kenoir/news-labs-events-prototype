@@ -1,0 +1,34 @@
+{
+  "agents": [
+    {
+      "label": "Agent Name",
+      "uri": "http://dbpedia.org/resource/person_resource_name"
+    }
+  ],
+  "articles": [
+    {
+      "cps_id": "18095758",
+      "description": "Syria is losing the information war against the West, President Bashar al-Assad has said, amid continuing violence across the country.",
+      "published": "2012-05-16T18:38:04Z",
+      "title": "Syria crisis: Damascus losing information war, says Assad",
+      "url": "http://www.bbc.co.uk/news/world-middle-east-18095758"
+    }
+  ],
+  "description": "The Syria Crisis",
+  "endTime": "2012-09-30T12:38:00Z",
+  "factors": [
+    {
+      "label": "Military dictatorship",
+      "uri": "http://dbpedia.org/resource/Military_dictatorship"
+    }
+  ],
+  "places": [
+    {
+      "label": "Jaramana",
+      "uri": "http://dbpedia.org/resource/Jaramana"
+    }
+  ],
+  "startTime": "2011-03-15T12:38:00Z",
+  "title": "Event Title",
+  "uri": "http://juicer.responsivenews.co.uk/events/1"
+}

@@ -7,7 +7,7 @@ module RestAssuredHelpers
   end
 
   def event_json_location
-    File.join(File.dirname(__FILE__), '..', 'spec/data/event.json')
+    File.join(File.dirname(__FILE__), '/data/event.json')
   end
 
   def events_api_endpoint
@@ -22,20 +22,36 @@ module RestAssuredHelpers
     JSON.parse(event_json)
   end
 
-  def rdf_resource_uri
-    'http://dbpedia.org/resource/resource_name'
+  def rdf_event_resource_uri
+    'http://juicer.responsivenews.co.uk/events/1'
   end
 
-  def rdf_api_endpoint
-    "/rdf?identifier=#{rdf_resource_uri}"
+  def rdf_person_resource_uri
+    'http://dbpedia.org/resource/person_resource_name'
   end
 
-  def resource_xml_location
-    File.join(File.dirname(__FILE__), '..', 'spec/data/resource.xml')
+  def rdf_person_api_endpoint
+    "/rdf?identifier=#{rdf_person_resource_uri}"
   end
 
-  def resource_xml
-    read_from_file(resource_xml_location)
+  def rdf_event_api_endpoint
+    "/rdf?identifier=#{rdf_event_resource_uri}"
+  end
+
+  def person_resource_xml_location
+    File.join(File.dirname(__FILE__), '/data/person_resource.xml')
+  end
+
+  def person_resource_xml
+    read_from_file(person_resource_xml_location)
+  end
+
+  def event_resource_xml_location
+    File.join(File.dirname(__FILE__), '/data/event_resource.xml')
+  end
+
+  def event_resource_xml
+    read_from_file(event_resource_xml_location)
   end
 
   def start_test_api
@@ -45,8 +61,13 @@ module RestAssuredHelpers
       :content => event_json
     )
     RestAssured::Double.create(
-      :fullpath => rdf_api_endpoint,
-      :content => resource_xml 
+      :fullpath => rdf_person_api_endpoint,
+      :content => person_resource_xml 
+    )
+    RestAssured::Double.create(
+      :fullpath => rdf_event_api_endpoint,
+      :content => event_resource_xml 
     )
   end
+
 end
