@@ -220,10 +220,10 @@ div#news-lab-events section header.section h2 a {
 	color: #505050;		
 }
 div#news-lab-events section.open header h2 {	
-	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 300px 0; 
+	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
 }
 div#news-lab-events section header h2 {	
-	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 300px -44px;
+	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -44px;
 }
 div#news-lab-events section.places {	
     border-top-style: solid;
@@ -240,26 +240,30 @@ div#news-lab-events section.people ul li {
 	margin-bottom: 5px;
 	background-color: #f0f0f0;
 	overflow: auto;
-}
-div#news-lab-events section.people ul li:last-child {
+}div#news-lab-events section.people ul li:last-child {
 	margin-bottom: 0;
 }
 div#news-lab-events section.people article header{
     position: absolute;
     left: -9999px;	
 }
-div#news-lab-events section.people article ul {
+div#news-lab-events section.people ul article ul {
 	font-size: 1.4rem;
 	width: 60%;
 	padding: 0;
 	float: right;
-	margin-right: 18px;
+	margin-right: 5%;
 }
-div#news-lab-events section.people article ul li {
+@media screen and (min-width:480px) {
+    div#news-lab-events section.people ul article ul {
+        width: 70%;
+    }	
+}
+div#news-lab-events section.people ul article ul li {
     margin: 0;
     padding: 0;
 }
-div#news-lab-events section.people article ul li b {
+div#news-lab-events section.people ul article ul li b {
 	font-weight: 800;
 }
 div#news-lab-events section.people article a.profile {
@@ -285,7 +289,7 @@ div#news-lab-events section.articles ol {
 div#news-lab-events section.articles ol li {
 	position: relative;
 }
-div#news-lab-events section.articles li a {
+div#news-lab-events section.articles ol li a {
 	display: block;
 	font-size: 1.15rem;
 	font-weight: 800;
@@ -295,7 +299,7 @@ div#news-lab-events section.articles li a {
 	padding: 16px 0 11px 7px;
 	width: 100%;
 }
-div#news-lab-events section.articles li a span {
+div#news-lab-events section.articles ol li a span {
     display: block;
     width: 90%;
     white-space: nowrap;
@@ -306,12 +310,57 @@ div#news-lab-events section.articles ol li:nth-child(n) a:after {
 	content: counter(li);
 	counter-increment: li;
 	position: absolute;
-	top: 10px;
-	left: 300px;
+	top: 5px;
+	right: 4%;
 	font-size: 2.4rem;
 	font-weight: 700;
 	color: #f68b23;
 }
+/*
+div#news-lab-events section.people section.articles header.section h2 {
+	padding: 8px 0 8px 11px;
+	background-color: #dcdcdc;
+	padding: 0;
+}
+div#news-lab-events section.people section.articles header.section h2 a {
+	display: block;
+	position: static;
+	color: #505050;		
+}
+*/
+div#news-lab-events section.open header h2 {	
+	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
+}
+div#news-lab-events section header h2 {	
+	background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -44px;
+}
+div#news-lab-events section.people ul section.articles {
+	clear: both;
+	border-top: none;
+}
+div#news-lab-events section.people ul section.articles li {
+	padding: 0;
+	margin-bottom: 0;
+}
+div#news-lab-events section.people ul section.articles ol li a {
+	background-color: #dcdcdc;	
+	margin-bottom: 1px;
+	padding: 5px 5px 5px 10px;
+}
+div#news-lab-events section.people ul section.articles ol li {
+	overflow: hidden;
+}
+div#news-lab-events section.people ul section.articles ol li:nth-child(n) a:after {
+	content: none;
+}
+
+
+
+
+
+
+
+
 div#news-lab-events section.timeline .content {
 	font-size: 1.4rem;
 	text-align: center;
