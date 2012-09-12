@@ -10,17 +10,18 @@
           <header class="article">
           <h3><%= person.name %></h3>
           </header>
-          <ul>
+          <div class="figure">
+            <figure>
+                <img src="<%= person.thumbnail %>" width="95" height="95" alt="Bashar al-Assad" />
+                <figcaption>Bashar al-Assad</a></figcaption>
+            </figure>
+            <a href="http://www.bbc.co.uk/news/10338256" title="Profile of Bashar al-Assad" class="profile">Profile</a>
+          </div>
+          <ul class="info">
             <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
             <li><b>Role:</b> President of Syria</li>
             <li><b>Description:</b> <%= person.abstract %></li>
-          </ul>     
-          <figure>
-          <img src="<%= person.thumbnail %>" width="95" height="95" alt="Bashar al-Assad" />
-              <figcaption>Bashar al-Assad</a></figcaption>
-          </figure>
-          <a href="http://www.bbc.co.uk/news/10338256" title="Profile of Bashar al-Assad" class="profile">Profile</a>
-          
+          </ul>       
           <!-- List of articles in the context of a person -->
           <%= erb :'modules/_articles' %>          
       </article>      

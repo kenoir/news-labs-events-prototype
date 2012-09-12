@@ -247,18 +247,26 @@ div#news-lab-events section.people ul article header{
     position: absolute;
     left: -9999px;	
 }
+div#news-lab-events section.people ul article div.figure {
+	width: 95px;
+	float: left;
+}
 div#news-lab-events section.people ul article ul {
 	font-size: 1.4rem;
-	width: 60%;
 	padding: 0;
-	float: right;
-	margin-right: 5%;
+	float: left;
+	margin-left: 15px;
+	width: 60%;
 }
+
+/*
 @media screen and (min-width:480px) {
     div#news-lab-events section.people ul article ul {
         width: 70%;
     }	
 }
+*/
+
 div#news-lab-events section.people ul article ul li {
     margin: 0;
     padding: 0;
@@ -316,8 +324,7 @@ div#news-lab-events section.articles ol li:nth-child(n) a:after {
 	font-weight: 700;
 	color: #f68b23;
 }
-
-
+/* Nested Articles module */
 div#news-lab-events section.people ul li section.articles header{
     position: static;
     margin-top: 10px;
@@ -329,12 +336,12 @@ div#news-lab-events section.people ul li section.articles header h2 {
 	padding: 5px 5px 5px 10px;	
 	margin-right: 10px;
 }
-div#news-lab-events section.people ul li section.articles header.section h2 a {
-	
-}
 div#news-lab-events section.people ul section.articles {
 	clear: both;
 	border-top: none;
+}
+div#news-lab-events section.people ul section.articles article ul {
+    width: auto;	
 }
 div#news-lab-events section.people ul section.articles li {
 	padding: 0;
@@ -355,8 +362,6 @@ div#news-lab-events section.people ul section.articles ol li {
 div#news-lab-events section.people ul section.articles ol li:nth-child(n) a:after {
 	content: none;
 }
-
-
 
 div#news-lab-events section.timeline .content {
 	font-size: 1.4rem;
