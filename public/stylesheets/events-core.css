@@ -435,18 +435,19 @@ circle {
 
 /* For events index page */
 .index-events{
+  background-color:lightgrey;
   font: 18px/1.5 sans-serif;
-  padding:20px;
+  padding: 20px;
+  margin: 5px;
 }
-.index-events ul{  
-  margin: 10px 0px;
-}
+
 .index-events li{
   background-color:lightgrey;
   margin: 5px; 
-  padding:10px;  
+  padding:10px;
+  list-style-type:square
 }
 .index-events li a{
-  background-color:red; 
   padding:5px;
+  text-decoration:underline;
 }
