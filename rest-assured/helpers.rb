@@ -22,6 +22,10 @@ module RestAssuredHelpers
     JSON.parse(event_json)
   end
 
+  def parsed_article_json
+    JSON.parse(articles_person_query_json)
+  end
+
   def rdf_event_resource_uri
     'http://juicer.responsivenews.co.uk/events/1'
   end
@@ -44,6 +48,18 @@ module RestAssuredHelpers
 
   def rdf_article_api_endpoint
     "/rdf?identifier=#{rdf_article_resource_uri}"
+  end
+
+  def articles_person_query_endpoint
+    "/api/articles?binding=article&limit=5&where=?article%20%3Chttp://data.press.net/ontology/tag/mentions%3E%20%3C#{rdf_person_resource_uri}%3E"
+  end
+
+  def articles_person_query_json_location
+    File.join(File.dirname(__FILE__), '/data/article_person_query.json')
+  end
+
+  def articles_person_query_json
+    read_from_file(articles_person_query_json_location)
   end
 
   def article_resource_xml_location
@@ -88,6 +104,11 @@ module RestAssuredHelpers
       :fullpath => rdf_article_api_endpoint,
       :content => article_resource_xml 
     )
+    RestAssured::Double.create(
+      :fullpath => articles_person_query_endpoint,
+      :content => articles_person_query_json 
+    )
+
 
   end
 

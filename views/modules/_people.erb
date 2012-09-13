@@ -23,7 +23,7 @@
             <li><b>Description:</b> <%= person.abstract %></li>
           </ul>       
           <!-- List of articles in the context of a person -->
-          <%= erb :'modules/_articles' %>          
+          <%= erb :'modules/_articles', :scope => person %>          
       </article>      
   </li>
   <% end %>

@@ -11,3 +11,6 @@ paths:
   "/rdf?identifier=http://www.bbc.co.uk/news/article-1234" : 
     file_location : "rest-assured/data/article_resource.xml"
     content-type: "application/rdf+xml"
+  "/api/articles?binding=article&limit=5&where=?article%20%3Chttp://data.press.net/ontology/tag/mentions%3E%20%3Chttp://dbpedia.org/resource/person_resource_name%3E" : 
+    file_location : "rest-assured/data/article_person_query.json"
+    content-type: "application/json"

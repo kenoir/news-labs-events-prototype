@@ -1,0 +1,23 @@
+{ "articles" : [ { "content_type" : null,
+  "countries" : [  ],
+  "cps_id" : "19575796",
+  "description" : "The Mars Curiosity rover has all but completed its commissioning phase and is ready to begin its detailed investigation of the Red Planet.",
+  "organisations" : [ ],
+  "people" : [ ],
+  "places" : [ ],
+  "published" : "2012-09-12T21:34:00Z",
+  "title" : "Article Title",
+  "url" : "http://www.bbc.co.uk/news/article-1234"
+                 },
+  { "content_type" : null,
+    "countries" : [  ],
+    "cps_id" : "19525421",
+    "description" : "A study of rocks at an old French A-bomb test site in the Pacific has led a team of scientists to conclude that early Mars was not so warm and wet, as many argue.",
+    "organisations" : [ ],
+    "people" : [ ],
+    "places" : [ ],
+    "published" : "2012-09-10T08:50:04Z",
+    "title" : "Article Title",
+    "url" : "http://www.bbc.co.uk/news/article-1234"
+  }
+] }

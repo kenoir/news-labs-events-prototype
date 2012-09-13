@@ -34,6 +34,15 @@ class EventsController
     @event.people = @builder.build_array_of_type('Person','uri',@json['agents'])
     @event.articles =  @builder.build_array_of_type('Article','url',@json['articles'])
 
+    if not @event.people.nil?
+      @event.people.each { |person|
+        article_json_for_person  = person.related_articles
+        articles_for_person = @builder.build_array_of_type('Article','url',article_json_for_person)
+
+        person.articles = articles_for_person
+      }
+    end
+
     @event
   end
 

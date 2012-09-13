@@ -52,15 +52,14 @@ end
 
 describe EventsController, "#run" do
 
-  it 'should call populate then build_array_of_type twice in the set builder' do
+  it 'should call populate then build_array_of_type in the set builder' do
     events_controller = EventsController.new(dummy_id,dummy_events_base_path)
     events_controller.rest_client = dummy_rest_client
 
     builder = double('Builder')
 
     builder.should_receive(:populate).ordered
-    builder.should_receive(:build_array_of_type).ordered
-    builder.should_receive(:build_array_of_type).ordered
+    builder.should_receive(:build_array_of_type).any_number_of_times
 
     events_controller.builder = builder
     events_controller.run!

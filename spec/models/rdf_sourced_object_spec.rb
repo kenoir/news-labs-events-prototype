@@ -26,14 +26,4 @@ describe RDFSourcedObject, '#populate!' do
   end
 end
 
-describe RDFSourcedObject, '#related_articles' do
-  it 'should return and set an array of Articles' do
-    rdf_sourced_object = RDFSourcedObject.new(rdf_person_resource_uri)
-    articles = rdf_sourced_object.related_articles
 
-    articles.each { |article|
-      article.should be_an_instance_of(Article)
-    }
-    rdf_sourced_object.articles.should == articles
-  end
-end

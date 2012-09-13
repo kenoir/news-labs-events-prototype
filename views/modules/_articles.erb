@@ -5,7 +5,7 @@
 </header>
 <div class="content">
   <ol>
-    <% @event.articles.each do | article | %>
+    <% @articles.each do | article | %>
       <li><a href="<%=article.uri%>"><span><%=article.title%></span></a></li>
     <% end %>
   </ol>
