@@ -72,6 +72,7 @@
         <event:hasAgent rdf:resource="http://dbpedia.org/resource/Virgin_Group"/>
         <event:hasAgent rdf:resource="http://dbpedia.org/resource/First_Great_Western"/>
         <pns:label>West Coast Main Line franchise</pns:label>
+        <dc-term:abstract>Some description</dc-term:abstract>
 </rdf:Description>
 
 </rdf:RDF>

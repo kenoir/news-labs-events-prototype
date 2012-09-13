@@ -9,6 +9,7 @@ class Event < RDFSourcedObject
     query = RDF::Query.new({
       :content => {
         RDFS.label => :name,
+        DC.abstract => :description
       }
     })
 
@@ -17,6 +18,7 @@ class Event < RDFSourcedObject
       solution_hash = solutions.first.to_hash
 
       @name = solution_hash[:name]
+      @description = solution_hash[:description]
     end
   end
 

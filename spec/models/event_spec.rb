@@ -5,5 +5,6 @@ describe Event, '#populate!' do
     event.populate!
     
     event.name.should_not be_nil
+    event.description.should_not be_nil
   end
 end
