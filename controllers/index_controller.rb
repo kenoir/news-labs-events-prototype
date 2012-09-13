@@ -10,7 +10,7 @@ class IndexController
     doc = Hpricot(@response)
     events_html = doc.at('div.events').inner_html
     
-    @events = events_html.sub('events','event')
+    @events = events_html.gsub("\/events","\/event")
   end
 
 end
