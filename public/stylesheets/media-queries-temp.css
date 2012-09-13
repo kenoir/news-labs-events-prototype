@@ -1,0 +1,28 @@
+@media screen and (orientation:landscape) {
+  html {
+    -webkit-text-size-adjust: none;
+  }
+}
+/* Smart phones landscape */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    div#news-lab-events article.intro {
+        overflow: auto;
+    }
+    div#news-lab-events article.intro p {
+        position: absolute;
+        top: -5px;
+        left: 330px;
+    }    	
+}
+/* Tablets */
+@media screen and (min-width: 768px){
+	div#news-lab-events article.intro {
+	    width: 736px;
+	    float: left;
+	}
+	div#news-lab-events section.articles {
+	    width: 256px;
+	    float: left;
+	}
+}
+	

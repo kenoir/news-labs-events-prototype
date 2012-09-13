@@ -1,13 +1,6 @@
 html {
 	font-size: 62.5%;
 }
-
-@media screen and (orientation:landscape) {
-  html {
-    -webkit-text-size-adjust: none;
-  }
-}
-
 body {
 	font-family: Helmet,Freesans,sans-serif;
 	font-weight: 400;
@@ -174,7 +167,7 @@ div#news-lab-events article.intro header h1{
 	color: #000000;
     background: #ffffff;
     margin-top: 141px;
-    width: 70%;
+    width: 273px;
     min-height: 4.5rem;
 }
 div#news-lab-events article.intro figure {
@@ -258,15 +251,6 @@ div#news-lab-events section.people ul article ul {
 	margin-left: 15px;
 	width: 60%;
 }
-
-/*
-@media screen and (min-width:480px) {
-    div#news-lab-events section.people ul article ul {
-        width: 70%;
-    }	
-}
-*/
-
 div#news-lab-events section.people ul article ul li {
     margin: 0;
     padding: 0;
