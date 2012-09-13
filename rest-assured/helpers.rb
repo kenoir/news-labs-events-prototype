@@ -26,6 +26,10 @@ module RestAssuredHelpers
     JSON.parse(articles_person_query_json)
   end
 
+  def rdf_place_resource_uri
+    'http://dbpedia.org/resource/place_resource_name'
+  end
+
   def rdf_event_resource_uri
     'http://juicer.responsivenews.co.uk/events/1'
   end
@@ -36,6 +40,10 @@ module RestAssuredHelpers
 
   def rdf_article_resource_uri
     'http://www.bbc.co.uk/news/article-1234'
+  end
+
+  def rdf_place_api_endpoint
+    "/rdf?identifier=#{rdf_place_resource_uri}"
   end
 
   def rdf_person_api_endpoint
@@ -70,16 +78,24 @@ module RestAssuredHelpers
     read_from_file(article_resource_xml_location)
   end
 
+  def place_resource_xml_location
+    File.join(File.dirname(__FILE__), '/data/place_resource.xml')
+  end
+
   def person_resource_xml_location
     File.join(File.dirname(__FILE__), '/data/person_resource.xml')
   end
 
-  def person_resource_xml
-    read_from_file(person_resource_xml_location)
-  end
-
   def event_resource_xml_location
     File.join(File.dirname(__FILE__), '/data/event_resource.xml')
+  end
+
+  def place_resource_xml
+    read_from_file(place_resource_xml_location)
+  end
+
+  def person_resource_xml
+    read_from_file(person_resource_xml_location)
   end
 
   def event_resource_xml
@@ -108,8 +124,10 @@ module RestAssuredHelpers
       :fullpath => articles_person_query_endpoint,
       :content => articles_person_query_json 
     )
-
-
+    RestAssured::Double.create(
+      :fullpath => rdf_place_api_endpoint, 
+      :content => place_resource_xml 
+    )
   end
 
 end

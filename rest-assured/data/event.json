@@ -24,8 +24,8 @@
   ],
   "places": [
     {
-      "label": "Jaramana",
-      "uri": "http://dbpedia.org/resource/Jaramana"
+      "label": "Place Name",
+      "uri": "http://dbpedia.org/resource/place_resource_name"
     }
   ],
   "startTime": "2011-03-15T12:38:00Z",

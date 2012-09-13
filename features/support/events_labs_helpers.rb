@@ -35,7 +35,7 @@ module EventsLabsHelpers
   # Latest articles module
   def latest_article_module_should_have_list_of_articles
     within('section.articles') do
-      parsed_event_json['articles'] .each { |article|
+      parsed_event_json['articles'].each { |article|
         page.should have_content(article['title'])
         page.should have_xpath "//a[contains(@href,'#{article['url']}')]"
       }
@@ -46,12 +46,23 @@ module EventsLabsHelpers
     within('section.people ul li section.articles') do
       # http://juicer.responsivenews.co.uk/articles/19485798.json
       # Need to get for above
-      parsed_article_json['articles'] .each { |article|
+      parsed_article_json['articles'].each { |article|
         page.should have_content(article['title'])
         page.should have_xpath "//a[contains(@href,'#{article['url']}')]"
       }
     end
   end
+
+  # Places module
+  def places_module_should_have_list_of_people
+    within('section.places') do
+      parsed_event_json['places'].each { | place |
+        page.should have_content(place['label'])
+        page.should have_xpath "//a[contains(@href,'#{place['uri']}')]"
+      }
+    end
+  end
+
 end
 
 

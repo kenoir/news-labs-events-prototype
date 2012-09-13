@@ -1,14 +1,51 @@
-<section class="places">
-<header class="section">
-<h2>Places</h2>
-</header>
-<div class="content">
-  <!--
-  <ul>
-    <li>London</li>
-  </ul>
-  -->
-  <div id="map"></div>
-</div>
-</section>
+<% if not @event.places.empty? %>
+  <section class="places">
+  <header class="section">
+  <h2>Places</h2>
+  </header>
+  <div class="content">
+    <div id='map' style="width: 100%; height: 300px;">
+    <ul>
+      <% @event.places.each do | place | %>
 
+        <li><a href="<%=place.uri%>"><%= place.name %></a>: <%=place.lat%>,<%=place.long%></li>
+
+      <% end %>
+    </ul>
+    </div>
+
+    <script type="text/javascript">
+      var locations = [
+      <% @event.places.each do | place | %>
+        ['<%= place.name %>',<%=place.lat%>, <%=place.long%>],
+      <% end %>
+      ];
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: new google.maps.LatLng(20.00, -10.00),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      var infowindow = new google.maps.InfoWindow();
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {  
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }      
+
+    </script>
+  </div>
+  </section>
+<% end %>

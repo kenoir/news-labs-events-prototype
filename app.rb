@@ -26,8 +26,4 @@ class Application < Sinatra::Base
     erb :event
   end
 
-  get '/article/:id' do |id|
-    erb :article
-  end
-
 end

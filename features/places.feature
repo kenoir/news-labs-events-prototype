@@ -6,3 +6,7 @@ Feature: Places module
   Scenario: Viewing an event page
     When I go to an event page
     Then I should see the places module
+
+  Scenario: Viewing a list if places on an event page
+    When I go to an event page
+    Then I should see a list of places associated with that event

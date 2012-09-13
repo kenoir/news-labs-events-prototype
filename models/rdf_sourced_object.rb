@@ -7,7 +7,9 @@ class RDFSourcedObject
   include RDF
 
   attr :people, true
+  attr :places, true
   attr :articles, true
+
   attr :rdf_base_uri
   attr :article_query_base_uri
 
