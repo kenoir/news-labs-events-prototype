@@ -8,6 +8,8 @@ gem 'json'
 gem 'rdf'
 gem 'rdf-rdfxml'
 gem 'equivalent-xml'
+gem 'mechanize'
+gem 'hpricot'
 
 group :development,:test do
   gem 'relish'

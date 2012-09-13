@@ -10,11 +10,11 @@ class EventsController
   attr :rest_client,true
   attr :builder, true
 
-  def initialize(id,events_base_path)
+  def initialize(id)
     @id = id
     @rest_client = RestClient
     @builder = Builder.new
-    @events_base_path = events_base_path
+    @events_base_path = Application.config['event_base_path'] 
     @rdf_base_path = rdf_base_path
   end
 

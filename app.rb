@@ -13,14 +13,16 @@ class Application < Sinatra::Base
   }
 
   get '/' do
+    index_controller = IndexController.new
+
+    @events = index_controller.run!
     erb :index
   end
 
   get '/event/:id' do |id|
-    events_controller = EventsController.new(id,Application.config['event_base_path'])
+    events_controller = EventsController.new(id)
 
     @event = events_controller.run!
-
     erb :event
   end
 
