@@ -4,7 +4,7 @@ define(["jquery","./jquery.jtruncate"],
 		    
     	var truncate = function(element) {
 
-    		var element = $(element).find('li').last();    	
+    		var element = $(element).find('li');
     		element.jTruncate(
     				{  
     			        length: 100,  
