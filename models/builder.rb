@@ -9,8 +9,9 @@ class Builder
     parsed_json.each { | item |
       instantiation_string = "#{type}.new(item['#{key}'])"
       concept = eval(instantiation_string)
-      populate(concept)
-      concepts.push(concept)
+      if populate(concept)
+        concepts.push(concept)
+      end
     }
 
     concepts
@@ -18,8 +19,19 @@ class Builder
   end
 
   def populate(object)
-    object.load!
-    object.populate!
+    succeeded = false
+
+    begin
+      object.load!
+      object.populate!
+
+      succeeded = true      
+    rescue Exception => e
+      puts e.message
+      puts e.backtrace.join("\n")
+    end
+
+    succeeded
   end
 
 end
