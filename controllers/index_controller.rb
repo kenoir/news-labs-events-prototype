@@ -8,8 +8,9 @@ class IndexController
 
     @response = page.content
     doc = Hpricot(@response)
-
-    @events = doc.at('div.events').inner_html
+    events_html = doc.at('div.events').inner_html
+    
+    @events = events_html.sub("\/events","\/event")
   end
 
 end
