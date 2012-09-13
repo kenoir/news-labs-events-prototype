@@ -22,8 +22,10 @@
             <li><b>Role:</b> President of Syria</li>
             <li><b>Description:</b> <%= person.abstract %></li>
           </ul>       
-          <!-- List of articles in the context of a person -->
-          <%= erb :'modules/_articles', :scope => person %>          
+          <% if not person.articles.empty? %>
+            <!-- List of articles in the context of a person -->
+            <%= erb :'modules/_articles', :scope => person %>          
+          <% end %>
       </article>      
   </li>
   <% end %>
