@@ -15,9 +15,10 @@
     </div>
 
     <script type="text/javascript">
+      var dummyListElement = '<li><a href="#">Article title</a>: Article description</li>';
       var locations = [
       <% @event.places.each do | place | %>
-        ['<%= place.name %>',<%=place.lat%>, <%=place.long%>],
+        ['<h3>Related articles for <strong><%= place.name %></strong></h3><ul>'+dummyListElement + dummyListElement+'</ul>',<%=place.lat%>, <%=place.long%>],
       <% end %>
       ];
 
