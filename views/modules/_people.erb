@@ -14,13 +14,12 @@
           <div class="figure">
             <figure>
                 <img src="<%= person.thumbnail %>" width="95" height="95" alt="Bashar al-Assad" />
-                <figcaption>Bashar al-Assad</a></figcaption>
+                <figcaption><%=person.name%></a></figcaption>
             </figure>
-            <a href="http://www.bbc.co.uk/news/10338256" title="Profile of Bashar al-Assad" class="profile">Profile</a>
+            <a href="http://www.bbc.co.uk/news/10338256" title="Profile of <%=person.name%>" class="profile">Profile</a>
           </div>
           <ul class="info">
             <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
-            <li><b>Role:</b> President of Syria</li>
             <li><b>Description:</b> <%= person.abstract %></li>
           </ul>       
           <% if not person.articles.empty? %>
