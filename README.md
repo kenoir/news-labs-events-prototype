@@ -1,7 +1,7 @@
 BBC News Labs Events Prototype
 ==============================
 
-[http://news-labs-events-prototype.herokuapp.com/](http://news-labs-events-prototype.herokuapp.com/event/3)
+[http://news-labs-events-prototype.herokuapp.com/event/29](http://news-labs-events-prototype.herokuapp.com/event/29)
 
 Background Story
 ----------------
