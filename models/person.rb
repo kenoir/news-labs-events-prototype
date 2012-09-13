@@ -43,8 +43,8 @@ class Person < RDFSourcedObject
       end
 
     rescue Exception => e
-      puts ex.message
-      puts ex.backtrace.join("\n")
+      puts e.message
+      puts e.backtrace.join("\n")
     end
 
     articles
