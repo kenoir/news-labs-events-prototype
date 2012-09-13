@@ -14,10 +14,8 @@ define(["jquery","./lib/polymaps"],
         svg[0].setAttribute('width', '100%');
         svg[0].setAttribute('height', '100%'); 
 
-        svg.prepend($('<style>@import url(svg.css); </style>'));
-
         map.add(po.geoJson()
-          .url("/data/map/world.json")
+          .url("/data/map/syria.json")
           .tile(false)
           .zoom(3)
           .on("load", manipulatemap));
@@ -35,7 +33,6 @@ define(["jquery","./lib/polymaps"],
             var  sat = Math.round(Math.random()*99+1);
             var  lit = Math.round(Math.random()*60+20);
             feature.element.setAttribute("fill", 'hsl(' + hue + ", " + sat + '%, ' + lit + '%)');
-            feature.element.setAttribute("id", feature.data.properties.name.toLowerCase().split(" ").join("_"))
           }
 
           map.resize();
