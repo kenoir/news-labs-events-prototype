@@ -10,7 +10,7 @@
           <h1><%= @event.name %></h1>
           </header>
           <figure id="main">
-            <img src="/images/event/syria-crisis_320.jpg" width="320" height="186" alt="" data-fullsrc="syria-crisis_640" />
+            <img src="/images/event/event-placeholder.jpeg" width="320" height="186" alt="Event placeholder"/>
             <figcaption>Bombing in a Syrian city</a></figcaption>
           </figure>
           <p><%= @event.description %></p>
@@ -32,8 +32,11 @@
           </header>
           <div class="content">
               <h3>March 2011: Syrian Protests</h3>
-              <figure>
+              <figure class="tiny-timeline">
                   <img src="/images/event/timeline-mockup.jpg" alt="" />
+              </figure>
+              <figure class="wide-timeline">
+                  <img src="/images/event/timeline-mockup-wide.png" alt="" />
               </figure>
               <a href="#" class="cta">View detailed timeline</a>
           </div>          

@@ -13,6 +13,9 @@
         top: -5px;
         left: 330px;
     }    	
+    div#news-lab-events section.timeline figure.wide-timeline{
+      display: none;
+    }
 }
 /* Tablets */
 @media screen and (min-width: 768px){
@@ -24,5 +27,11 @@
 	    width: 256px;
 	    float: left;
 	}
+        div#news-lab-events section.timeline figure.tiny-timeline{
+          display: none;
+        }
+        div#news-lab-events section.timeline .content{
+          background-color: white;
+        }
 }
 	
