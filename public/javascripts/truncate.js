@@ -13,7 +13,7 @@ define(["jquery","./jquery.jtruncate"],
     			        lessText: "[Less]",  
     			        ellipsisText: " ...",  
     			        moreAni: "fast",  
-    			        lessAni: 2000  
+    			        lessAni: 300  
     			    }
     		);
     		
