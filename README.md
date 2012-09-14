@@ -25,7 +25,7 @@ In the project directory:
 Running tests
 -------------
 
-Using autotest to run everything:
+Using autotest to run everything all the time:
 
     export AUTOFEATURE=true
     autotest
