@@ -10,10 +10,10 @@
           <h1><%= @event.name %></h1>
           </header>
           <figure id="main">
-            <img src="/images/event/event-placeholder.jpeg" width="320" height="186" alt="Event placeholder"/>
+            <img src="/images/event/event-placeholder.jpeg" alt="Event placeholder"/>
             <figcaption>Bombing in a Syrian city</a></figcaption>
           </figure>
-          <p><%= @event.description %></p>
+          <p id="event-description">Vince Cable has dismissed a warning by senior Lib Dem colleague Sir Menzies Campbell about his text exchanges with Labour leader Ed Miliband. Vince Cable has dismissed a warning by senior Lib Dem colleague Sir Menzies Campbell about his text exchanges with Labour leader Ed Miliband.</p>
 
           <a href="#">
               <span class="cta">
@@ -22,9 +22,11 @@
           </a>
       </article>      
       
-      <%= erb :'modules/_articles', :scope => @event %>      
+      <%= erb :'modules/_articles', :scope => @event %>
+      <div class="secondary-modules">  
       <%= erb :'modules/_people' %>
       <%= erb :'modules/_places' %>
+      </div>
 
       <section class="timeline">
           <header class="section">
