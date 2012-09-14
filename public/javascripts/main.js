@@ -3,6 +3,8 @@ require(["./sliderise", "./truncate", "./jquery.jtruncate"], function(sliderise,
         sliderise('section.places');
         sliderise('section.articles');
         sliderise('section.timeline');
+
+        mapfeed('section.places');
         
         truncate('section.people ul.info');
 });

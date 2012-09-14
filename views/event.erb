@@ -10,7 +10,7 @@
           <h1><%= @event.name %></h1>
           </header>
           <figure id="main">
-            <img src="/images/event/event-placeholder.jpeg" width="320" height="186" alt="Event placeholder"/>
+            <img src="/images/event/event-placeholder.jpeg" alt="Event placeholder"/>
             <figcaption>Bombing in a Syrian city</a></figcaption>
           </figure>
           <p><%= @event.description %></p>
@@ -22,9 +22,11 @@
           </a>
       </article>      
       
-      <%= erb :'modules/_articles', :scope => @event %>      
+      <%= erb :'modules/_articles', :scope => @event %>
+      <div class="secondary-modules">  
       <%= erb :'modules/_people' %>
       <%= erb :'modules/_places' %>
+      </div>
 
       <section class="timeline">
           <header class="section">
