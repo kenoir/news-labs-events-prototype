@@ -53,7 +53,7 @@ header.banner{
 }
 #events-header {
   color: #fff;
-  font-family: "Gill Sans";
+  font-family: "Gill Sans" !important;
   text-transform: uppercase;
 }
 #events-header a {
