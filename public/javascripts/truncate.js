@@ -1,6 +1,6 @@
 define(["jquery","./jquery.jtruncate"],
 		
-	function ($) {
+	function ($,jTruncate) {
 		    
     	var truncate = function(element) {
     		var element = $(element);

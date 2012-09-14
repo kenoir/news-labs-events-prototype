@@ -47,7 +47,7 @@ define(["jquery","./mustache","text!./templates/slider.html"],
 
 
 			function shouldSlide(){
-					if($(window).width() < 768){
+					if($(window).width() < 720){
 						return true;
 					} 
 					return false;
