@@ -19,7 +19,7 @@ define(["jquery","./mustache","text!./templates/slider.html"],
     		var head = $(element).find('h2').filter(":first");
         var content = $(element).find('.content').filter(":first");
 
-        var sectionTitle = head.html();
+        var sectionTitle = head.text();
         var updatedHead = $(template({title: sectionTitle}));
 
         $(head).replaceWith(updatedHead);
