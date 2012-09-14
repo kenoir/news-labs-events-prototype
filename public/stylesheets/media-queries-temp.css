@@ -8,14 +8,23 @@
     div#news-lab-events article.intro {
         overflow: auto;
     }
+    div#news-lab-events article.intro header h1 {
+        width: 45%;
+    }
+    div#news-lab-events article.intro figure {
+	    width: 272px;
+	    height: 151px;
+	    overflow: hidden;
+	}
     div#news-lab-events article.intro p {
         position: absolute;
         top: -5px;
-        left: 330px;
+        left: 284px;
     }    	
     div#news-lab-events section.timeline figure.wide-timeline{
       display: none;
     }
+
 }
 /* Tablets portrait */
 @media screen and (min-width: 768px) and (max-width: 1023px){

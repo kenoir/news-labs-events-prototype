@@ -3,8 +3,7 @@ define(["jquery","./jquery.jtruncate"],
 	function ($) {
 		    
     	var truncate = function(element) {
-
-    		var element = $(element).find('li');
+    		var element = $(element);
     		element.jTruncate(
     				{  
     			        length: 100,  
