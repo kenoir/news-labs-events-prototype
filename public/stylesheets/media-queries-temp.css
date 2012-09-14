@@ -99,6 +99,7 @@
 	}
     div#news-lab-events section.people ul section.articles {
         width: 478px;
+        margin-left: 0;
     }
     div#news-lab-events section.people ul li section.articles header h2{
         background-color: #c0c0c0;
