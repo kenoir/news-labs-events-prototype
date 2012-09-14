@@ -53,7 +53,7 @@ header.banner{
 }
 #events-header {
   color: #fff;
-  font-family: "Gill Sans" !important;
+  font-family: "Gill Sans", sans-serif;
   text-transform: uppercase;
 }
 #events-header a {
@@ -376,6 +376,13 @@ div#news-lab-events section.timeline .content {
   font-size: 1.4rem;
   text-align: center;
   background-color: #f0f0f0;
+}
+div#news-lab-events section.timeline div.timeline-mockup {
+	padding-bottom: 30px;
+	width: 100%;
+	height: 334px;
+	text-align: center;
+	background: #f0f0f0 url('../images/event/timeline-mockup-320-view.jpg') no-repeat center 15px; 
 }
 div#news-lab-events section.timeline h3 {
   padding-top: 10px;

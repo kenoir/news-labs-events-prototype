@@ -24,7 +24,10 @@
     div#news-lab-events section.timeline figure.wide-timeline{
       display: none;
     }
-
+    div#news-lab-events section.timeline div.timeline-mockup {
+	    height: 316px;
+	    background: #ffffff url('../images/event/timeline-mockup-480-view.jpg') no-repeat center 15px; 
+    }
 }
 /* iPad portrait (768px) and Nexus 7 landscape (720px) */
 @media screen and (min-width: 720px) and (max-width: 1023px){
@@ -46,6 +49,10 @@
     }
     div#news-lab-events section.timeline .content{
       background-color: white;
+    }
+    div#news-lab-events section.timeline div.timeline-mockup {
+	    height: 316px;
+	    background: #ffffff url('../images/event/timeline-mockup-480-view.jpg') no-repeat center 15px; 
     }	
 }
 /* iPad landscape (1024px) and beyond */
@@ -138,4 +145,8 @@
 	  width: 176px;
 	  margin-top: 0;
 	}
+	div#news-lab-events section.timeline div.timeline-mockup {
+	    height: 961px;
+	    background: #ffffff url('../images/event/timeline-mockup-1024-view.jpg') no-repeat center 15px; 
+    }
 }
