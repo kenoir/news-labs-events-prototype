@@ -107,14 +107,15 @@ header.banner{
 /* Page layout */
 .container {
   overflow: hidden;
-  margin: 6px 0;
+  margin: 0;
 }
 section {
   overflow: hidden;
 }
 div#news-lab-events nav.breadcrumb {
   font-size: inherit;
-  margin-bottom: 6px;    
+  margin-top: 6px;
+  margin-bottom: 6px;      
 }
 div#news-lab-events nav.breadcrumb:after {
   content: ' ';
@@ -175,7 +176,7 @@ div#news-lab-events article.intro header h1{
   color: #000000;
   background: #ffffff;
   margin-top: 141px;
-  width: 70%;
+  width: 276px;
   min-height: 4.5rem;
 }
 div#news-lab-events article.intro figure {
