@@ -182,7 +182,10 @@ div#news-lab-events article.intro figure {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;	
+  z-index: -1;
+  width: 320px;
+  height: 184px;
+  overflow: hidden;
 }
 div#news-lab-events article.intro figure img {
     width: 100%;	
