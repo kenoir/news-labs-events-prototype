@@ -5,7 +5,8 @@
   </header>
   <div class="content">
     <ol>
-      <% @articles.each do | article | %>
+      <% @articles.each_with_index do | article,index | %>
+        <% break if index == 9 %>
         <li><a href="<%=article.uri%>"><span><%=article.title%></span></a></li>
       <% end %>
     </ol>
