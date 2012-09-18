@@ -16,6 +16,10 @@ class EventsController
     @builder = Builder.new
     @events_base_path = Application.config['event_base_path'] 
     @rdf_base_path = rdf_base_path
+
+    if not ENV['REST_PROXY'].nil?
+      @rest_client.proxy = ENV['REST_PROXY']
+    end
   end
 
   def load

@@ -5,7 +5,7 @@ require 'assured-runner'
 
 desc 'Start REST-Assured (Mock API)'
 task :mockapi do
-  AssuredRunner.run
+  Thread.new { AssuredRunner.run }
 end
 
 desc 'Default: run cukes  & specs.'
@@ -25,6 +25,16 @@ desc "Run autotest"
 task :autotest do 
   system 'autotest' 
 end 
+
+desc "Run app with RACK_ENV set to 'production', and REST_PROXY set to reith"
+task :start_production do
+  system 'foreman start --env config/foreman/dev_with_live_api.env'
+end
+
+desc "Run app with RACK_ENV set to development, also starts mock API"
+task :start_development => :mockapi do
+  system 'foreman start --env config/foreman/dev_with_mockapi.env'
+end
 
 begin
   require 'jasmine'
