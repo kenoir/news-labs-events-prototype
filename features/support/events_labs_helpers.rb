@@ -85,6 +85,18 @@ module EventsLabsHelpers
       parsed_events_json
     end
 
+    def self.all_responses_should_be_successful(responses)
+      all_succeeded = true
+      responses.each do | response |
+        if not response[:success]
+          all_succeeded = false
+          puts "Failed: #{response.inspect}"
+        end
+      end
+
+      all_succeeded.should be true
+    end
+
     def self.visit_events(events)
       RestClient.proxy = ENV['CUKES_REST_PROXY']
 

@@ -6,14 +6,18 @@ class Builder
     if not parsed_json.kind_of?(Array) 
       return concepts
     end
-
-    parsed_json.each { | item |
-      instantiation_string = "#{type}.new(item['#{key}'])"
-      concept = eval(instantiation_string)
-      if populate(concept)
-        concepts.push(concept)
+    
+    begin 
+      parsed_json.each do | item |
+        instantiation_string = "#{type}.new(item['#{key}'])"
+        concept = eval(instantiation_string)
+        if populate(concept)
+          concepts.push(concept)
+        end
       end
-    }
+    rescue Exception => e
+      log("Exception raised trying to create list of concepts",e)
+    end
 
     concepts
 

@@ -6,10 +6,9 @@ end
 
 When /^a request is made to each event$/ do
   @responses = BigTestsHelper.visit_events(@available_events)
-  pp @responses
 end
 
 Then /^each request is successful$/ do
-  pending # express the regexp above with the code you wish you had
+  BigTestsHelper.all_responses_should_be_successful(@responses)
 end
 
