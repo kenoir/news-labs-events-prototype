@@ -27,8 +27,11 @@ class Builder
 
       succeeded = true      
     rescue Exception => e
+      puts "----------------------------------------------------------------\n"
+      puts "Exception raised trying to load and populate rdf_sourced_object:\n"
       puts e.message
       puts e.backtrace.join("\n")
+      puts "----------------------------------------------------------------\n"
     end
 
     succeeded

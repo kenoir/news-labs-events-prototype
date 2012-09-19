@@ -1,4 +1,4 @@
-@wip @big 
+@now @wip @big 
 Feature: Reliability using live API
   As a developer
   I want to make sure the application works with all live Event data
