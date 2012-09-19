@@ -1,4 +1,5 @@
 class Builder
+  include Loggable
  
   def build_array_of_type(type,key,parsed_json)
     concepts = Array.new
@@ -27,11 +28,7 @@ class Builder
 
       succeeded = true      
     rescue Exception => e
-      puts "----------------------------------------------------------------\n"
-      puts "Exception raised trying to load and populate rdf_sourced_object:\n"
-      puts e.message
-      puts e.backtrace.join("\n")
-      puts "----------------------------------------------------------------\n"
+      log("Exception raised trying to load and populate rdf_sourced_object",e)
     end
 
     succeeded

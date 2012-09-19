@@ -3,6 +3,7 @@ require 'sinatra/base'
 require 'yaml'
 
 Dir.glob("controllers/*.rb").each { |r| require_relative r }
+Dir.glob("mixin/*.rb").each { |r| require_relative r }
 Dir.glob("models/*.rb").each { |r| require_relative r }
 
 class Application < Sinatra::Base

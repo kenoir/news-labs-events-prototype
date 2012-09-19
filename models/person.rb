@@ -1,7 +1,5 @@
-require_relative './rdf_sourced_object'
-require_relative './article'
-
 class Person < RDFSourcedObject
+  include Loggable
 
   attr :name
   attr :thumbnail
@@ -43,8 +41,7 @@ class Person < RDFSourcedObject
       end
 
     rescue Exception => e
-      puts e.message
-      puts e.backtrace.join("\n")
+      log("Exception raised trying to populate related articles for person",e)
     end
 
     articles

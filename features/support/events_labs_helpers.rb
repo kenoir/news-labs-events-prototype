@@ -86,25 +86,29 @@ module EventsLabsHelpers
     end
 
     def self.visit_events(events)
-      RestClient.proxy = ENV['CUKES_REST_PROXY']                                                                                                                               
+      RestClient.proxy = ENV['CUKES_REST_PROXY']
+
+      responses = Array.new
 
       events.each do | event |
         event_uri = "#{app_event_base_uri}#{event["id"].to_s}"
 
-        begin
-          response = RestClient.get event_uri
-        rescue
-          pp event["title"]
-          pp event["id"]
-          pp response
-        end
+      response = { 
+        :title => event["title"], 
+        :id => event["id"],
+        :success => true
+      }
 
+      begin
+        RestClient.get event_uri
+      rescue
+        response[:success] = false;
       end
 
+      responses.push(response)
+      end
+
+      responses
     end
-
   end
-
 end
-
-
