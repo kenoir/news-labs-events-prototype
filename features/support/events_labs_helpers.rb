@@ -94,7 +94,7 @@ module EventsLabsHelpers
         end
       end
 
-      all_succeeded.should be true
+      all_succeeded.should == true
     end
 
     def self.visit_events(events)

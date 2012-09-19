@@ -12,6 +12,7 @@ gem 'mechanize'
 gem 'hpricot'
 
 group :development,:test do
+  gem 'heroku'
   gem 'relish'
   gem 'rest-assured'
   gem 'assured-runner', :git => 'https://github.com/BBC-Knowlearn/assured-runner-gem.git' 

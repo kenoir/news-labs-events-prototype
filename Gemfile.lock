@@ -54,11 +54,20 @@ GEM
     equivalent-xml (0.2.9)
       nokogiri (>= 1.4.3)
     eventmachine (1.0.0)
+    excon (0.16.2)
     extlib (0.9.15)
     ffi (1.1.5)
     gherkin (2.11.2)
       json (>= 1.4.6)
     haml (3.1.7)
+    heroku (2.31.3)
+      heroku-api (~> 0.3.5)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.7)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.5)
+      excon (~> 0.16.1)
     highline (1.6.14)
     hpricot (0.8.6)
     i18n (0.6.1)
@@ -69,6 +78,8 @@ GEM
       selenium-webdriver (>= 0.1.3)
     jasmine-core (1.2.0)
     json (1.7.5)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     libwebsocket (0.1.5)
       addressable
     mechanize (2.5.1)
@@ -83,6 +94,7 @@ GEM
     multi_json (1.3.6)
     net-http-digest_auth (1.2.1)
     net-http-persistent (2.7)
+    netrc (0.7.7)
     nokogiri (1.5.5)
     ntlm-http (0.1.1)
     rack (1.4.1)
@@ -161,6 +173,7 @@ DEPENDENCIES
   cucumber
   cucumber-sinatra
   equivalent-xml
+  heroku
   hpricot
   jasmine
   json
