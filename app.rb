@@ -13,14 +13,14 @@ class Application < Sinatra::Base
     full_yaml_config[Application.environment.to_s]
   }
 
-  get '/' do
+  get '/news/events' do
     index_controller = IndexController.new
 
     @events = index_controller.run!
     erb :index
   end
 
-  get '/event/:id' do |id|
+  get '/news/events/:id' do |id|
     events_controller = EventsController.new(id)
 
     @event = events_controller.run!
