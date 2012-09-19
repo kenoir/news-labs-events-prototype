@@ -58,9 +58,51 @@ module EventsLabsHelpers
     within('section.places') do
       parsed_event_json['places'].each { | place |
         page.should have_content(place['label'])
-        page.should have_xpath "//a[contains(@href,'#{place['uri']}')]"
+      page.should have_xpath "//a[contains(@href,'#{place['uri']}')]"
       }
     end
+  end
+
+  module BigTestsHelper
+    require 'rest_client'
+    require 'json'
+
+    def self.juicer_api_url
+      'http://juicer.responsivenews.co.uk/events'
+    end
+
+    def self.app_event_base_uri
+      'http://news-labs-events-prototype.herokuapp.com/event/'
+    end
+
+    def self.all_available_events
+      RestClient.proxy = ENV['CUKES_REST_PROXY'] 
+      response = RestClient.get juicer_api_url, :accept => 'application/json'
+
+      events_json = response.to_str
+      parsed_events_json = JSON.parse(events_json)
+
+      parsed_events_json
+    end
+
+    def self.visit_events(events)
+      RestClient.proxy = ENV['CUKES_REST_PROXY']                                                                                                                               
+
+      events.each do | event |
+        event_uri = "#{app_event_base_uri}#{event["id"].to_s}"
+
+        begin
+          response = RestClient.get event_uri
+        rescue
+          pp event["title"]
+          pp event["id"]
+          pp response
+        end
+
+      end
+
+    end
+
   end
 
 end
