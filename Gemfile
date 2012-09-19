@@ -28,6 +28,7 @@ group :development,:test do
 end
 
 group :development do
+  gem 'colorize'
   gem 'autotest', '~> 4.4.6'
   gem 'autotest-growl'
 end

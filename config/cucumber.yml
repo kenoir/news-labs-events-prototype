@@ -1,3 +1,2 @@
 default: --format pretty -t ~@big -t ~@wip
 focus: --format pretty -t @now
-post_deploy: --format pretty -t @big
