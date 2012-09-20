@@ -5,6 +5,8 @@ class RDFSourcedObject
   require 'json'
 
   include RDF
+  include Loggable
+  include Cacheable
 
   attr :people, true
   attr :places, true
@@ -15,6 +17,7 @@ class RDFSourcedObject
 
   attr :uri
   attr :graph
+  attr :unloaded_graph
 
   def initialize(uri)
     @rdf_base_uri = Application.config["rdf_base_path"]
@@ -22,11 +25,14 @@ class RDFSourcedObject
 
     @uri = uri
 
-    @graph = RDF::Graph.new("#{@rdf_base_uri}#{@uri}")
+    @unloaded_graph = RDF::Graph.new("#{@rdf_base_uri}#{@uri}")
   end
 
   def load!
-    @graph.load!
+    @graph = cache(@uri) { 
+      @unloaded_graph.load!
+      @unloaded_graph.clone
+    }
   end
 
   def populate! 
