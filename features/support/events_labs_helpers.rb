@@ -2,7 +2,11 @@ module EventsLabsHelpers
   require 'capybara'
 
   # Page validity
-  def page_should_be_valid_events_page
+  def page_should_be_a_valid_knl_events_page
+    find('h1').should have_content('Learn')
+  end
+
+  def page_should_be_valid_news_events_page
     find('h1').should have_content('News')
     find('header.section h1').should have_content(parsed_event_json['title'])
   end

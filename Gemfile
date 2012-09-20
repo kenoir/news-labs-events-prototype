@@ -10,6 +10,7 @@ gem 'rdf-rdfxml'
 gem 'equivalent-xml'
 gem 'mechanize'
 gem 'hpricot'
+gem 'dalli'
 
 group :development,:test do
   gem 'heroku'
