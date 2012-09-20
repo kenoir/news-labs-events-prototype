@@ -1,21 +1,28 @@
+require_relative('loggable.rb')
+
 module Cacheable
   require 'dalli'
+  include Loggable
 
-  def get(id,cache = Application.cache)
-    if not cache.nil?
-      cached_value = cache.get(id)
+  def cache(id,cache = Application.cache)
+    return if id.nil?
+
+    begin
+      cached_value = cache.get(id) if not cache.nil?
+    rescue Exception => e
+      log("Exception raised trying to use cache.",e)
     end
 
     if not cached_value.nil?
       value = cached_value
     else
-      value = yield
+      if block_given?
+        value = yield
+        cache.set(id,value) if not cache.nil?
+      end
     end
 
     value
   end
 
-  def set(id)
-
-  end
 end
