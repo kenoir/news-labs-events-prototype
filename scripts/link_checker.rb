@@ -38,16 +38,27 @@ module LinkChecker
         response = { 
           :title => event["title"], 
           :id => event["id"],
+          :time => nil,
           :success => true
         }
 
         begin
+          start_time = Time.now
           RestClient.get event_uri
         rescue
           response[:success] = false;
         end
-        
-        puts "Response: #{response.inspect}"
+
+        response_time = Time.now - start_time
+        response[:time] = response_time
+
+        output = "Response: #{response.inspect}"
+
+        if response[:success]
+          puts output.green
+        else
+          puts output.red
+        end
 
         responses.push(response)
       end

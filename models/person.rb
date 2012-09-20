@@ -1,5 +1,4 @@
 class Person < RDFSourcedObject
-  include Loggable
 
   attr :name
   attr :thumbnail
