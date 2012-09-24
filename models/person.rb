@@ -30,8 +30,10 @@ class Person < RDFSourcedObject
     articles = Array.new
 
     begin
-      response = RestClient.get query_uri, {:accept => :json}
-      parsed_json = JSON.parse(response)
+      parsed_json = cache(query_uri) {
+        response = RestClient.get query_uri, {:accept => :json}
+        parsed_json = JSON.parse(response)
+      }
 
       if not parsed_json['articles'].nil? and parsed_json['articles'].instance_of? Array
         articles.concat(parsed_json['articles'])
