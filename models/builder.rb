@@ -23,16 +23,22 @@ class Builder
 
   end
 
-  def populate(object)
-    succeeded = false
+  def populate(object_array)
+    if not object_array.instance_of?(Array) 
+      object_array = [object_array]
+    end
 
-    begin
-      object.load!
-      object.populate!
+    succeeded = true 
 
-      succeeded = true      
-    rescue Exception => e
-      log("Exception raised trying to load and populate rdf_sourced_object",e)
+    object_array.each do | object |
+      begin
+        object.load!
+        object.populate!
+
+      rescue Exception => e
+        log("Exception raised trying to load and populate rdf_sourced_object",e)
+        succeeded = false 
+      end
     end
 
     succeeded

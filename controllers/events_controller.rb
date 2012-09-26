@@ -33,10 +33,7 @@ class EventsController
  
   def run! 
     #load
-
-puts events_uri 
-
-    @event = Event.new(@json['uri'])
+    @event = Event.new(events_uri)
 
     @builder.populate(@event)
 

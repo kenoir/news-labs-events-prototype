@@ -33,10 +33,63 @@ class RDFSourcedObject
       @unloaded_graph.load!
       @unloaded_graph.clone
     }
+    @people = agents
+    @places = places
+
+    puts @people.inspect
+    puts @places.inspect
   end
 
   def populate! 
     raise NotImplementedError.new
+  end
+
+  private
+  def agents
+    all_agents = Array.new
+
+    event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
+    query = RDF::Query.new({
+      :agents => {
+        event.agent => :uri
+      }
+    })
+
+    solutions = query.execute(@graph)
+
+    return all_agents if solutions.empty?
+
+    solutions.each do | solution |
+      agent_hash = solution.to_hash   
+      all_agents.push Person.new(agent_hash[:uri])
+    end
+
+    all_agents
+  end
+
+  private
+  def places
+    all_places = Array.new
+
+    event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
+    query = RDF::Query.new({
+      :places => {
+        event.place => :uri,
+      }
+    })
+
+    solutions = query.execute(@graph)
+
+puts @graph.dump
+
+    return all_places if solutions.empty?
+
+    solutions.each do | solution |
+      place_hash = solution.to_hash   
+      all_places.push Place.new(place_hash[:uri])
+    end
+
+    all_places
   end
 
 end

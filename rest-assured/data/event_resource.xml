@@ -67,6 +67,8 @@
         <dc-term:title>West Coast Main Line franchise</dc-term:title>
         <event:time rdf:resource="http://juicer.responsivenews.co.uk/events/9/time"/>
         <pne:title>West Coast Main Line franchise</pne:title>
+        <event:place rdf:resource="http://dbpedia.org/resource/London" />
+        <event:place rdf:resource="http://dbpedia.org/resource/Buckingham_Palace" />
         <event:agent rdf:resource="http://dbpedia.org/resource/Virgin_Group"/>
         <event:agent rdf:resource="http://dbpedia.org/resource/First_Great_Western"/>
         <event:hasAgent rdf:resource="http://dbpedia.org/resource/Virgin_Group"/>
