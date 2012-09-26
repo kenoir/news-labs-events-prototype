@@ -25,27 +25,28 @@ class EventsController
   end
 
   def load
-    response = @rest_client.get(events_uri)
+    response = @rest_client.get(events_api_uri)
     @json = JSON.parse(response.to_str)
 
     @json
   end
  
   def run! 
-    #load
+    load
+ 
     @event = Event.new(events_uri)
 
     @builder.populate(@event)
+    @builder.populate(@event.people) 
+    @builder.populate(@event.agents) 
 
-    @event.people = @builder.build_array_of_type('Person','uri',@json['agents'])
     @event.articles =  @builder.build_array_of_type('Article','url',@json['articles'])
-    @event.places = @builder.build_array_of_type('Place','uri',@json['places'])
 
     if not @event.people.nil?
       @event.people.each { |person|
         article_json_for_person  = person.related_articles
         articles_for_person = @builder.build_array_of_type('Article','url',article_json_for_person)
-
+    
         person.articles = articles_for_person
       }
     end

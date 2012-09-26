@@ -21,6 +21,6 @@ class Event < RDFSourcedObject
       @description = solution_hash[:description]
     end
 
-  end
+   end
     
 end

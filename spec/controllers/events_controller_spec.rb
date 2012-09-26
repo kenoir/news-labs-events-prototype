@@ -30,31 +30,6 @@ describe EventsController, "#initialize" do
 
 end
 
-describe EventsController, "#load" do
-
-  it 'should GET data from a given URI' do
-    events_controller = EventsController.new(dummy_id)
-    events_controller.event_api_base_path = dummy_event_api_base_path
-    events_controller.rest_client = dummy_rest_client
-
-    dummy_rest_client.should_receive(:get).with(dummy_url)
-
-    events_controller.load
-  end
-
-  it 'should return, parse and set the JSON GET response' do
-    events_controller = EventsController.new(dummy_id)
-    events_controller.event_api_base_path = dummy_event_api_base_path
-    events_controller.rest_client = dummy_rest_client
-
-    json = events_controller.load
-
-    events_controller.json.should == parsed_dummy_json
-    json.should == parsed_dummy_json
-  end
-
-end
-
 describe EventsController, "#run" do
 
   it 'should call populate then build_array_of_type in the set builder' do

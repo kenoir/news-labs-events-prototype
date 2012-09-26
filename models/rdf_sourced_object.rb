@@ -33,18 +33,15 @@ class RDFSourcedObject
       @unloaded_graph.load!
       @unloaded_graph.clone
     }
+
     @people = agents
     @places = places
-
-    puts @people.inspect
-    puts @places.inspect
   end
 
   def populate! 
     raise NotImplementedError.new
   end
 
-  private
   def agents
     all_agents = Array.new
 
@@ -61,13 +58,12 @@ class RDFSourcedObject
 
     solutions.each do | solution |
       agent_hash = solution.to_hash   
-      all_agents.push Person.new(agent_hash[:uri])
+      all_agents.push Person.new(agent_hash[:uri].to_s)
     end
 
     all_agents
   end
 
-  private
   def places
     all_places = Array.new
 
@@ -80,13 +76,11 @@ class RDFSourcedObject
 
     solutions = query.execute(@graph)
 
-puts @graph.dump
-
     return all_places if solutions.empty?
 
     solutions.each do | solution |
       place_hash = solution.to_hash   
-      all_places.push Place.new(place_hash[:uri])
+      all_places.push Place.new(place_hash[:uri].to_s)
     end
 
     all_places
