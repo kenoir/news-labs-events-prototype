@@ -31,8 +31,12 @@ def dummy_rest_client
   @dummy_rest_client = dummy_rest_client
 end
 
-def dummy_events_base_path
-  'http://www.example.com/events/'
+def dummy_event_base_path 
+  'http://juicer.responsivenews.co.uk/events/'
+end
+
+def dummy_event_api_base_path
+  'http://www.example.com/events/api/'
 end
 
 def dummy_event_uri
@@ -44,7 +48,7 @@ def dummy_id
 end
 
 def dummy_url
-  'http://www.example.com/events/1234'
+  'http://juicer.responsivenews.co.uk/events/1234'
 end
 
 def dummy_json

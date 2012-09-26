@@ -5,7 +5,8 @@ class EventsController
   attr :event
   attr :json
   attr :id,true
-  attr :events_base_path,true
+  attr :event_api_base_path,true
+  attr :event_base_path,true
   attr :rdf_base_path,true
   attr :rest_client,true
   attr :builder, true
@@ -14,7 +15,8 @@ class EventsController
     @id = id
     @rest_client = RestClient
     @builder = Builder.new
-    @events_base_path = Application.config['event_base_path'] 
+    @event_api_base_path = Application.config['event_api_base_path'] 
+    @event_base_path = Application.config['event_base_path'] 
     @rdf_base_path = rdf_base_path
 
     if not ENV['REST_PROXY'].nil?
@@ -30,10 +32,13 @@ class EventsController
   end
  
   def run! 
-    load
+    #load
+
+puts events_uri 
+
     @event = Event.new(@json['uri'])
 
-    @builder.populate(event)
+    @builder.populate(@event)
 
     @event.people = @builder.build_array_of_type('Person','uri',@json['agents'])
     @event.articles =  @builder.build_array_of_type('Article','url',@json['articles'])
@@ -52,7 +57,11 @@ class EventsController
   end
 
   def events_uri
-    @events_base_path + @id.to_s
+    @event_base_path + @id.to_s
+  end
+
+  def events_api_uri
+    @event_api_base_path + @id.to_s
   end
 
 end
