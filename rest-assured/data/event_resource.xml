@@ -67,10 +67,8 @@
         <dc-term:title>West Coast Main Line franchise</dc-term:title>
         <event:time rdf:resource="http://juicer.responsivenews.co.uk/events/9/time"/>
         <pne:title>West Coast Main Line franchise</pne:title>
-        <event:agent rdf:resource="http://dbpedia.org/resource/Virgin_Group"/>
-        <event:agent rdf:resource="http://dbpedia.org/resource/First_Great_Western"/>
-        <event:hasAgent rdf:resource="http://dbpedia.org/resource/Virgin_Group"/>
-        <event:hasAgent rdf:resource="http://dbpedia.org/resource/First_Great_Western"/>
+        <event:place rdf:resource="http://dbpedia.org/resource/place_resource_name" />
+        <event:agent rdf:resource="http://dbpedia.org/resource/person_resource_name"/>
         <pns:label>West Coast Main Line franchise</pns:label>
         <dc-term:abstract>Some description</dc-term:abstract>
 </rdf:Description>
