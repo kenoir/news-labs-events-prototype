@@ -35,11 +35,12 @@ describe EventsController, "#run" do
   it 'should call populate then build_array_of_type in the set builder' do
     events_controller = EventsController.new(dummy_id)
     events_controller.event_api_base_path = dummy_event_api_base_path
+    events_controller.event_base_path = dummy_event_base_path
     events_controller.rest_client = dummy_rest_client
 
     builder = double('Builder')
 
-    builder.should_receive(:populate).ordered
+    builder.should_receive(:populate).exactly(3).times
     builder.should_receive(:build_array_of_type).any_number_of_times
 
     events_controller.builder = builder
@@ -49,6 +50,7 @@ describe EventsController, "#run" do
   it 'should return and set an event' do
     events_controller = EventsController.new(dummy_id)
     events_controller.event_api_base_path = dummy_event_api_base_path
+    events_controller.event_base_path = dummy_event_base_path
     events_controller.rest_client = dummy_rest_client
 
     builder = double('Builder') 

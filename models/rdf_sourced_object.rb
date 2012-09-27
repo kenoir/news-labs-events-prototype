@@ -8,9 +8,9 @@ class RDFSourcedObject
   include Loggable
   include Cacheable
 
+  attr :articles, true
   attr :people, true
   attr :places, true
-  attr :articles, true
 
   attr :rdf_base_uri
   attr :article_query_base_uri
@@ -26,6 +26,10 @@ class RDFSourcedObject
     @uri = uri
 
     @unloaded_graph = RDF::Graph.new("#{@rdf_base_uri}#{@uri}")
+
+    @articles = []
+    @people = []
+    @places = []
   end
 
   def load!
@@ -34,15 +38,16 @@ class RDFSourcedObject
       @unloaded_graph.clone
     }
 
-    @people = agents
-    @places = places
+    @people = populate_people
+    @places = populate_places
+    @articles = []
   end
 
   def populate! 
     raise NotImplementedError.new
   end
 
-  def agents
+  def populate_people 
     all_agents = Array.new
 
     event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
@@ -52,8 +57,10 @@ class RDFSourcedObject
       }
     })
 
-    solutions = query.execute(@graph)
+    # If we haven't loaded @graph return an empty array
+    return all_agents if @graph.nil?
 
+    solutions = query.execute(@graph)
     return all_agents if solutions.empty?
 
     solutions.each do | solution |
@@ -64,7 +71,7 @@ class RDFSourcedObject
     all_agents
   end
 
-  def places
+  def populate_places
     all_places = Array.new
 
     event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
@@ -73,6 +80,9 @@ class RDFSourcedObject
         event.place => :uri,
       }
     })
+
+    # If we haven't loaded @graph return an empty array
+    return all_places if @graph.nil?
 
     solutions = query.execute(@graph)
 

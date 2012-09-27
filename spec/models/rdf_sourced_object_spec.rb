@@ -1,10 +1,16 @@
 describe RDFSourcedObject, '#initialize' do
-
   it 'should accept and set the event URI' do
     rdf_sourced_object = RDFSourcedObject.new(dummy_event_uri)
     rdf_sourced_object.uri.should == dummy_event_uri 
   end
 
+  it 'should set articles,people and places to []' do
+    rdf_sourced_object = RDFSourcedObject.new(dummy_event_uri)
+
+    rdf_sourced_object.people.should be_empty
+    rdf_sourced_object.places.should be_empty
+    rdf_sourced_object.articles.should be_empty
+  end
 end
 
 describe RDFSourcedObject, '#load!' do
@@ -15,17 +21,21 @@ describe RDFSourcedObject, '#load!' do
     rdf_sourced_object.graph.count.should be > 0
   end
 
-  it 'should call and set agents and places' do
+  it 'should call populate_people, populate_places and set people and places respectively' do
     rdf_sourced_object = RDFSourcedObject.new(rdf_event_resource_uri)
-    agents = double('agents')
+
+    people = double('people')
     places = double('places')
 
-    rdf_sourced_object.should_receive(:agents) { agents }
-    rdf_sourced_object.should_receive(:places) { places }
+    rdf_sourced_object.should_receive(:populate_people) { people }
+    rdf_sourced_object.should_receive(:populate_places) { places }
     
-    rdf_sourced_object.agents.should == agents
+    rdf_sourced_object.load!
+
+    rdf_sourced_object.people.should == people  
     rdf_sourced_object.places.should == places
   end
+
 end
 
 describe RDFSourcedObject, '#places' do
@@ -38,17 +48,16 @@ describe RDFSourcedObject, '#places' do
     actual_places.count.should > 0
     actual_places.each do | place |
       place.should be_an_instance_of Place
-      puts place.inspect
     end
   end
 end
 
-describe RDFSourcedObject, '#agents' do
+describe RDFSourcedObject, '#people' do
   it 'should return an array of people' do
     rdf_sourced_object = RDFSourcedObject.new(rdf_event_resource_uri)
     rdf_sourced_object.load!
 
-    actual_agents = rdf_sourced_object.agents
+    actual_agents = rdf_sourced_object.people
     actual_agents.count.should > 0
     actual_agents.each do | agent |
       agent.should be_an_instance_of Person
@@ -65,5 +74,3 @@ describe RDFSourcedObject, '#populate!' do
     }.should raise_error(NotImplementedError)
   end
 end
-
-

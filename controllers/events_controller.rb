@@ -38,17 +38,17 @@ class EventsController
 
     @builder.populate(@event)
     @builder.populate(@event.people) 
-    @builder.populate(@event.agents) 
+    @builder.populate(@event.places) 
 
     @event.articles =  @builder.build_array_of_type('Article','url',@json['articles'])
 
-    if not @event.people.nil?
-      @event.people.each { |person|
+    if not @event.people.empty?
+      @event.people.each do |person|
         article_json_for_person  = person.related_articles
         articles_for_person = @builder.build_array_of_type('Article','url',article_json_for_person)
-    
-        person.articles = articles_for_person
-      }
+
+        person.articles.concat articles_for_person
+      end
     end
 
     @event
