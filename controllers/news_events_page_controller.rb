@@ -1,4 +1,6 @@
-class EventsController < BaseController
+require_relative 'news_page_controller.rb'
+
+class NewsEventsPageController < NewsPageController 
   require 'rest_client'
   require 'json'
 
@@ -33,7 +35,7 @@ class EventsController < BaseController
  
   def run! 
     load
- 
+
     @event = Event.new(events_uri)
 
     @builder.populate(@event)
@@ -50,8 +52,8 @@ class EventsController < BaseController
         person.articles.concat articles_for_person
       end
     end
-
-    @event
+    
+    page(:event,@event)
   end
 
   def events_uri

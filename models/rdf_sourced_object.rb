@@ -8,6 +8,8 @@ class RDFSourcedObject
   include Loggable
   include Cacheable
 
+  attr :domain, true
+
   attr :articles, true
   attr :people, true
   attr :places, true

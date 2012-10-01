@@ -1,10 +1,10 @@
-describe PeopleController, "#run" do
+describe LearnPeoplePageController, "#run" do
   it 'should not fail' do
     pending
   end
 end
 
-describe PeopleController, "#initialize" do
+describe LearnPeoplePageController, "#initialize" do
   it 'should not fail' do
     pending
   end

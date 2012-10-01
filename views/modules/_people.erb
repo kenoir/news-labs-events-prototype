@@ -1,11 +1,11 @@
-<% if not @event.people.empty? %>
+<% if not @page[:event].people.empty? %>
 <section class="people">
   <header class="section">
     <h2>People &amp; Organisations</h2>
   </header>
   <div class="content">
   <ul>
-  <% @event.people.each do | person | %>
+  <% @page[:event].people.each do | person | %>
   <li>
       <article>
           <header class="article">

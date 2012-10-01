@@ -7,13 +7,13 @@
       
       <article class="intro">
           <header class="section">
-          <h1><%= @event.name %></h1>
+          <h1><%= @page[:event].name %></h1>
           </header>
           <figure id="main">
             <img src="/images/event/event-placeholder.jpeg" alt="Event placeholder"/>
             <figcaption>Bombing in a Syrian city</a></figcaption>
           </figure>
-          <p id="event-description"><%= @event.description %></p>
+          <p id="event-description"><%= @page[:event].description %></p>
 
           <a href="#">
               <span class="cta">
@@ -22,7 +22,7 @@
           </a>
       </article>      
       
-      <%= erb :'modules/_articles', :scope => @event %>
+      <%= erb :'modules/_articles', :scope => @page[:event] %>
       <div class="secondary-modules">  
       <%= erb :'modules/_people' %>
       <%= erb :'modules/_places' %>

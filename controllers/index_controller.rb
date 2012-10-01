@@ -1,4 +1,4 @@
-class IndexController < BaseController
+class IndexController
   require 'mechanize'
   require 'hpricot'
 

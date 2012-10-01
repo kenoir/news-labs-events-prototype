@@ -29,27 +29,29 @@ class Application < Sinatra::Base
     erb :index
   end
 
-  get '/:domain/:resource_type/:id' do | domain_id, resource_type, id |
-    case resource_type
-    when "events"
-      events_controller = EventsController.new(id)
-      @domain = events_controller.domain(domain_id)
-      @event = events_controller.run!
-      erb :event
-    when "places"
-      places_controller = PlacesController.new(id)
-      @domain = places_controller.domain(domain_id)
-      @place = places_controller.run!
-      erb :places
-    when "people"
-      people_controller = PeopleController.new(id)
-      @domain = people_controller.domain(domain_id)
-      @person = people_controller.run!
-      erb :people
-    else
-      throw :halt, [404, "Not found"]
-    end
-    
+  get '/news/events/:id' do | id |
+    controller = NewsEventsPageController.new(id)
+    @page = controller.run!
+
+    erb :news_events
+  end
+
+  get '/learn/events/:id' do | id |
+    controller = LearnEventsPageController.new(id)
+    @page = controller.run!
+    erb :learn_events
+  end
+
+  get '/learn/places/:id' do | id |
+    controller = LearnPlacesPageController.new(id)
+    @page = controller.run!
+    erb :learn_places
+  end
+
+  get '/learn/people/:id' do | id |
+    controller = LearnPeoplePageController.new(id)
+    @page = controller.run!
+    erb :learn_people
   end
 
 end

@@ -2,19 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>BBC <%=@domain[:display_name] %> - Events</title>
+    <title>BBC <%=@page[:domain][:display_name] %> - Events</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/<%= @domain[:body_class] %>.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/<%= @page[:domain][:body_class] %>.css">
     <script type="text/javascript" data-main="/javascripts/main" src="/javascripts/require-jquery.js"></script>    
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
   </head>
 
 
-  <body class="<%= @domain[:body_class] %>">
+  <body class="<%= @page[:domain][:body_class] %>">
 
     <header class="banner" role="banner">
     <div id="global-header">
@@ -24,12 +24,12 @@
     </div>
     <div id="events-header">
       <h1>
-        <a href="http://www.bbc.co.uk/news"><%= @domain[:display_name] %></a>
+        <a href="http://www.bbc.co.uk/news"><%= @page[:domain][:display_name] %></a>
       </h1>
     </div>
     </header>    
     
-    <% if @domain[:id] == "news" %>
+    <% if @page[:domain][:id] == "news" %>
     <div class="container" id="news-labs-tabs">
       <div id="tab-wrapper" class="outer solid">
         <div id="index-tabs" class="tabs">
