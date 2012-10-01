@@ -1,0 +1,30 @@
+/* Page header */
+header.banner{
+  background-color: #cd0102;
+}
+#global-header {
+  background-color: #520000;
+}
+#events-header {
+  color: #fff;
+}
+#events-header a {
+  color: #fff;
+}
+/* Tabs */
+.tabs li {
+  background-color: lightgrey;
+}
+.tabs li.open{
+  background-color:white;   
+}
+.solid{
+  background-color: darkgrey;
+}
+/* Page layout */
+div#news-lab-events article.intro header h1{
+  color: #000000;
+  background: #ffffff;
+  margin-top: 141px;
+  min-height: 4.5rem;
+}

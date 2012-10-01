@@ -1,0 +1,20 @@
+/* Page header */
+header.banner{
+  background-color: #e6efec;
+}
+#global-header {
+  background-color: #3a3c3b;
+}
+#events-header {
+  color: #333333;
+}
+#events-header a {
+  color: #333333;
+}
+/* Page layout */
+div#news-lab-events article.intro header h1{
+  color: #000000;
+  background: rgba(16, 16, 16, 0.8);
+  margin-top: 105px;
+  min-height: 7.5rem;
+}
