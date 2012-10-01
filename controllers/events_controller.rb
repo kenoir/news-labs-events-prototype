@@ -1,4 +1,4 @@
-class EventsController
+class EventsController < BaseController
   require 'rest_client'
   require 'json'
 

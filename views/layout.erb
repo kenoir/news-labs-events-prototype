@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>BBC News - Events</title>
+    <title>BBC <%=@domain[:display_name] %> - Events</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -23,7 +23,7 @@
     </div>
     <div id="events-header">
       <h1>
-        <a href="http://www.bbc.co.uk/news"><%= @domain_display_name %></a>
+        <a href="http://www.bbc.co.uk/news"><%= @domain[:display_name] %></a>
       </h1>
     </div>
     </header>    
