@@ -11,8 +11,6 @@ class RDFSourcedObject
   attr :relations, true
 
   attr :articles, true
-  attr :people, true
-  attr :places, true
 
   attr :rdf_base_uri
   attr :article_query_base_uri
@@ -32,8 +30,6 @@ class RDFSourcedObject
     @relations = Hash.new
 
     @articles = []
-    @people = []
-    @places = []
   end
 
   def load!
@@ -47,37 +43,11 @@ class RDFSourcedObject
       relation.populate!
     end
 
-    @places = populate_places
     @articles = []
   end
 
   def populate! 
     raise NotImplementedError.new
-  end
-
-  def populate_places
-    all_places = Array.new
-
-    event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
-    query = RDF::Query.new({
-      :places => {
-        event.place => :uri,
-      }
-    })
-
-    # If we haven't loaded @graph return an empty array
-    return all_places if @graph.nil?
-
-    solutions = query.execute(@graph)
-
-    return all_places if solutions.empty?
-
-    solutions.each do | solution |
-      place_hash = solution.to_hash   
-      all_places.push Place.new(place_hash[:uri].to_s)
-    end
-
-    all_places
   end
 
 end

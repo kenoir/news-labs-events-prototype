@@ -1,5 +1,6 @@
 require_relative 'news_page_controller.rb'
 require_relative '../models/relations/event_people_relation.rb'
+require_relative '../models/relations/event_places_relation.rb'
 
 class NewsEventsPageController < NewsPageController 
   require 'rest_client'
@@ -39,6 +40,7 @@ class NewsEventsPageController < NewsPageController
 
     @event = Event.new(events_uri)
     @event.relations[:event_people] = EventPeopleRelation.new
+    @event.relations[:event_places] = EventPlacesRelation.new
 
     @event.load!
     @event.populate!
@@ -49,7 +51,7 @@ class NewsEventsPageController < NewsPageController
       end
     end
 
-abort @event.relations[:event_people].objects.first.inspect
+abort @event.relations[:event_places].objects.first.inspect
 
     @builder.populate(@event.places) 
 
