@@ -1,46 +1,21 @@
 class Builder
   include Loggable
 
-  def build_array_of_type(type,key,parsed_json)
-    concepts = Array.new
-    if not parsed_json.kind_of?(Array) 
-      return concepts
-    end
-    
-    begin       
-      parsed_json.each do | item |
-        instantiation_string = "#{type}.new(item['#{key}'])"
-        concept = eval(instantiation_string)
-        if populate(concept)
-          concepts.push(concept)
-        end
-      end
-    rescue Exception => e
-      log("Exception raised trying to create list of concepts",e)
-    end
+  def build_event(event)
+    event.relations[:event_people] = EventPeopleRelation.new
+    event.relations[:event_places] = EventPlacesRelation.new
+    event.relations[:event_articles] = EventArticlesRelation.new
 
-    concepts
-  end
-
-  def populate(object_array)
-    if not object_array.instance_of?(Array) 
-      object_array = [object_array]
-    end
-
-    succeeded = true 
-
-    object_array.each do | object |
-      begin
+    event.load!
+    event.populate!
+    event.relations.each do | key, relation |
+      relation.objects.each do | object |
         object.load!
         object.populate!
-
-      rescue Exception => e
-        log("Exception raised trying to load and populate rdf_sourced_object",e)
-        succeeded = false 
       end
     end
 
-    succeeded
+    event
   end
 
 end

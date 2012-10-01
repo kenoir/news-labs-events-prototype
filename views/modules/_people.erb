@@ -1,11 +1,11 @@
-<% if not @page[:event].people.empty? %>
+<% if not @page[:event_people].empty? %>
 <section class="people">
   <header class="section">
     <h2>People &amp; Organisations</h2>
   </header>
   <div class="content">
   <ul>
-  <% @page[:event].people.each do | person | %>
+  <% @page[:event_people].each do | person | %>
   <li>
       <article>
           <header class="article">
@@ -22,10 +22,6 @@
             <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
             <li><b>Description:</b> <%= person.abstract %></li>
           </ul>       
-          <% if not person.articles.empty? %>
-            <!-- List of articles in the context of a person -->
-            <%= erb :'modules/_articles', :scope => person %>          
-          <% end %>
       </article>      
   </li>
   <% end %>

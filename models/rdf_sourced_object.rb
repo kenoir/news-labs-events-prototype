@@ -28,8 +28,6 @@ class RDFSourcedObject
     @unloaded_graph = RDF::Graph.new("#{@rdf_base_uri}#{@uri}")
 
     @relations = Hash.new
-
-    @articles = []
   end
 
   def load!
@@ -42,8 +40,6 @@ class RDFSourcedObject
       relation.graph = @graph
       relation.populate!
     end
-
-    @articles = []
   end
 
   def populate! 
