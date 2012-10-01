@@ -10,7 +10,6 @@ describe NewsEventsPageController, "#initialize" do
     events_controller = NewsEventsPageController.new(dummy_id)
     events_controller.event_api_base_path = dummy_event_api_base_path
 
-
     events_controller.event_api_base_path.should == dummy_event_api_base_path 
   end
 

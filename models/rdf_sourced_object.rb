@@ -8,7 +8,7 @@ class RDFSourcedObject
   include Loggable
   include Cacheable
 
-  attr :domain, true
+  attr :relations, true
 
   attr :articles, true
   attr :people, true
@@ -29,6 +29,8 @@ class RDFSourcedObject
 
     @unloaded_graph = RDF::Graph.new("#{@rdf_base_uri}#{@uri}")
 
+    @relations = Hash.new
+
     @articles = []
     @people = []
     @places = []
@@ -40,37 +42,17 @@ class RDFSourcedObject
       @unloaded_graph.clone
     }
 
-    @people = populate_people
+    @relations.each do | key,relation |
+      relation.graph = @graph
+      relation.populate!
+    end
+
     @places = populate_places
     @articles = []
   end
 
   def populate! 
     raise NotImplementedError.new
-  end
-
-  def populate_people 
-    all_agents = Array.new
-
-    event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
-    query = RDF::Query.new({
-      :agents => {
-        event.agent => :uri
-      }
-    })
-
-    # If we haven't loaded @graph return an empty array
-    return all_agents if @graph.nil?
-
-    solutions = query.execute(@graph)
-    return all_agents if solutions.empty?
-
-    solutions.each do | solution |
-      agent_hash = solution.to_hash   
-      all_agents.push Person.new(agent_hash[:uri].to_s)
-    end
-
-    all_agents
   end
 
   def populate_places

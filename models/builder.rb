@@ -1,13 +1,13 @@
 class Builder
   include Loggable
- 
+
   def build_array_of_type(type,key,parsed_json)
     concepts = Array.new
     if not parsed_json.kind_of?(Array) 
       return concepts
     end
     
-    begin 
+    begin       
       parsed_json.each do | item |
         instantiation_string = "#{type}.new(item['#{key}'])"
         concept = eval(instantiation_string)
@@ -20,7 +20,6 @@ class Builder
     end
 
     concepts
-
   end
 
   def populate(object_array)

@@ -1,4 +1,5 @@
 require_relative 'news_page_controller.rb'
+require_relative '../models/relations/event_people_relation.rb'
 
 class NewsEventsPageController < NewsPageController 
   require 'rest_client'
@@ -32,21 +33,31 @@ class NewsEventsPageController < NewsPageController
 
     @json
   end
- 
+
   def run! 
-    load
+    load    
 
     @event = Event.new(events_uri)
+    @event.relations[:event_people] = EventPeopleRelation.new
 
-    @builder.populate(@event)
-    @builder.populate(@event.people) 
+    @event.load!
+    @event.populate!
+    @event.relations.each do | key, relation |
+      relation.objects.each do | object |
+        object.load!
+        object.populate!
+      end
+    end
+
+abort @event.relations[:event_people].objects.first.inspect
+
     @builder.populate(@event.places) 
 
     @event.articles =  @builder.build_array_of_type('Article','url',@json['articles'])
 
     if not @event.people.empty?
       @event.people.each do |person|
-        article_json_for_person  = person.related_articles
+    article_json_for_person  = person.related_articles
         articles_for_person = @builder.build_array_of_type('Article','url',article_json_for_person)
 
         person.articles.concat articles_for_person
