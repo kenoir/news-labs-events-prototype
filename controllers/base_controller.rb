@@ -15,6 +15,7 @@ class BaseController
     end
 
     {
+      :id => id,
       :display_name => display_name,
       :body_class => body_class
     }
