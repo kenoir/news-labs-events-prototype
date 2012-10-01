@@ -21,27 +21,39 @@ class Application < Sinatra::Base
     full_yaml_config[Application.environment.to_s]
   }
 
-  get '/news/events' do
-    index_controller = IndexController.new
+  get '/:domain/:resource_type' do | domain, resource_type |
+    case domain
+    when "news"
+      @domain_display_name = "News"
+    when "learn"
+      @domain_display_name = "Learn"
+    else
+      throw :halt, [404, "Not found"]
+    end
 
-    @events = index_controller.run!
+    #index_controller = IndexController.new
+    #@events = index_controller.run!
     erb :index
   end
 
-  get '/news/events/:id' do |id|
-    events_controller = EventsController.new(id)
+  get '/:domain/:resource_type/:id' do | domain, resource_type, id |
+    case domain
+    when "news"
+      @domain_display_name = "News"
+    when "learn"
+      @domain_display_name = "Learn"
+    else
+      throw :halt, [404, "Not found"]
+    end
 
-    @domain_display_name = "News"
-    @event = events_controller.run!
-    erb :event
-  end
-
-  get '/learn/events/:id' do |id|
-    events_controller = EventsController.new(id)
-
-    @domain_display_name = "Learn"
-    @event = events_controller.run!
-    erb :event
+    case resource_type
+    when "events"
+      events_controller = EventsController.new(id)
+      @event = events_controller.run!
+      erb :event
+    else
+      throw :halt, [404, "Not found"]
+    end
   end
 
 end
