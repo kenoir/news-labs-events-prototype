@@ -8,6 +8,7 @@ require 'json'
 require_relative '../models/builder.rb'
 require_relative '../models/event.rb'
 require_relative '../controllers/events_controller.rb'
+require_relative '../controllers/base_controller.rb'
 require_relative '../rest-assured/helpers.rb'
 
 include RestAssuredHelpers

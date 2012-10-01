@@ -50,7 +50,6 @@ class Application < Sinatra::Base
       throw :halt, [404, "Not found"]
     end
     
-    
   end
 
 end
