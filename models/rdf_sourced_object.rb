@@ -10,8 +10,6 @@ class RDFSourcedObject
 
   attr :relations, true
 
-  attr :articles, true
-
   attr :rdf_base_uri
   attr :article_query_base_uri
 
