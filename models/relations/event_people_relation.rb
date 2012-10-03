@@ -13,8 +13,8 @@ class EventPeopleRelation
     event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
     query = RDF::Query.new({
       :agents => {
-      event.agent => :uri
-    }
+        event.agent => :uri
+      }
     })
 
     # If we haven't loaded @graph return an empty array

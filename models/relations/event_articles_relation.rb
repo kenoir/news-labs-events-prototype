@@ -1,6 +1,6 @@
 class EventArticlesRelation
   attr :rest_client
-  attr :event_api_base_path
+  attr :event_api_base_path, true
   attr :graph, true
   attr :json
   attr :objects
