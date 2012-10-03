@@ -1,7 +1,7 @@
 BBC News Labs Events Prototype - Background Story
 =================================================
 
-An example event [http://news-labs-events-prototype.herokuapp.com/event/29](http://news-labs-events-prototype.herokuapp.com/event/29)
+An example event [http://news-labs-events-prototype.herokuapp.com/news/events/29](http://news-labs-events-prototype.herokuapp.com/news/events/29)
 
 View [current features](https://www.relishapp.com/bbc-knowlearn/news-labs-events-prototype/docs)
 
