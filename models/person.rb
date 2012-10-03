@@ -24,28 +24,4 @@ class Person < RDFSourcedObject
     @thumbnail = solution_hash[:thumbnail]
   end
 
-  def related_articles
-    ontology = 'http://data.press.net/ontology/tag/mentions'
-    query_uri = "#{@article_query_base_uri}binding=article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
-    articles = Array.new
-
-    begin
-      parsed_json = cache(query_uri) {
-        response = RestClient.get query_uri, {:accept => :json}
-        parsed_json = JSON.parse(response)
-      }
-
-      if not parsed_json['articles'].nil? and parsed_json['articles'].instance_of? Array
-        articles.concat(parsed_json['articles'])
-      else 
-        raise "Articles not found for person"
-      end
-
-    rescue Exception => e
-      log("Exception raised trying to populate related articles for person",e)
-    end
-
-    articles
-  end
-
 end
