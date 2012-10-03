@@ -8,53 +8,28 @@ describe NewsEventsPageController do
     end
 
     it 'should set builder as an instance of Builder' do
-      controller = NewsEventsPageController.new(dummy_id)
-      controller.builder.should be_an_instance_of(Builder)
+      subject.builder.should be_an_instance_of(Builder)
     end
 
   end
 
   describe NewsEventsPageController, "#run" do
-
-    it 'should call populate then build_array_of_type in the set builder' do
-      controller = NewsEventsPageController.new(dummy_id)
-      controller.event_api_base_path = dummy_event_api_base_path
-      controller.event_base_path = dummy_event_base_path
-      controller.rest_client = dummy_rest_client
-
+    it 'should call build_news_event in the set builder' do
       builder = double('Builder')
+      builder.should_receive(:build_news_event).exactly(1).times
 
-      builder.should_receive(:populate).exactly(3).times
-      builder.should_receive(:build_array_of_type).any_number_of_times
-
-      controller.builder = builder
-      controller.run!
+      subject.builder = builder
+      subject.run!
     end
 
-    it 'should return a hash containing :event and set the event' do
-      controller = NewsEventsPageController.new(dummy_id)
-      controller.event_api_base_path = dummy_event_api_base_path
-      controller.event_base_path = dummy_event_base_path
-      controller.rest_client = dummy_rest_client
-
+    it 'should return a hash containing :event' do
       builder = double('Builder') 
-      builder.stub(:populate)
-      builder.stub(:build_array_of_type)
+      builder.stub(:build_news_event)
 
-      controller.builder = builder
+      subject.builder = builder
 
-      page = controller.run!
+      page = subject.run!
       page[:event].should be_an_instance_of(Event)
-    end
-
-  end
-
-  describe NewsEventsPageController, "#events_uri" do
-    it 'should return an events_uri when passed an id' do
-      controller = NewsEventsPageController.new(dummy_id)
-      controller.event_base_path = dummy_event_base_path
-
-      controller.events_uri.should == dummy_event_base_path + dummy_id.to_s
     end
   end
 

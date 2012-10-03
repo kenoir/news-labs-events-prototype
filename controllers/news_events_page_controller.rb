@@ -7,11 +7,8 @@ class NewsEventsPageController < NewsPageController
   require 'rest_client'
   require 'json'
 
-  attr :event
-  attr :json
   attr :id,true
   attr :event_base_path,true
-  attr :rdf_base_path,true
   attr :builder, true
 
   def initialize(id)
@@ -21,8 +18,8 @@ class NewsEventsPageController < NewsPageController
 
   def run! 
 
-    @event = Event.new(events_uri)
-    @builder.build_event(@event)
+    event = Event.new(events_uri)
+    @builder.build_news_event(event)
 
 =begin
     if not @event.people.empty?
@@ -35,7 +32,7 @@ class NewsEventsPageController < NewsPageController
     end
 =end
 
-    page(:event,@event)
+    page(:event,event)
   end
 
   private
