@@ -1,5 +1,13 @@
 class PageController
 
+  attr :builder, true
+  attr :id,true
+
+  def initialize(id)
+    @id = id
+    @builder = Builder.new
+  end
+
   def domain
     raise NotImplementedError
   end
