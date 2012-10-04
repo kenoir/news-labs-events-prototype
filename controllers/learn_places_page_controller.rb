@@ -7,7 +7,7 @@ class LearnPlacesPageController < LearnPageController
   end
 
   def run!
-    page(:place,nil)          
+    page(:places,nil)          
   end
 
 end
