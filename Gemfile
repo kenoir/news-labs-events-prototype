@@ -26,6 +26,7 @@ group :development,:test do
   gem 'rspec-mocks'
   gem 'rack-test'
   gem 'jasmine'
+  gem 'simplecov'
 end
 
 group :development do

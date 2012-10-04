@@ -1,4 +1,5 @@
 ENV['RACK_ENV'] = 'test'
+require 'simplecov'
 
 require './app'
 require 'rack/test'
@@ -14,6 +15,7 @@ require_relative '../controllers/learn_people_page_controller.rb'
 require_relative '../rest-assured/helpers.rb'
 
 include RestAssuredHelpers
+
 start_test_api
 
 def app

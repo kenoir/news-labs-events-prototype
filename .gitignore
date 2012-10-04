@@ -1,3 +1,4 @@
 .project
 capybara-*.html
 rest-assured.*
+coverage
