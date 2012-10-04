@@ -1,4 +1,6 @@
-require(["./sliderise", "./truncate", "./jquery.jtruncate"], function(sliderise,truncate,jTruncate) {
+require(["./sliderise", "./truncate", "./jquery.jtruncate"], 
+  function(sliderise,truncate,jTruncate) {
+
   $(document).ready(function(){
     sliderise('section.people');
     sliderise('section.places');
@@ -8,5 +10,6 @@ require(["./sliderise", "./truncate", "./jquery.jtruncate"], function(sliderise,
     truncate('div#news-lab-events article.intro p#event-description');        
     truncate('section.people ul.info li');
   });
+
 });
 

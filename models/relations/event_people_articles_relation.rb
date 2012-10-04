@@ -11,13 +11,25 @@ class EventPeopleArticlesRelation
   def populate!
     ontology = 'http://data.press.net/ontology/tag/mentions'
     article_query_base_uri = Application.config['article_query_base_uri']
-    binding = "article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
+    uri = @graph.to_s
+
+    # TODO: This query needs to restrict by person & event 
+    binding = "article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{uri}%3E"
 
     query_uri = "#{article_query_base_uri}binding=#{binding}"
+
+pp query_uri
+
     articles = cache(query_uri) {
       response = RestClient.get query_uri, {:accept => :json}
       parsed_json = JSON.parse(response)
+
+pp parsed_json
+      
+      parsed_json["articles"]
     }
+
+pp articles
 
     articles_for_person = build_array_of_type('Article','url',articles)
   end
@@ -31,8 +43,8 @@ class EventPeopleArticlesRelation
 
     parsed_json.each do | item |
       instantiation_string = "#{type}.new(item['#{key}'])"
-    concept = eval(instantiation_string)
-    concepts.push(concept)
+      concept = eval(instantiation_string)
+      concepts.push(concept)
     end
 
     concepts

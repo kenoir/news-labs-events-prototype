@@ -6,17 +6,15 @@ define(["jquery","./mustache","text!./templates/slider.html"],
         slider(elements[i]);
       }
 
-			$(window).resize(function() {
-				globalOpen();
-			});
+      $(window).resize(function() { globalOpen(); });
 
       function slider(element){
-    	// Check for a parent section element with id -- should do for now
+        // Check for a parent section element with id -- should do for now
         if( $(element).parents().filter('section').attr('class') ) {
-         return false;
+          return false;
         }
 
-    		var head = $(element).find('h2').filter(":first");
+        var head = $(element).find('h2').filter(":first");
         var content = $(element).find('.content').filter(":first");
 
         var sectionTitle = head.text();
@@ -24,52 +22,44 @@ define(["jquery","./mustache","text!./templates/slider.html"],
 
         $(head).replaceWith(updatedHead);
 
-				bindClick(updatedHead,content);
-				$(content).addClass('sliderised');
-				if (shouldSlide()){
-					$(content).slideUp();
-				}
+        bindClick(updatedHead,content);
+        $(content).addClass('sliderised');
+        if (shouldSlide()){
+          $(content).slideUp();
+        }
 
         return element;
-			}
+      }
 
-			function globalOpen(){
-				if(shouldSlide()){
-					$('.sliderised').slideUp();
-				} else {
-					$('.sliderised').slideDown();
-				}	
-			}
+      function globalOpen(){
+        if(shouldSlide()){
+          $('.sliderised').slideUp();
+        } else {
+          $('.sliderised').slideDown();
+        }	
+      }
 
       function template(values){
         return Mustache.to_html(t,values);
-			}
+      }
 
+      function shouldSlide(){
+        if($(window).width() < 720){
+          return true;
+        } 
+        return false;
+      }
 
-			function shouldSlide(){
-					if($(window).width() < 720){
-						return true;
-					} 
-					return false;
-			}
-	
-			function bindClick(clickElement,targetElement){
-
+      function bindClick(clickElement,targetElement){
         $(clickElement).bind('click',function(){
-					if(!shouldSlide()) { return; }
-
+          if(!shouldSlide()) { return; }
           $(targetElement).slideToggle();
-
           $('html,body').animate({"scrolltop": clickElement.offset().top - 5}, 750);
           $(this).parents().filter('section').toggleClass('open');          
+
           return false;
         });
-
-
-			}
-
+      }
     }
-
     return sliderise;
-  }
-);
+  });
