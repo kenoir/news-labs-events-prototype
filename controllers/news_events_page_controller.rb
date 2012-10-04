@@ -7,14 +7,7 @@ class NewsEventsPageController < NewsPageController
   require 'rest_client'
   require 'json'
 
-  attr :id,true
   attr :event_base_path,true
-  attr :builder, true
-
-  def initialize(id)
-    @id = id
-    @builder = Builder.new
-  end
 
   def run! 
     event = Event.new(events_uri)
