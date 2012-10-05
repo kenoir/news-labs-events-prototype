@@ -11,8 +11,8 @@ class IndexController < PageController
   end
 
   def run!
-    if not ENV['http_proxy'].nil?
-      RestClient.proxy = ENV['http_proxy']
+    if not ENV['REST_PROXY'].nil?
+      RestClient.proxy = ENV['REST_PROXY']
     end
 
     response = RestClient.get('http://juicer.responsivenews.co.uk/events')

@@ -22,23 +22,22 @@ class Application < Sinatra::Base
   }
 
   get '/:domain/:resource_type' do | domain_id, resource_type |
-    index_controller = IndexController.new(domain_id)
-    @page = index_controller.run!
-
+    controller = IndexController.new(domain_id)
+    @page = controller.run!
     erb :index
   end
 
   get '/news/events/:id' do | id |
     controller = NewsEventsPageController.new(id)
     @page = controller.run!
-
     erb :news_events
   end
 
   get '/learn/events/:id' do | id |
     controller = LearnEventsPageController.new(id)
     @page = controller.run!
-    erb :learn_events
+    #erb :learn_events
+    erb :learn_events_temp
   end
 
   get '/learn/places/:id' do | id |
