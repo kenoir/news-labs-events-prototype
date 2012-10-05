@@ -8,7 +8,7 @@ class EventPlacesRelation
   attr :objects
 
   def populate!
-    all_places = Array.new
+    @objects = Array.new
 
     event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
     query = RDF::Query.new({
@@ -18,18 +18,18 @@ class EventPlacesRelation
     })
 
     # If we haven't loaded @graph return an empty array
-    return all_places if @graph.nil?
+    return @objects if @graph.nil?
 
     solutions = query.execute(@graph)
 
-    return all_places if solutions.empty?
+    return @objects if solutions.empty?
 
     solutions.each do | solution |
       place_hash = solution.to_hash   
-      all_places.push Place.new(place_hash[:uri].to_s)
+      @objects.push Place.new(place_hash[:uri].to_s)
     end
 
-    @objects = all_places
+    @objects = @objects
   end
 
 end
