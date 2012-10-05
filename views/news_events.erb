@@ -1,35 +1,38 @@
-    <div class="container" id="news-lab-events">
-      <nav class="breadcrumb">
-          <ol>
-              <li><a href="/">Events</a></li>
-          </ol>
-      </nav>
-      
-      <article class="intro">
-          <header class="section">
-          <h1><%= @page[:event].name %></h1>
-          </header>
-          <figure id="main">
-            <img src="/images/event/event-placeholder.jpeg" alt="Event placeholder"/>
-            <figcaption>Bombing in a Syrian city</a></figcaption>
-          </figure>
-          <p id="event-description"><%= @page[:event].description %></p>
+<div class="container" id="news-lab-events">
+  <nav class="breadcrumb">
+  <ol>
+    <li><a href="/">Events</a></li>
+  </ol>
+  </nav>
 
-          <a href="#">
-              <span class="cta">
-                  <span class="icon live"><b>LIVE</b></span> Breaking news <time>1 hour ago</time>
-              </span>
-          </a>
-      </article>      
-      
-      <%= erb :'modules/_articles', :scope => @page[:event] %>
-      <div class="secondary-modules">  
-      <%= erb :'modules/_people' %>
-      <%= erb :'modules/_places' %>
-      </div>
-      
-      <%= erb :'modules/_timeline' %>
+  <article class="intro">
+  <header class="section">
+  <h1><%= @page[:event].name %></h1>
+  </header>
+  <figure id="main">
+  <img src="/images/event/event-placeholder.jpeg" alt="Event placeholder"/>
+  <figcaption>Bombing in a Syrian city</a></figcaption>
+</figure>
+<p id="event-description"><%= @page[:event].description %></p>
 
-    </div>
+<a href="#">
+  <span class="cta">
+    <span class="icon live">
+      <b>LIVE</b>
+    </span>
+    Breaking news <time>1 hour ago</time>
+  </span>
+</a>
+</article>      
 
+<%= erb :'modules/_articles' %>
+
+<div class="secondary-modules">  
+  <%= erb :'modules/_people' %>
+  <%= erb :'modules/_places' %>
+</div>
+
+<%= erb :'modules/_timeline' %>
+
+</div>
 

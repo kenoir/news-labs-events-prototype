@@ -1,35 +1,42 @@
-<% if not @page[:event].people.empty? %>
-<section class="people">
+<% if not @page[:event_people].empty? %>
+  <section class="people">
   <header class="section">
-    <h2>People &amp; Organisations</h2>
+  <h2>People &amp; Organisations</h2>
   </header>
   <div class="content">
-  <ul>
-  <% @page[:event].people.each do | person | %>
-  <li>
-      <article>
-          <header class="article">
-          <h3><%= person.name %></h3>
-          </header>
-          <div class="figure">
-            <figure>
-                <img src="<%= person.thumbnail %>" alt="<%=person.name%>" />
-                <figcaption><%=person.name%></a></figcaption>
-            </figure>
-            <a href="http://www.bbc.co.uk/news/10338256" title="Profile of <%=person.name%>" class="profile">Profile</a>
-          </div>
-          <ul class="info">
-            <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
-            <li><b>Description:</b> <%= person.abstract %></li>
-          </ul>       
-          <% if not person.articles.empty? %>
-            <!-- List of articles in the context of a person -->
-            <%= erb :'modules/_articles', :scope => person %>          
-          <% end %>
+    <ul>
+      <% @page[:event_people].each do | person | %>
+        <% next if not person.populated? %>
+        <li>
+        <article>
+        <header class="article">
+        <h3><%= person.name %></h3>
+        </header>
+        <div class="figure">
+          <figure>
+          <img src="<%= person.thumbnail %>" alt="<%=person.name%>" />
+          <figcaption><%=person.name%></a></figcaption>
+        </figure>
+        <a href="http://www.bbc.co.uk/news/10338256" title="Profile of <%=person.name%>" class="profile">Profile</a>
+      </div>
+      <ul class="info">
+        <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
+        <li><b>Description:</b> <%= person.abstract %></li>
+      </ul>       
+      <section class="articles">
+      <header class="section">
+      <h2>Latest Articles</h2>
+      </header>
+      <div class="content">
+        <ol>
+          <li><a href="#"><span>Article Title: Article description</span></a></li>
+        </ol>
+      </div>          
+      </section>
       </article>      
-  </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
 </div>
 </section>
 <% end %>

@@ -18,7 +18,11 @@ module Cacheable
     else
       if block_given?
         value = yield
-        cache.set(id,value) if not cache.nil?
+        begin
+          cache.set(id,value) if not cache.nil?
+        rescue Exception => e
+          log("Exception raised trying to use cache.",e)
+        end
       end
     end
 
