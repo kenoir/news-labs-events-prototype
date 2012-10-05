@@ -11,5 +11,5 @@ test:
 production:
   event_api_base_path: "http://juicer.responsivenews.co.uk/api/events/"
   event_base_path: "http://juicer.responsivenews.co.uk/events/"
-  rdf_base_path: "http://juicer.responsivenews.co.uk/rdf?identifier="
+  rdf_base_path: "http://bbc-blender.herokuapp.com/rdf?identifier="
   article_query_base_uri: "http://juicer.responsivenews.co.uk/api/articles?"
