@@ -18,11 +18,16 @@ class Place < RDFSourcedObject
 
     solutions = query.execute(@graph)
     solutions.filter { |solution| solution.name.language == :en }
+
+    return if solutions.empty?
+
     solution_hash = solutions.first.to_hash
 
     @name = solution_hash[:name]
     @lat = solution_hash[:lat]
     @long = solution_hash[:long]
+
+    @populated = true
   end
 
 end

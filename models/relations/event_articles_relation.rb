@@ -20,6 +20,10 @@ class EventArticlesRelation
 
   private
   def load
+    if not ENV['http_proxy'].nil?
+      @rest_client.proxy = ENV['http_proxy']
+    end
+
     response = @rest_client.get(events_api_uri)
     @json = JSON.parse(response.to_str)
 

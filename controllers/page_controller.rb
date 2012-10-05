@@ -3,7 +3,7 @@ class PageController
   attr :builder, true
   attr :id,true
 
-  def initialize(id)
+  def initialize(id = nil)
     @id = id
     @builder = Builder.new
   end
@@ -18,7 +18,7 @@ class PageController
       :domain => domain
     }
 
-    if not subject.nil?
+    if not subject.nil? and defined? subject.relations
       subject.relations.each do | id, value |
         page_hash[id] = value.objects   
       end

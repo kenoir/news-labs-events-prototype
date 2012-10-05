@@ -22,10 +22,19 @@ class RDFSourcedObject
     @article_query_base_uri = Application.config["article_query_base_uri"] 
 
     @uri = uri
+    @loaded = false
 
     @unloaded_graph = RDF::Graph.new("#{@rdf_base_uri}#{@uri}")
 
     @relations = Hash.new
+  end
+
+  def populated?
+    if @populated.nil?
+      @populated = false
+    end
+
+    @populated
   end
 
   def load!

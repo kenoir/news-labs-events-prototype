@@ -6,6 +6,7 @@
   <div class="content">
     <ul>
       <% @page[:event_people].each do | person | %>
+        <% next if not person.populated? %>
         <li>
         <article>
         <header class="article">

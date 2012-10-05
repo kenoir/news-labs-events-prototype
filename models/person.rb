@@ -17,11 +17,16 @@ class Person < RDFSourcedObject
     solutions = query.execute(@graph)
     solutions.filter { |solution| solution.name.language == :en }
     solutions.filter { |solution| solution.abstract.language == :en }
+
+    return if solutions.empty?
+
     solution_hash = solutions.first.to_hash
 
     @name = solution_hash[:name]
     @abstract = solution_hash[:abstract]
     @thumbnail = solution_hash[:thumbnail]
+
+    @populated = true
   end
 
   def related_articles

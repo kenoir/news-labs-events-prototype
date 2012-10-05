@@ -22,10 +22,9 @@ class Application < Sinatra::Base
   }
 
   get '/:domain/:resource_type' do | domain_id, resource_type |
-    index_controller = IndexController.new
-    @domain = index_controller.domain(domain_id)
+    index_controller = IndexController.new(domain_id)
+    @page = index_controller.run!
 
-    #@events = index_controller.run!
     erb :index
   end
 
