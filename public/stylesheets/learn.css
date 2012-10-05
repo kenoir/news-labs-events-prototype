@@ -12,9 +12,54 @@ header.banner{
   color: #333333;
 }
 /* Page layout */
+div#news-lab-events section header.section h2 {
+  background-color: #ededed;
+}
+div#news-lab-events section header.section h2 a {
+  color: #656565;		
+}
+div#news-lab-events section.open header h2 {
+  background: #ededed url('../images/event/icons-sprite.gif') no-repeat 80% 0;
+}
+div#news-lab-events section header h2 {	
+  background: #ededed url('../images/event/icons-sprite.gif') no-repeat 80% -44px;
+}
 div#news-lab-events article.intro header h1{
-  color: #000000;
+  color: #ffffff;
   background: rgba(16, 16, 16, 0.8);
   margin-top: 105px;
   min-height: 7.5rem;
 }
+div#news-lab-events section.people ul li {	
+  padding: 10px 0 0 10px;
+}
+div#news-lab-events section.people ul li {	
+  background-color: #ffffff;
+}
+div#news-lab-events section.people article a.profile {
+  background-color: #3a676c;
+}
+div#news-lab-events section.people ul li section.articles header h2 {
+  background: #839695;
+  color: #ffffff;
+}
+div#news-lab-events section.people ul section.articles ol li a {
+  background-color: #ffffff;
+  color: #3a676c;
+  border-bottom: 1px solid #cccccc;
+}
+div#news-lab-events section.people ul section.articles ol li:last-child a {
+  border-bottom: none;	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

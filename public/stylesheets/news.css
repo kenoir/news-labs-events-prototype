@@ -28,3 +28,71 @@ div#news-lab-events article.intro header h1{
   margin-top: 141px;
   min-height: 4.5rem;
 }
+/* Breaking news CTA */
+div#news-lab-events .cta {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 5px 0 17px 10px;
+  background-color: #ffffff;
+}
+div#news-lab-events .icon.live {
+  position: relative;
+  background-color: #cc0101;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 400;	
+  letter-spacing: -0.0425em;
+  line-height: 1em;    
+  padding: 0.2em 0.33em 0 0.33em;
+  top: -2px;	
+}
+div#news-lab-events .cta time {
+  font-weight: 400;
+  color: #6daa17;
+  font-style: italic;
+}
+div#news-lab-events section header.section h2 {
+  background-color: #dcdcdc;
+}
+div#news-lab-events section header.section h2 a {
+  color: #505050;		
+}
+div#news-lab-events section.open header h2 {	
+  background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
+}
+div#news-lab-events section header h2 {	
+  background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -44px;
+}
+div#news-lab-events section.places {	
+  border-top-style: solid;
+  border-top-width: 3px;   
+  border-top-color: #fdb515;
+}
+div#news-lab-events section.people, div#news-lab-events section.timeline {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: #759b75;
+}
+div#news-lab-events section.people ul li {	
+  background-color: #f0f0f0;
+}
+div#news-lab-events section.people article a.profile {
+  background-color: #656565;
+}
+div#news-lab-events section.people ul li section.articles header h2 {
+  background: #dcdcdc;
+}
+div#news-lab-events section.people ul section.articles ol li a {
+  background-color: #969696;
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+
+

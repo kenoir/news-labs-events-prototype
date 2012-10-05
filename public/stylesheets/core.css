@@ -179,60 +179,19 @@ div#news-lab-events article.intro p {
   margin: 6px 0 0 10px;
   background-color: #ffffff;
 }
-div#news-lab-events .cta {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin: 5px 0 17px 10px;
-  background-color: #ffffff;
-}
-div#news-lab-events .icon.live {
-  position: relative;
-  background-color: #cc0101;
-  font-size: 1rem;
-  color: #ffffff;
-  font-weight: 400;	
-  letter-spacing: -0.0425em;
-  line-height: 1em;    
-  padding: 0.2em 0.33em 0 0.33em;
-  top: -2px;	
-}
-div#news-lab-events .cta time {
-  font-weight: 400;
-  color: #6daa17;
-  font-style: italic;
-}
 div#news-lab-events section header.section h2 {
   padding: 8px 0 8px 11px;
-  background-color: #dcdcdc;
 }
 div#news-lab-events section header.section h2 a {
   display: block;
   position: relative;
-  color: #505050;		
-}
-div#news-lab-events section.open header h2 {	
-  background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
-}
-div#news-lab-events section header h2 {	
-  background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -44px;
-}
-div#news-lab-events section.places {	
-  border-top-style: solid;
-  border-top-width: 3px;   
-  border-top-color: #fdb515;
-}
-div#news-lab-events section.people, div#news-lab-events section.timeline {
-  border-top-style: solid;
-  border-top-width: 3px;
-  border-top-color: #759b75;
 }
 div#news-lab-events section.people ul li {	
   padding: 10px 0 5px 10px;
   margin-bottom: 5px;
-  background-color: #f0f0f0;
   overflow: auto;
-}div#news-lab-events section.people ul li:last-child {
+}
+div#news-lab-events section.people ul li:last-child {
   margin-bottom: 0;
 }
 div#news-lab-events section.people ul article header{
@@ -274,7 +233,6 @@ div#news-lab-events section.people article a.profile {
   color: #ffffff;
   text-align: center;
   padding: 5px 0;
-  background-color: #656565;
   margin-top: -3px;
 }
 div#news-lab-events section.articles {
@@ -323,7 +281,6 @@ div#news-lab-events section.people ul li section.articles header{
 div#news-lab-events section.people ul li section.articles header h2 {	
   font-size: 1.4rem;
   font-weight: 400;
-  background: #dcdcdc;
   padding: 5px 5px 5px 10px;	
   margin-right: 10px;
 }
@@ -341,11 +298,9 @@ div#news-lab-events section.people ul section.articles li {
 }
 div#news-lab-events section.people ul section.articles ol li a {
   font-size: 1.4rem;
-  font-weight: 400;
-  background-color: #969696;	
+  font-weight: 400;	
   margin-bottom: 1px;
-  padding: 5px 5px 5px 10px;
-  color: #ffffff;	
+  padding: 5px 5px 5px 10px;	
 }
 div#news-lab-events section.people ul section.articles ol li {
   overflow: hidden;
