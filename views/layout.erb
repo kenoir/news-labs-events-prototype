@@ -28,25 +28,25 @@
       </h1>
     </div>
     </header>    
-    
+
     <% if @page[:domain][:id] == "news" %>
-    <div class="container" id="news-labs-tabs">
-      <div id="tab-wrapper" class="outer solid">
-        <div id="index-tabs" class="tabs">
-          <ul>
-            <li class="tab-1">
-            <a href="#">Top Stories</a>
-            </li>
-            <li class="tab-2">
-            <a href="#">Most Read</a>
-            </li>
-            <li class="tab-3 open">
-            <a href="/<%= "#{@page[:domain][:id]}" %>/events">Events</a>
-            </li>
-          </ul>
+      <div class="container" id="news-labs-tabs">
+        <div id="tab-wrapper" class="outer solid">
+          <div id="index-tabs" class="tabs">
+            <ul>
+              <li class="tab-1">
+              <a href="#">Top Stories</a>
+              </li>
+              <li class="tab-2">
+              <a href="#">Most Read</a>
+              </li>
+              <li class="tab-3 open">
+              <a href="/<%= "#{@page[:domain][:id]}" %>/events">Events</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>    
+      </div>    
     <% end %>
 
     <%= yield %>
