@@ -8,7 +8,12 @@ describe 'Application' do
 
   it "should provide k&l event pages" do
     get '/learn/events/1'
-    pending
+    last_response.should be_ok
+  end
+
+  it "should provide news article pages" do
+    get '/news/articles/1'
+    last_response.should be_ok
   end
 
 end

@@ -8,6 +8,7 @@ require 'json'
 
 require_relative '../models/builder.rb'
 require_relative '../models/event.rb'
+require_relative '../controllers/news_articles_page_controller.rb'
 require_relative '../controllers/news_events_page_controller.rb'
 require_relative '../controllers/learn_events_page_controller.rb'
 require_relative '../controllers/learn_places_page_controller.rb'

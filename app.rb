@@ -27,6 +27,12 @@ class Application < Sinatra::Base
     erb :index
   end
 
+  get '/news/articles/:id' do | id |
+    controller = NewsArticlesPageController.new(id)
+    @page = controller.run!
+    erb :news_articles
+  end
+
   get '/news/events/:id' do | id |
     controller = NewsEventsPageController.new(id)
     @page = controller.run!

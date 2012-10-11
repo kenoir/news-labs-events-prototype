@@ -9,6 +9,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /^a News Article page$/
+          '/news/articles/1'
+
     when /^a K&L Place page$/
           '/learn/places/1'
 
