@@ -10,6 +10,12 @@ module EventsLabsHelpers
     find('h1').should have_content('News')
     find('header.section h1').should have_content(parsed_event_json['title'])
   end
+  
+  def page_should_be_a_valid_news_article_page
+    find('body').should have_selector('.news')
+    page.should have_selector('.story-header')
+    page_should_have_people_module
+  end
 
   def page_should_be_valid_news_page
     find('h1').should have_content('News')

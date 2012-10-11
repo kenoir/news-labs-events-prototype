@@ -7,7 +7,7 @@ Then /^I should see a K&L Event page$/ do
 end
 
 Then /^I should see a News Article page$/ do
-    pending # express the regexp above with the code you wish you had
+    page_should_be_a_valid_news_article_page
 end
 
 Then /^I should see a K&L Person page$/ do
