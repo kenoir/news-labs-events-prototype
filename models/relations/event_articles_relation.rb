@@ -13,8 +13,7 @@ class EventArticlesRelation
   def populate!
     load
     
-    articles = build_array_of_type('Article','url',@json['articles'])
-    
+    articles = build_array_of_articles(@json['articles'])
     @objects = articles
   end
 
@@ -37,19 +36,22 @@ class EventArticlesRelation
   end
 
   private
-  def build_array_of_type(type,key,parsed_json)
-    concepts = Array.new
+  def build_array_of_articles(parsed_json)
+    articles = Array.new
     if not parsed_json.kind_of?(Array) 
       return concepts
     end
 
     parsed_json.each do | item |
-      instantiation_string = "#{type}.new(item['#{key}'])"
-      concept = eval(instantiation_string)
-      concepts.push(concept)
+      url = "#{Application.config['article_base_path']}#{item["cps_id"]}"
+
+      article = Article.new( url )
+      article.unloaded_graph = RDF::Graph.new( url )
+
+      articles.push(article)
     end
 
-    concepts
+    articles
   end
 
 end

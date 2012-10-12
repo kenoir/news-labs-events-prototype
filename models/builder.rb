@@ -12,8 +12,12 @@ class Builder
       next if relation.objects.nil?
 
       relation.objects.each do | object |
-        object.load!
-        object.populate!
+        begin
+          object.load!
+          object.populate!
+        rescue Exception => e
+          log("Oops, could not load relation: #{object.inspect}",e)
+        end
       end
     end
 
@@ -26,6 +30,8 @@ class Builder
 
     article.load!
     article.populate!
+
+    article
   end
 
 end
