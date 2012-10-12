@@ -38,21 +38,6 @@
   </head>
   
   <body class="<%= @page[:domain][:body_class] %>">
-  
-  	<div class="<%= @page[:domain][:context] %>">
-  	
-	  <header class="banner" role="banner">
-	    <div id="global-header">
-	      <a href="http://www.bbc.co.uk">
-	        <img src="/images/bbc_blocks.png" width="84" height="24" alt="British Broadcasting Corporation" />
-	      </a>
-	    </div>
-	    <div id="events-header">
-	      <h1>
-	        <a href="http://www.bbc.co.uk/news"><%= @page[:domain][:display_name] %></a>
-	      </h1>
-	    </div>
-	    </header> 
-    <%= yield %>
-  </body>
+  	<%= yield %>
+ </body>
 </html> 
