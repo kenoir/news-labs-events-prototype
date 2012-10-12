@@ -6,6 +6,7 @@ class Article < RDFSourcedObject
   attr :description
   attr :id
   attr :image
+  attr :body
 
   def populate!
     dcim = RDF::Vocabulary.new("http://purl.org/dc/dcmitype/")
@@ -15,7 +16,8 @@ class Article < RDFSourcedObject
         dcim.image => :image,
         DC.title => :title,
         DC.abstract => :abstract,
-        DC.identifier => :id
+        DC.identifier => :id,
+        DC.description => :body
       }
     })
 
@@ -29,6 +31,7 @@ class Article < RDFSourcedObject
     @description = solution_hash[:abstract].to_s
     @id = solution_hash[:id].to_s
     @image = solution_hash[:image].to_s
+    @body = solution_hash[:body].to_s
   end
 
 end
