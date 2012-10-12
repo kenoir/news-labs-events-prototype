@@ -30,6 +30,7 @@ class Application < Sinatra::Base
   get '/news/articles/:id' do | id |
     controller = NewsArticlesPageController.new(id)
     @page = controller.run!
+    @page_type = 'articles'
     erb :news_articles
   end
 

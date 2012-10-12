@@ -1,6 +1,7 @@
 /* Page header */
 header.banner{
-  background-color: #cd0102;
+  background: #cd0102 url('http://news.bbcimg.co.uk/view/1_4_35/cream/hi/news/img/red-masthead.png') repeat-x scroll center top;
+  min-height: 100px;
 }
 #global-header {
   background-color: #520000;
