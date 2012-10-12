@@ -14,7 +14,7 @@ class Article < RDFSourcedObject
       :content => {
         dcim.image => :image,
         DC.title => :title,
-        DC.description => :description,
+        DC.abstract => :abstract,
         DC.identifier => :id
       }
     })
@@ -22,12 +22,11 @@ class Article < RDFSourcedObject
     solutions = query.execute(@graph)
 
     solutions.filter { |solution| solution.title.language == :en }
-    solutions.filter { |solution| solution.description.language == :en }
 
     solution_hash = solutions.first.to_hash
 
     @title = solution_hash[:title].to_s
-    @description = solution_hash[:description].to_s
+    @description = solution_hash[:abstract].to_s
     @id = solution_hash[:id].to_s
     @image = solution_hash[:image].to_s
   end
