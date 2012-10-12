@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!--
+
     	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
     	<link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
     	<link rel="stylesheet" type="text/css" href="/stylesheets/<%= @page[:domain][:body_class] %>.css">
-    -->    
+    
     <!-- News Article page assets -->
     <meta name="viewport" content="width = 996">
     <link rel="stylesheet" type="text/css" href="/stylesheets/articles/main.css">
@@ -32,7 +32,19 @@
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
   </head>
   
-  <body class="<%= @page[:domain][:body_class] %>">   
+  <body class="<%= @page[:domain][:body_class] %>">
+	  <header class="banner" role="banner">
+	    <div id="global-header">
+	      <a href="http://www.bbc.co.uk">
+	        <img src="/images/bbc_blocks.png" width="84" height="24" alt="British Broadcasting Corporation" />
+	      </a>
+	    </div>
+	    <div id="events-header">
+	      <h1>
+	        <a href="http://www.bbc.co.uk/news"><%= @page[:domain][:display_name] %></a>
+	      </h1>
+	    </div>
+	    </header> 
     <%= yield %>
   </body>
 </html> 
