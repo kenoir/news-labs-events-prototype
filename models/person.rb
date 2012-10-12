@@ -8,6 +8,8 @@ class Person < RDFSourcedObject
   attr :articles
 
   def populate!
+    @articles = []
+
     dbp_ont = RDF::Vocabulary.new("http://dbpedia.org/ontology/")
     query = RDF::Query.new({
       :content => {
@@ -25,18 +27,20 @@ class Person < RDFSourcedObject
 
     solution_hash = solutions.first.to_hash
 
-    @articles = related_articles
-
-    @name = solution_hash[:name]
-    @abstract = solution_hash[:abstract]
-    @thumbnail = solution_hash[:thumbnail]
+    @name = solution_hash[:name].to_s
+    @abstract = solution_hash[:abstract].to_s
+    @thumbnail = solution_hash[:thumbnail].to_s
 
     @populated = true
+
+    @articles = related_articles
   end
 
   def related_articles
     ontology = 'http://data.press.net/ontology/tag/mentions'
-    query_uri = "#{Application.config['article_query_base_uri']}binding=article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
+    #query_uri = "#{Application.config['article_query_base_uri']}binding=article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
+    query_uri = "#{Application.config['article_query_json_path']}text=#{@name.sub(" ","+")}&page_length=5&commit=Filter&format=json"
+
     articles = Array.new
 
     begin
