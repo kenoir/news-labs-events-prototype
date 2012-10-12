@@ -29,7 +29,9 @@
       </header>
       <div class="content">
         <ol>
-          <li><a href="#"><span>Article Title: Article description</span></a></li>
+        <% person.articles.each do | article | %>
+          <li><a href="/news/articles/<%=article["url"].split("-").last%>"><span><%= article["title"] %></span></a></li>
+        <% end%>
         </ol>
       </div>          
       </section>

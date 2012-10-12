@@ -5,6 +5,7 @@ class Person < RDFSourcedObject
   attr :name
   attr :thumbnail
   attr :abstract
+  attr :articles
 
   def populate!
     dbp_ont = RDF::Vocabulary.new("http://dbpedia.org/ontology/")
@@ -24,6 +25,8 @@ class Person < RDFSourcedObject
 
     solution_hash = solutions.first.to_hash
 
+    @articles = related_articles
+
     @name = solution_hash[:name]
     @abstract = solution_hash[:abstract]
     @thumbnail = solution_hash[:thumbnail]
@@ -33,7 +36,7 @@ class Person < RDFSourcedObject
 
   def related_articles
     ontology = 'http://data.press.net/ontology/tag/mentions'
-    query_uri = "#{@article_query_base_uri}binding=article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
+    query_uri = "#{Application.config['article_query_base_uri']}binding=article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
     articles = Array.new
 
     begin
