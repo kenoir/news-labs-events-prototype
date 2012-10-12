@@ -10,20 +10,8 @@ class NewsEventsPageController < NewsPageController
   attr :event_base_path,true
 
   def run! 
-
     event = Event.new(events_uri)
     @builder.build_news_event(event)
-
-=begin
-    if not @event.people.empty?
-      @event.people.each do |person|
-    article_json_for_person  = person.related_articles
-        articles_for_person = @builder.build_array_of_type('Article','url',article_json_for_person)
-
-        person.articles.concat articles_for_person
-      end
-    end
-=end
 
     page(:event,event)
   end

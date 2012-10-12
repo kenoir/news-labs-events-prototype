@@ -20,4 +20,12 @@ class Builder
     event
   end
 
+  def build_news_article(article)
+    unloaded_graph = RDF::Graph.new(article.uri)
+    article.unloaded_graph = unloaded_graph
+
+    article.load!
+    article.populate!
+  end
+
 end

@@ -2,14 +2,17 @@ development:
   event_api_base_path: "http://127.0.0.1:7899/api/events/"
   event_base_path: "http://juicer.responsivenews.co.uk/events/"
   rdf_base_path: "http://127.0.0.1:7899/rdf?identifier="
+  article_base_path: "http://bbc-blender.herokuapp.com/articles/"
   article_query_base_uri: "http://127.0.0.1:7899/api/articles?"
 test:
   event_api_base_path: "http://127.0.0.1:6666/api/events/"
   event_base_path: "http://juicer.responsivenews.co.uk/events/"
   rdf_base_path: "http://127.0.0.1:6666/rdf?identifier="
+  article_base_path: "http://bbc-blender.herokuapp.com/articles/"
   article_query_base_uri: "http://127.0.0.1:6666/api/articles?"
 production:
   event_api_base_path: "http://juicer.responsivenews.co.uk/api/events/"
   event_base_path: "http://juicer.responsivenews.co.uk/events/"
   rdf_base_path: "http://bbc-blender.herokuapp.com/rdf?identifier="
+  article_base_path: "http://bbc-blender.herokuapp.com/articles/"
   article_query_base_uri: "http://juicer.responsivenews.co.uk/api/articles?"
