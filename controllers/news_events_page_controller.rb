@@ -24,7 +24,7 @@ class NewsEventsPageController < NewsPageController
       end
     end
 =end
-
+	puts :event
     page(:event,event)
   end
 

@@ -6,56 +6,33 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/<%= @page[:domain][:body_class] %>.css">
+    <!--
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/<%= @page[:domain][:body_class] %>.css">
+    -->    
+    <!-- News Article page assets -->
+    <meta name="viewport" content="width = 996">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/articles/main.css">
+    
+   	<link rel="stylesheet" type="text/css" href="/stylesheets/articles/type.css" />
+   	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/global.css" />
+   	<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/articles/print.css" />
+   	<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 976px)" href="/stylesheets/articles/mobile.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/articles/components.css" />
+		
+	<link href="/stylesheets/articles/widgets.css" rel="stylesheet" type="text/css" class="gloaded async">	
+	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/story.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/story(1).css">	
+	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/skin.css">
+	<style type="text/css">img.emp-overlay-panel-holding-image {display:none;} .bbc-st-flash-hidden img.emp-overlay-panel-holding-image {display:block;}</style>
+	<!-- News Article page assets -->	
+	    
     <script type="text/javascript" data-main="/javascripts/main" src="/javascripts/require-jquery.js"></script>    
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
   </head>
-
-
-  <body class="<%= @page[:domain][:body_class] %>">
-
-    <header class="banner" role="banner">
-    <div id="global-header">
-      <a href="http://www.bbc.co.uk">
-        <img src="/images/bbc_blocks.png" width="84" height="24" alt="British Broadcasting Corporation" />
-      </a>
-    </div>
-    <div id="events-header">
-      <h1>
-        <a href="http://www.bbc.co.uk/news"><%= @page[:domain][:display_name] %></a>
-      </h1>
-    </div>
-    </header>    
-
-    <% if @page[:domain][:id] == "news" %>
-      <div class="container" id="news-labs-tabs">
-        <div id="tab-wrapper" class="outer solid">
-          <div id="index-tabs" class="tabs">
-            <ul>
-              <li class="tab-1">
-              <a href="#">Top Stories</a>
-              </li>
-              <li class="tab-2">
-              <a href="#">Most Read</a>
-              </li>
-              <li class="tab-3 open">
-              <a href="/<%= "#{@page[:domain][:id]}" %>/events">Events</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>    
-    <% end %>
-
+  
+  <body class="<%= @page[:domain][:body_class] %>">   
     <%= yield %>
-
-    <footer>
-    <div id="footer-content">
-      <p>BBC &copy; 2012</p>
-    </div>
-    </footer>
-
   </body>
 </html> 
