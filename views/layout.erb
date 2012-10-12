@@ -6,11 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
-    	<link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
-    	<link rel="stylesheet" type="text/css" href="/stylesheets/<%= @page[:domain][:body_class] %>.css">
-    
+        
+    <% if @page_type == 'articles' %>
     <!-- News Article page assets -->
     <meta name="viewport" content="width = 996">
     <link rel="stylesheet" type="text/css" href="/stylesheets/articles/main.css">
@@ -20,19 +17,30 @@
    	<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/articles/print.css" />
    	<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 976px)" href="/stylesheets/articles/mobile.css" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/articles/components.css" />
-		
+	
 	<link href="/stylesheets/articles/widgets.css" rel="stylesheet" type="text/css" class="gloaded async">	
 	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/story.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/story(1).css">	
 	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/articles/skin.css">
 	<style type="text/css">img.emp-overlay-panel-holding-image {display:none;} .bbc-st-flash-hidden img.emp-overlay-panel-holding-image {display:block;}</style>
-	<!-- News Article page assets -->	
-	    
+    <!-- News Article page assets -->
+	<% else %>
+	<!-- Events page assets -->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/<%= @page[:domain][:body_class] %>.css">
+		    
     <script type="text/javascript" data-main="/javascripts/main" src="/javascripts/require-jquery.js"></script>    
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	<!-- Events page assets -->
+	<% end %>
+
   </head>
   
   <body class="<%= @page[:domain][:body_class] %>">
+  
+  	<div class="<%= @page[:domain][:context] %>">
+  	
 	  <header class="banner" role="banner">
 	    <div id="global-header">
 	      <a href="http://www.bbc.co.uk">
