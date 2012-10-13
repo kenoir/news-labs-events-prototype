@@ -20,7 +20,7 @@ class EventArticlesRelation
   private
   def load
     if not ENV['REST_PROXY'].nil?
-      @rest_client.proxy = ENV['REST_PROXY']
+      #@rest_client.proxy = ENV['REST_PROXY']
     end
 
     response = @rest_client.get(events_api_uri)

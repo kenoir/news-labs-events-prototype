@@ -5,7 +5,6 @@ class NewsArticlesPageController < NewsPageController
   def run!
     article = Article.new(article_uri)
     @builder.build_news_article(article)
-
     page(:article,article)
   end
 

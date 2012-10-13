@@ -1,4 +1,4 @@
-class EventPlacesRelation
+class PlacesRelation
   require 'rdf'
   require 'rdf/rdfxml'
 

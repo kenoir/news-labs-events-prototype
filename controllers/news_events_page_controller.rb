@@ -1,7 +1,4 @@
 require_relative 'news_page_controller.rb'
-require_relative '../models/relations/event_people_relation.rb'
-require_relative '../models/relations/event_places_relation.rb'
-require_relative '../models/relations/event_articles_relation.rb'
 
 class NewsEventsPageController < NewsPageController 
   require 'rest_client'
