@@ -41,6 +41,7 @@ class Builder
 
     article.relations[:agents] = AgentRelation.new
     article.relations[:places] = PlacesRelation.new
+    article.relations[:events] = EventsRelation.new
 
     article.load!
     article.populate!
