@@ -8,6 +8,7 @@ class ArticlesRelation
   attr :objects
 
   def populate!
+
     @objects = Array.new
 
     terms = RDF::Vocabulary.new("http://purl.org/dc/terms/")
