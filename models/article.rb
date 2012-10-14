@@ -9,27 +9,36 @@ class Article < RDFSourcedObject
   attr :body
 
   def populate!
-    dcim = RDF::Vocabulary.new("http://purl.org/dc/dcmitype/")
 
+    #Required
+    query = RDF::Query.new({
+      :content => {
+        DC.title => :title,
+        DC.identifier => :id,
+      }
+    })
+
+    solutions = query.execute(@graph)
+    solutions.filter { |solution| solution.title.language == :en }
+    solution_hash = solutions.first.to_hash
+
+    @title = solution_hash[:title].to_s
+    @id = solution_hash[:id].to_s
+
+    # Optional
+    dcim = RDF::Vocabulary.new("http://purl.org/dc/dcmitype/")
     query = RDF::Query.new({
       :content => {
         dcim.image => :image,
-        DC.title => :title,
         DC.abstract => :abstract,
-        DC.identifier => :id,
         DC.description => :body
       }
     })
 
     solutions = query.execute(@graph)
-
-    solutions.filter { |solution| solution.title.language == :en }
-
     solution_hash = solutions.first.to_hash
 
-    @title = solution_hash[:title].to_s
     @description = solution_hash[:abstract].to_s
-    @id = solution_hash[:id].to_s
     @image = solution_hash[:image].to_s
     @body = solution_hash[:body].to_s
   end

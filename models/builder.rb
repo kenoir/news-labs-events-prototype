@@ -2,9 +2,15 @@ class Builder
   include Loggable
 
   def build_news_event(event)
+    uri = event.uri.sub("http://juicer.responsivenews.co.uk/events/",
+                        "http://bbc-blender.herokuapp.com/events/")
+
+    unloaded_graph = RDF::Graph.new(uri)
+    event.unloaded_graph = unloaded_graph
+
     event.relations[:agents] = AgentRelation.new
     event.relations[:places] = PlacesRelation.new
-    event.relations[:event_articles] = EventArticlesRelation.new
+    event.relations[:articles] = ArticlesRelation.new
 
     event.load!
     event.populate!
