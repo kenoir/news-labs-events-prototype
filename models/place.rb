@@ -7,7 +7,6 @@ class Place < RDFSourcedObject
   attr :long
 
   def populate!
-    begin
     geo_pos = RDF::Vocabulary.new("http://www.w3.org/2003/01/geo/wgs84_pos#")
     query = RDF::Query.new({
       :content => {
@@ -29,9 +28,6 @@ class Place < RDFSourcedObject
     @long = solution_hash[:long]
 
     @populated = true
-    rescue
-
-    end
   end
 
 end
