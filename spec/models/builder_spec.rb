@@ -4,7 +4,7 @@ describe Builder do
 
   describe Builder, "#build_news_event" do
 
-    it 'should return an event with :event_people, :event_places & :event_articles relations' do
+    it 'should return an event with :people, :places & :articles relations' do
       dummy_relations = Hash.new
       dummy_event = double('event')
       dummy_event.stub(:load!)
@@ -13,9 +13,9 @@ describe Builder do
 
       subject.build_news_event(dummy_event)
 
-      dummy_event.relations[:event_people].should be_an_instance_of(EventPeopleRelation)
-      dummy_event.relations[:event_places].should be_an_instance_of(EventPlacesRelation)
-      dummy_event.relations[:event_articles].should be_an_instance_of(EventArticlesRelation)
+      dummy_event.relations[:people].should be_an_instance_of(PeopleRelation)
+      dummy_event.relations[:places].should be_an_instance_of(PlacesRelation)
+      dummy_event.relations[:articles].should be_an_instance_of(ArticlesRelation)
     end
     
     it 'should call load! and populate! on each object for each relation' do
@@ -32,9 +32,9 @@ describe Builder do
       dummy_relation = double('relation')
       dummy_relation.stub(:objects).and_return([dummy_object])
 
-      EventPeopleRelation.stub(:new) { dummy_relation }
-      EventPlacesRelation.stub(:new) { dummy_relation }
-      EventArticlesRelation.stub(:new) { dummy_relation }
+      PeopleRelation.stub(:new) { dummy_relation }
+      PlacesRelation.stub(:new) { dummy_relation }
+      ArticlesRelation.stub(:new) { dummy_relation }
 
       subject.build_news_event(dummy_event)
     end

@@ -1,8 +1,8 @@
-describe EventPeopleRelation do
+describe AgentRelation do
 
-  subject { EventPeopleRelation.new }
+  subject { AgentRelation.new }
 
-  describe EventPeopleRelation, '#populate!' do
+  describe AgentRelation, '#populate!' do
     it 'should return an array of people' do
       event = Event.new(rdf_event_resource_uri)
       event.load!

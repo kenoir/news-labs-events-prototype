@@ -1,8 +1,8 @@
-describe EventArticlesRelation do
+describe ArticlesRelation do
 
-  subject { EventArticlesRelation.new }
+  subject { ArticlesRelation.new }
 
-  describe EventArticlesRelation, '#populate!' do
+  describe ArticlesRelation, '#populate!' do
     it 'should return an array of articles' do
       event = Event.new(rdf_event_resource_uri)
       event.load!

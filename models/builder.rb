@@ -6,6 +6,18 @@ class Builder
             "http://bbc-blender.herokuapp.com/events/")
   end
 
+  def fix_agent_uri(uri)
+    dbpedia_id = uri.split('/').last
+    
+    "http://bbc-blender.herokuapp.com/people/#{dbpedia_id}"
+  end
+
+  def fix_place_uri(uri)
+    dbpedia_id = uri.split('/').last
+    
+    "http://bbc-blender.herokuapp.com/places/#{dbpedia_id}"
+  end
+
   def build_news_event(event)
     uri = fix_event_uri(event.uri) 
 
@@ -55,25 +67,30 @@ class Builder
 
     article.load!
     article.populate!
-
-    #article.relations.each do | key,relation |
-    #  next if relation.objects.nil?
-
-    #  relation.objects.each do | object |
-    #    begin
-    #      object.load!
-    #      object.populate!
-    #    rescue Exception => e
-    #      log("Oops, could not load relation: #{object.inspect}",e)
-    #    end
-    #  end
-    #end
-    
+   
     if not article.relations[:places].objects.nil?
       article.relations[:places].objects.each do | place |
         begin
+          uri = fix_place_uri(place.uri)
+
+          unloaded_graph = RDF::Graph.new(uri)
+          place.unloaded_graph = unloaded_graph
+
           place.load!
           place.populate!
+
+          place.relations[:places] = PlacesRelation.new
+          place.relations[:places].graph = place.graph
+          place.relations[:places].populate!
+
+          place.relations[:places].objects.each do | object |
+            begin
+            object.load!
+            object.populate!
+            rescue
+
+            end
+          end
         rescue Exception => e
           log("Could not load #{place.uri}",e)
         end
@@ -83,8 +100,26 @@ class Builder
     if not article.relations[:agents].objects.nil?
       article.relations[:agents].objects.each do | agent |
         begin
+          uri = fix_agent_uri(agent.uri)
+          
+          unloaded_graph = RDF::Graph.new(uri)
+          agent.unloaded_graph = unloaded_graph
+
           agent.load!
           agent.populate!
+
+          agent.relations[:agents] = AgentRelation.new
+          agent.relations[:agents].graph = agent.graph          
+          agent.relations[:agents].populate!
+
+          agent.relations[:agents].objects.each do | object |
+            begin
+            object.load!
+            object.populate!
+            rescue
+
+            end
+          end
         rescue Exception => e
           log("Could not load #{agent.uri}",e)
         end
