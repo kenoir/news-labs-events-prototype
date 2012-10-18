@@ -1,11 +1,11 @@
-<% if not @page[:event_articles].empty? %>
+<% if not @page[:articles].empty? %>
   <section class="articles">
   <header class="section">
   <h2>Latest Articles</h2>
   </header>
   <div class="content">
     <ol>
-      <% @page[:event_articles].each_with_index do | article,index | %>
+      <% @page[:articles].each_with_index do | article,index | %>
         <% break if index == 9 %>
         <li><a href="/news/articles/<%=article.id%>"><span><%=article.title%></span></a></li>
       <% end %>

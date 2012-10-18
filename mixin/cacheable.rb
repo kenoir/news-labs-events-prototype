@@ -10,7 +10,7 @@ module Cacheable
     begin
       cached_value = cache.get(id) if not cache.nil?
     rescue Exception => e
-      log("Exception raised trying to use cache.",e)
+      log("Exception raised trying to use cache for #{id}",e)
     end
 
     if not cached_value.nil?
@@ -21,7 +21,7 @@ module Cacheable
         begin
           cache.set(id,value) if not cache.nil?
         rescue Exception => e
-          log("Exception raised trying to use cache.",e)
+          log("Exception raised trying to use cache for #{id}",e)
         end
       end
     end

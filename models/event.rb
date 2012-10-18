@@ -2,6 +2,7 @@ require_relative './rdf_sourced_object'
 
 class Event < RDFSourcedObject
 
+  attr :id
   attr :name
   attr :description
 
@@ -21,6 +22,7 @@ class Event < RDFSourcedObject
       @description = solution_hash[:description]
     end
 
+    @id = uri.split("/").last
    end
     
 end

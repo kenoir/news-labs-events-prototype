@@ -1,4 +1,4 @@
-class EventPlacesRelation
+class ArticlesRelation
   require 'rdf'
   require 'rdf/rdfxml'
 
@@ -8,12 +8,13 @@ class EventPlacesRelation
   attr :objects
 
   def populate!
+
     @objects = Array.new
 
-    event = RDF::Vocabulary.new("http://purl.org/NET/c4dm/event.owl#")
+    terms = RDF::Vocabulary.new("http://purl.org/dc/terms/")
     query = RDF::Query.new({
-      :places => {
-        event.place => :uri,
+      :articles => {
+        terms.isReferencedBy => :uri,
       }
     })
 
@@ -25,11 +26,11 @@ class EventPlacesRelation
     return @objects if solutions.empty?
 
     solutions.each do | solution |
-      place_hash = solution.to_hash   
-      @objects.push Place.new(place_hash[:uri].to_s)
+      article_hash = solution.to_hash   
+      @objects.push  Article.new(article_hash[:uri].to_s)
     end
 
-    @objects = @objects
+    @objects
   end
 
 end

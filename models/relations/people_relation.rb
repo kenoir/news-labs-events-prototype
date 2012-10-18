@@ -1,4 +1,4 @@
-class EventPeopleRelation
+class AgentRelation
   require 'rdf'
   require 'rdf/rdfxml'
 

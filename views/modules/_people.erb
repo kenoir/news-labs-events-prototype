@@ -1,11 +1,11 @@
-<% if not @page[:event_people].empty? %>
+<% if not @page[:agents].empty? %>
   <section class="people">
   <header class="section">
   <h2>People &amp; Organisations</h2>
   </header>
   <div class="content">
     <ul>
-      <% @page[:event_people].each do | person | %>
+      <% @page[:agents].each do | person | %>
         <% next if not person.populated? %>
         <li>
         <article>
@@ -23,18 +23,20 @@
         <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
         <li><b>Description:</b> <%= person.abstract %></li>
       </ul>       
+      <% if not person.articles.empty? %>
       <section class="articles">
       <header class="section">
       <h2>Latest Articles</h2>
       </header>
       <div class="content">
         <ol>
-        <% person.articles.each do | article | %>
-          <li><a href="/news/articles/<%=article["url"].split("-").last%>"><span><%= article["title"] %></span></a></li>
-        <% end%>
+          <% person.articles.each do | article | %>
+            <li><a href="/news/articles/<%=article["url"].split("-").last%>"><span><%= article["title"] %></span></a></li>
+          <% end%>
         </ol>
       </div>          
       </section>
+      <% end%>
       </article>      
       </li>
     <% end %>
