@@ -1,3 +1,10 @@
+.ellipsis {
+  display: block;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .kl-generic {
 	clear: both;
 	position: relative;
