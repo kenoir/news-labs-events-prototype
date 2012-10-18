@@ -1,0 +1,35 @@
+<!-- K and L Places -->
+<% if not @page[:places].empty? %>
+<div id="klplaces" class="kl-generic">
+  <h2 class="places-header">Places</h2>
+  <ul class="kl-generic-main">
+    <%@page[:places].each do | place |%>
+      <% if not place.relations[:learn].nil? and
+            not place.relations[:learn].objects.empty? %> 
+ 
+      <li class="medium-image">
+      <h3 class="places-header">
+        <a class="story" href="#"><img src="<%=place.relations[:learn].objects.first.image%>"><%=place.name%></a>
+      </h3>
+
+      <p>Small description about a place</p>
+     <hr>
+      <!-- Articles related to a place -->
+      <div class="panel ">
+        <ol>
+          <% place.relations[:learn].objects.each do | about | %>
+          <li>
+            <a href="<%=about.uri%>" class="story"><%=about.title%></a>
+            <span class="kl-article-description ellipsis"><%=about.description%></span>
+          </li>
+          <% end %>
+       </ol>
+      </div>
+      <%end%>
+      <!-- Articles related to a place -->
+      </li>   
+    <%end%>
+    </ul>
+  </div>
+</div>
+<%end%>
