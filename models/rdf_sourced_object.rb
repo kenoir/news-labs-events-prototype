@@ -3,6 +3,7 @@ class RDFSourcedObject
   require 'rdf/rdfxml'
   require 'rest-client'
   require 'json'
+  require 'timeout'
 
   include RDF
   include Loggable
@@ -39,7 +40,10 @@ class RDFSourcedObject
 
   def load!
     @graph = cache(@uri) { 
-      @unloaded_graph.load!
+      Timeout::timeout(3) do
+        @unloaded_graph.load!
+      end
+
       @unloaded_graph.clone
     }
 

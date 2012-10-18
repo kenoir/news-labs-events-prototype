@@ -38,12 +38,12 @@ class Builder
           object.load!
           object.populate!
         rescue Exception => e
-          log("Oops, could not load relation: #{object.inspect}",e)
+          log("Could not load relation: #{object.inspect}",e)
         end
       end
     end
 
-    # Special case loading data from juicer 
+    #Special case loading data from juicer 
     if not event.relations[:agents].objects.nil?
       event.relations[:agents].objects.each do | agent |
         begin
