@@ -1,0 +1,46 @@
+.kl-generic {
+	clear: both;
+	position: relative;
+	overflow: hidden;
+	width: 320px;
+	margin: 0 0 16px;
+	padding: 8px 8px 8px;
+	background: #EDEDED;
+}
+.kl-generic .panel {
+	position: relative;
+	overflow: hidden;
+	width: 320px;
+	background: white;
+}
+.kl-generic .panel li.first-child {
+	border-top: none;
+}
+.kl-generic .panel li {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	border-top: 1px solid #EEE;
+	position: relative;
+	zoom: 1;
+}
+.kl-generic .panel li.first-child a {
+	padding-top: 12px;
+}
+.kl-generic .panel li a {
+	position: relative;
+	overflow: visible;
+	float: left;
+	display: inline;
+	width: 283px;
+	padding: 11px 29px 12px 8px;
+}
+ol {
+display: block;
+list-style-type: decimal;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}

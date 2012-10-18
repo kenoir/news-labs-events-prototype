@@ -1,0 +1,190 @@
+						<ul>
+							<li>
+								<a class="story" rel="published-1349951210822" href="http://www.bbc.co.uk/news/uk-19906595">UK called for Abu Qatada pardon</a>
+							</li>
+							<li>
+								<a class="story" rel="published-1349950825075" href="http://www.bbc.co.uk/news/uk-england-19910377">Acid douse death 'preventable'</a>
+							</li>
+						</ul>
+					</div>
+					<script type="text/javascript">
+						//$render("range-top-stories","range-top-stories");
+					</script>
+					
+					<div id="features" class="feature-generic">
+						<h2 class="features-header">Features &amp; Analysis</h2>
+						<ul class="feature-main">
+						<!-- Non specific version -->
+							<li class="medium-image">
+								<h3 class=" feature-header">
+									<a class="story" rel="published-1349954804442" href="http://www.bbc.co.uk/sport/0/cycling/19907683"><img src="/images/articles/_63422266_armstrong.jpg" alt="Lance Armstrong">Fallen hero</a>
+								</h3>
+								<p>How cycling's Lance Armstrong's reputation lies in tatters 
+								<a class="from-external-source" href="http://www.bbc.co.uk/sport/0/">BBC Sport</a>
+								<span id="dna-comment-count___CPS__19907683" class="gvl3-icon gvl3-icon-comment comment-count"></span></p>
+								
+								<hr>
+							</li>
+							<li class="medium-image">
+								<h3 class=" feature-header">
+									<a class="story" rel="published-1349947211036" href="http://www.bbc.co.uk/news/magazine-19815457"><img src="/images/articles/_63417334_monsterstatuedrumnadrochit_getty.jpg" alt="Model of Loch Ness monster">Murky mystery</a>
+								</h3>
+								<p>Why can’t people stop searching for the Loch Ness Monster?
+								<span id="dna-comment-count___CPS__19815457" class="gvl3-icon gvl3-icon-comment comment-count"></span>
+								</p>
+								
+								<hr>
+							</li>
+							<li class="medium-image">
+								<h3 class=" feature-header">
+									<a class="story" rel="published-1349933624854" href="http://www.bbc.co.uk/news/uk-19712683"><img src="/images/articles/_63422320_wallerwaltonpa.jpg" alt="Photographs of the 26 Britons who were killed">Survivors' tales</a>
+								</h3>
+								<p>Britons recall the Bali bombings - 10 years on 
+								<span id="dna-comment-count___CPS__19712683" class="gvl3-icon gvl3-icon-comment comment-count"></span>
+								</p>
+								
+								<hr>
+							</li>
+							<li class="medium-image">
+								<h3 class=" feature-header">
+									<a class="story" rel="published-1349931480990" href="http://www.bbc.co.uk/news/magazine-19881905"><img src="/images/articles/_63402061_147930243.jpg" alt="Masked nationalists v gay rights activists in Kiev">Ban plan</a>
+								</h3>
+								<p>A country moves to outlaw gay pride and Brokeback Mountain 
+								<span id="dna-comment-count___CPS__19881905" class="gvl3-icon gvl3-icon-comment comment-count"></span>
+								</p>
+								
+								<hr>
+							</li>
+						</ul>
+					</div>
+					
+					<script type="text/javascript">
+						//$render("feature-generic","features");
+					</script>
+					
+					<div id="most-popular" class="livestats livestats-tabbed tabbed range-most-popular ">
+						<h2 class="livestats-header">Most Popular</h2>
+						<h3 class="tab "><a href="http://www.bbc.co.uk/news/world-europe-19906578#">Shared</a></h3>
+
+			              	<div class="panel ">
+			                <ol>
+			                  <li class="first-child ol1">
+			                  <a href="http://www.bbc.co.uk/news/uk-england-london-19858746" class="story">
+			                    <span class="livestats-icon livestats-1">1: </span>Rebel sticker craze on the Tube</a>
+			                  </li>
+			                  <li class="ol2">
+			                  <a href="http://www.bbc.co.uk/news/uk-wales-south-west-wales-19906942" class="story">
+			                    <span class="livestats-icon livestats-2">2: </span>Child given whiskey at restaurant</a>
+			                  </li>
+			                  <li class="ol3">
+			                  <a href="http://www.bbc.co.uk/news/magazine-19899540" class="story">
+			                    <span class="livestats-icon livestats-3">3: </span>Malala Yousafzai: Portrait of the girl blogger </a>
+			                  </li>
+			                  <li class="ol4">
+			                  <a href="http://www.bbc.co.uk/news/science-environment-19898947" class="story">
+			                    <span class="livestats-icon livestats-4">4: </span>'Musical' mice learn new songs </a>
+			                  </li>
+			                  <li class="ol5">
+			                  <a href="http://www.bbc.co.uk/news/technology-19909106" class="story">
+			                    <span class="livestats-icon livestats-5">5: </span>Security fear sees Firefox pulled</a>
+			                  </li>
+			                </ol>
+			              </div>
+
+              <h3 class="tab open"><a href="http://www.bbc.co.uk/news/world-europe-19906578#">Read</a></h3>
+
+              <div class="panel open">
+                <ol>
+                  <li class="first-child ol1">
+                  <a href="http://www.bbc.co.uk/news/uk-wales-south-west-wales-19906942" class="story">
+                    <span class="livestats-icon livestats-1">1: </span>Child given whiskey at restaurant</a>
+                  </li>
+                  <li class="ol2">
+                  <a href="http://www.bbc.co.uk/news/uk-19913000" class="story">
+                    <span class="livestats-icon livestats-2">2: </span>£50m allocated for WWI centenary</a>
+                  </li>
+                  <li class="ol3">
+                  <a href="http://www.bbc.co.uk/news/world-europe-19912532" class="story">
+                    <span class="livestats-icon livestats-3">3: </span>Plane interception angers Russia</a>
+                  </li>
+                  <li class="ol4">
+                  <a href="http://www.bbc.co.uk/news/technology-19909106" class="story">
+                    <span class="livestats-icon livestats-4">4: </span>Security fear sees Firefox pulled</a>
+                  </li>
+                  <li class="ol5">
+                  <a href="http://www.bbc.co.uk/news/business-19912951" class="story">
+                    <span class="livestats-icon livestats-5">5: </span>British Gas to raise its prices</a>
+                  </li>
+                  <li class="ol6">
+                  <a href="http://www.bbc.co.uk/news/uk-england-leeds-19906695" class="story">
+                    <span class="livestats-icon livestats-6">6: </span>Hospital complaints over Savile</a>
+                  </li>
+                  <li class="ol7">
+                  <a href="http://www.bbc.co.uk/news/uk-england-19910377" class="story">
+                    <span class="livestats-icon livestats-7">7: </span>Acid douse death 'preventable'</a>
+                  </li>
+                  <li class="ol8">
+                  <a href="http://www.bbc.co.uk/news/uk-england-manchester-19911943" class="story">
+                    <span class="livestats-icon livestats-8">8: </span>Man jailed over PC deaths T-shirt</a>
+                  </li>
+                  <li class="ol9">
+                  <a href="http://www.bbc.co.uk/news/uk-england-cumbria-19906704" class="story">
+                    <span class="livestats-icon livestats-9">9: </span>Pilot 'broke night flight rules'</a>
+                  </li>
+                  <li class="ol10">
+                  <a href="http://www.bbc.co.uk/news/uk-scotland-19905357" class="story">
+                    <span class="livestats-icon livestats-10">10: </span>Drivers warned of torrential rain</a>
+                  </li>
+                </ol>
+              </div>
+
+              <h3 class="tab "><a href="http://www.bbc.co.uk/news/world-europe-19906578#">Video/Audio</a></h3>
+              
+              <div class="panel ">
+              	<ol>
+              		<li class="first-child has-icon-watch ol1">
+              			<a href="http://www.bbc.co.uk/today/hi/today/newsid_9759000/9759000.stm" class="story">
+              			<span class="livestats-icon livestats-1">1: </span>McLaren £49m 'cheat' fine is tax deductible<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol2">
+              			<a href="http://www.bbc.co.uk/news/video_and_audio/" class="story">
+              			<span class="livestats-icon livestats-2">2: </span>BBC News Channel<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol3">
+              			<a href="http://www.bbc.co.uk/news/uk-england-leeds-19905006" class="story">
+              			<span class="livestats-icon livestats-3">3: </span>Woman 'saw Savile abuse patient'<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol4">
+              			<a href="http://www.bbc.co.uk/1/hi/programmes/fast_track/9757992.stm" class="story">
+              			<span class="livestats-icon livestats-4">4: </span>Riding the matatu - Nairobi's subway<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol5">
+              			<a href="http://www.bbc.co.uk/news/uk-england-london-19895637" class="story">
+              			<span class="livestats-icon livestats-5">5: </span>Guerrilla stickers appear on Tube<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol6">
+              			<a href="http://www.bbc.co.uk/news/entertainment-arts-19904902" class="story">
+              			<span class="livestats-icon livestats-6">6: </span>Singer Brightman to fly into space<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol7">
+              			<a href="http://www.bbc.co.uk/news/world-middle-east-19905573" class="story">
+              			<span class="livestats-icon livestats-7">7: </span>Syrian plane forced to land in Turkey<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol8">
+              			<a href="http://www.bbc.co.uk/news/world-19908396" class="story">
+              			<span class="livestats-icon livestats-8">8: </span>Armstrong lawyer: It is a farce<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol9">
+              			<a href="http://www.bbc.co.uk/news/magazine-17554106" class="story">
+              			<span class="livestats-icon livestats-9">9: </span>Keeping up with the sports cheats<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+              		</li>
+              		<li class="has-icon-watch ol10">
+              			<a href="http://www.bbc.co.uk/1/hi/programmes/hardtalk/9758790.stm" class="story">
+              			<span class="livestats-icon livestats-10">10: </span>Ryanair boss: Fuel risk claims are lies<span class="gvl3-icon gvl3-icon-watch"> Watch</span></a>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//$render("most-popular","most-popular");
+		</script>
