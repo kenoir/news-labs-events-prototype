@@ -258,7 +258,7 @@ div#news-lab-events section.articles ol li a {
 }
 div#news-lab-events section.articles ol li a span {
   display: block;
-  width: 90%;
+  width: 85%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
