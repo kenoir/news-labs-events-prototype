@@ -30,29 +30,39 @@ class Builder
 
     event.load!
     event.populate!
-    event.relations.each do | key, relation |
-      next if relation.objects.nil?
 
-      relation.objects.each do | object |
+    if not event.relations[:articles].objects.nil?
+      event.relations[:articles].objects.each do | article |
         begin
-          object.load!
-          object.populate!
+          article.load!
+          article.populate!
         rescue Exception => e
-          log("Could not load relation: #{object.inspect}",e)
+          log("Could not load relation: #{article.inspect}",e)
         end
       end
     end
 
-    #Special case loading data from juicer 
-    #if not event.relations[:agents].objects.nil?
-    #  event.relations[:agents].objects.each do | agent |
-    #    begin
-    #      agent.load_related_articles_from_juicer
-    #    rescue Exception => e
-    #      log("Could not load related articles from juicer",e)
-    #    end
-    #  end
-    #end
+    if not event.relations[:places].objects.nil?
+      event.relations[:places].objects.each do | place |
+        begin
+          place.load!
+          place.populate!
+        rescue Exception => e
+          log("Could not load relation: #{place.inspect}",e)
+        end
+      end
+    end
+
+    if not event.relations[:agents].objects.nil?
+      event.relations[:agents].objects.each do | agent |
+        begin
+          agent.load!
+          agent.populate!
+        rescue Exception => e
+          log("Could not load relation: #{agent.inspect}",e)
+        end
+      end
+    end
 
     event
   end
