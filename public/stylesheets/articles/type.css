@@ -104,7 +104,7 @@ body #blq-container #blq-main {
 .feature-digest-header,
 .generic-tiled-digest-header,
 .weather-4items h2,.marketdata-widget h2,
-.people-generic h2, .places-generic h2, .events-generic h2
+.kl-generic h2
  {
    font-size: 1.846em; /* 13px < 24px */
    font-weight: bold;

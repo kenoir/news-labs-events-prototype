@@ -1,8 +1,8 @@
-describe EventPlacesRelation do
+describe PlacesRelation do
 
-  subject { EventPlacesRelation.new }
+  subject { PlacesRelation.new }
 
-  describe EventPlacesRelation, '#populate!' do
+  describe PlacesRelation, '#populate!' do
     it 'should return an array of places' do
       event = Event.new(rdf_event_resource_uri)
       event.load!
