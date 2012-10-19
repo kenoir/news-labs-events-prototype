@@ -32,7 +32,7 @@ class Builder
     event.populate!
 
     if not event.relations[:articles].objects.nil?
-      event.relations[:articles].objects.each do | article |
+      event.relations[:articles].objects.take(9).each do | article |
         begin
           article.load!
           article.populate!
@@ -54,10 +54,23 @@ class Builder
     end
 
     if not event.relations[:agents].objects.nil?
-      event.relations[:agents].objects.each do | agent |
+      event.relations[:agents].objects.take(4).each do | agent |
         begin
           agent.load!
           agent.populate!
+
+          agent.relations[:articles] = ArticlesRelation.new
+          agent.relations[:articles].graph = event.graph
+          agent.relations[:articles].populate!
+
+          agent.relations[:articles].objects.take(3).each do | object |
+            begin
+              object.load!
+              object.populate!
+            rescue Exception => e
+              log("Could not load #{object.uri}",e)
+            end
+          end
         rescue Exception => e
           log("Could not load relation: #{agent.inspect}",e)
         end
@@ -70,8 +83,6 @@ class Builder
   def build_news_article(article)
     unloaded_graph = RDF::Graph.new(article.uri)
     article.unloaded_graph = unloaded_graph
-
-    maximum_about_relations = 3
 
     article.relations[:agents] = AgentRelation.new
     article.relations[:places] = PlacesRelation.new
@@ -93,7 +104,7 @@ class Builder
     end
 
     if not article.relations[:places].objects.nil?
-      article.relations[:places].objects.each do | place |
+      article.relations[:places].objects.take(3).each do | place |
         
         begin
           uri = fix_place_uri(place.uri)
@@ -108,14 +119,10 @@ class Builder
           place.relations[:learn].graph = place.graph
           place.relations[:learn].populate!
 
-          relations = 0
-          place.relations[:learn].objects.each do | object |
-            break if relations >= maximum_about_relations
+          place.relations[:learn].objects.take(3).each do | object |
             begin
               object.load!
               object.populate!
-
-              relations = relations + 1
             rescue Exception => e
               log("Could not load #{object.uri}",e)
             end
@@ -129,7 +136,7 @@ class Builder
     end
 
     if not article.relations[:agents].objects.nil?
-      article.relations[:agents].objects.each do | agent |
+      article.relations[:agents].objects.take(3).each do | agent |
 
         begin
           uri = fix_agent_uri(agent.uri)
@@ -144,14 +151,10 @@ class Builder
           agent.relations[:learn].graph = agent.graph
           agent.relations[:learn].populate!
 
-          relations = 0
-          agent.relations[:learn].objects.each do | object |
-            break if relations >= maximum_about_relations
+          agent.relations[:learn].objects.take(3).each do | object |
             begin
               object.load!
               object.populate!
-
-              relations = relations + 1
             rescue Exception => e
               log("Could not load #{object.uri}",e)
             end
