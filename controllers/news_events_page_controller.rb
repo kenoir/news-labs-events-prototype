@@ -1,6 +1,9 @@
 require_relative 'news_page_controller.rb'
 
 class NewsEventsPageController < NewsPageController 
+  require 'rest_client'
+  require 'json'
+
   attr :event_base_path,true
 
   def run! 

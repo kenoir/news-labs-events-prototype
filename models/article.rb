@@ -19,7 +19,6 @@ class Article < RDFSourcedObject
     })
 
     solutions = query.execute(@graph)
-
     solutions.filter { |solution| solution.title.language == :en }
     solution_hash = solutions.first.to_hash
 

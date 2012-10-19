@@ -75,7 +75,7 @@
                     </div>
                     <h1 class="story-header"><%=@page[:article].title%></h1>
                     <div class="videoInStoryB">
-                      <div id="emp-19905573-49629" class="emp page-bookmark-link-aware" style="position: relative; cursor: pointer; height: 252px; ">
+                      <div id="emp-19905573-49629" class="emp page-bookmark-link-aware" style="position: relative; cursor: pointer;">
                         <% if not @page[:article].image == "http://news-labs-events-prototype.herokuapp.com/images/event/event-placeholder.jpeg" %>
                           <img src="<%=@page[:article].image%>" width="448" height="252"><a title="Click to play" style="background-color: rgb(0, 0, 0); opacity: 0.75; width: 80px; height: 80px; display: block; position: absolute; left: 0px; top: 50%; margin-top: -40px; "></a><a title="Click to play" style="background-color: rgb(255, 0, 0); opacity: 0; width: 80px; height: 80px; display: block; position: absolute; left: 0px; top: 50%; margin-top: -40px; "></a>
                         <% end %>
@@ -99,7 +99,6 @@
                         </ul>
                       </div>
                     </div>
-
                     <%=@page[:article].body%>
                   </div>
                   <!-- / story-body -->

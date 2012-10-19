@@ -1,9 +1,9 @@
 .ellipsis {
-  display: block;
-  width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	display: block;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .kl-generic {
 	clear: both;
@@ -14,14 +14,28 @@
 	padding: 8px 8px 8px;
 	background: #EDEDED;
 }
+.kl-generic ul.kl-generic-main h3 {
+	margin:  10px 0 0 0;
+	font-size: 1.3em;
+}
+.kl-generic ul.kl-generic-main h3.people-header img {
+	float: left;
+	margin-right: 10px;
+}
+.kl-generic ul.kl-generic-main h3.people-header span.people-name {
+	color: #1F4F82;
+	float: left;
+}
+.kl-generic ul.kl-generic-main p.people-description {
+	clear: both;
+	padding-top: 5px;
+	margin-bottom: 5px;
+}
 .kl-generic .panel {
 	position: relative;
 	overflow: hidden;
 	width: 320px;
 	background: white;
-}
-.kl-generic .panel li.first-child {
-	border-top: none;
 }
 .kl-generic .panel li {
 	clear: both;
@@ -31,8 +45,8 @@
 	position: relative;
 	zoom: 1;
 }
-.kl-generic .panel li.first-child a {
-	padding-top: 12px;
+.kl-generic .panel li:first-child {
+	border-top: none;
 }
 .kl-generic .panel li a {
 	position: relative;
@@ -42,12 +56,11 @@
 	width: 283px;
 	padding: 11px 29px 12px 8px;
 }
-ol {
-display: block;
-list-style-type: decimal;
--webkit-margin-before: 1em;
--webkit-margin-after: 1em;
--webkit-margin-start: 0px;
--webkit-margin-end: 0px;
--webkit-padding-start: 40px;
+.kl-generic .panel li:first-child a {
+	padding-top: 12px;
 }
+.kl-generic span.kl-article-description {
+	font-weight: normal;
+}
+
+

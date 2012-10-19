@@ -43,7 +43,8 @@ class Application < Sinatra::Base
   get '/learn/events/:id' do | id |
     controller = LearnEventsPageController.new(id)
     @page = controller.run!
-    erb :learn_events
+    #erb :learn_events
+    erb :learn_events_temp
   end
 
   get '/learn/places/:id' do | id |
