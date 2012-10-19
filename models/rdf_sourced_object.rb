@@ -16,6 +16,7 @@ class RDFSourcedObject
   attr :uri
   attr :graph
   attr :unloaded_graph,true
+  attr :populated
 
   def initialize(uri)
     @rdf_base_uri = Application.config["rdf_base_path"]
