@@ -40,9 +40,9 @@ class RDFSourcedObject
 
   def load!
     @graph = cache(@uri) { 
-      Timeout::timeout(3) do
+      #Timeout::timeout(3) do
         @unloaded_graph.load!
-      end
+      #end
 
       @unloaded_graph.clone
     }

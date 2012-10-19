@@ -100,6 +100,39 @@ class Builder
       end
     end
 
+    if not article.relations[:agents].objects.nil?
+      article.relations[:agents].objects.each do | agent |
+
+        begin
+          uri = fix_agent_uri(agent.uri)
+
+          unloaded_graph = RDF::Graph.new(uri)
+          agent.unloaded_graph = unloaded_graph
+
+          agent.load!
+          agent.populate!
+
+          agent.relations[:learn] = AboutRelation.new
+          agent.relations[:learn].graph = agent.graph
+          agent.relations[:learn].populate!
+
+          agent.relations[:learn].objects.each do | object |
+            begin
+              object.load!
+              object.populate!
+            rescue Exception => e
+              log("Could not load #{object.uri}",e)
+            end
+          end
+          
+        rescue Exception => e
+          log("Could not load #{agent.uri}",e)
+        end
+
+      end
+
+    end
+
     article
   end
 

@@ -1,0 +1,38 @@
+<!-- K and L Agent -->
+<% if not @page[:agents].empty? %>
+<div id="klpeople" class="kl-generic">
+  <h2 class="people-header">People</h2>
+  <ul class="kl-generic-main">
+    <%@page[:agents].each do | agent |%>
+      <% if not agent.relations[:learn].nil? and
+            not agent.relations[:learn].objects.empty? %> 
+
+      <li class="medium-image">
+      <h3 class="agents-header">
+        <a class="story" href="#">
+          <img src="<%=agent.relations[:learn].objects.first.image%>">
+          <%=agent.name%>
+        </a>
+      </h3>
+
+      <p>Small description about an agent</p>
+     <hr>
+      <!-- Articles related to a agent -->
+      <div class="panel ">
+        <ol>
+          <% agent.relations[:learn].objects.each do | about | %>
+          <li>
+            <a href="<%=about.uri%>" class="story"><%=about.title%></a>
+            <span class="kl-article-description ellipsis"><%=about.description%></span>
+          </li>
+          <% end %>
+       </ol>
+      </div>
+      <%end%>
+      <!-- Articles related to a agent -->
+      </li>   
+    <%end%>
+    </ul>
+  </div>
+</div>
+<%end%>
