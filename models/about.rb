@@ -35,6 +35,8 @@ class About < RDFSourcedObject
 
     @description = solution_hash[:description].to_s
     @image = solution_hash[:image].to_s
+
+    @populated = true
   end
 
 end

@@ -21,6 +21,7 @@
       <div class="panel ">
         <ol>
           <% agent.relations[:learn].objects.each do | about | %>
+          <% break if not about.populated %>
           <li>
             <a href="<%=about.uri%>" class="story"><%=about.title%></a>
             <span class="kl-article-description ellipsis"><%=about.description%></span>

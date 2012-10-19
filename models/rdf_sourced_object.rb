@@ -17,6 +17,7 @@ class RDFSourcedObject
   attr :uri
   attr :graph
   attr :unloaded_graph,true
+  attr :populated
 
   def initialize(uri)
     @rdf_base_uri = Application.config["rdf_base_path"]
@@ -40,9 +41,9 @@ class RDFSourcedObject
 
   def load!
     @graph = cache(@uri) { 
-      #Timeout::timeout(3) do
+      Timeout::timeout(3) do
         @unloaded_graph.load!
-      #end
+      end
 
       @unloaded_graph.clone
     }

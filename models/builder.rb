@@ -44,15 +44,15 @@ class Builder
     end
 
     #Special case loading data from juicer 
-    if not event.relations[:agents].objects.nil?
-      event.relations[:agents].objects.each do | agent |
-        begin
-          agent.load_related_articles_from_juicer
-        rescue Exception => e
-          log("Could not load related articles from juicer",e)
-        end
-      end
-    end
+    #if not event.relations[:agents].objects.nil?
+    #  event.relations[:agents].objects.each do | agent |
+    #    begin
+    #      agent.load_related_articles_from_juicer
+    #    rescue Exception => e
+    #      log("Could not load related articles from juicer",e)
+    #    end
+    #  end
+    #end
 
     event
   end
@@ -60,6 +60,8 @@ class Builder
   def build_news_article(article)
     unloaded_graph = RDF::Graph.new(article.uri)
     article.unloaded_graph = unloaded_graph
+
+    maximum_about_relations = 3
 
     article.relations[:agents] = AgentRelation.new
     article.relations[:places] = PlacesRelation.new
@@ -70,7 +72,7 @@ class Builder
    
     if not article.relations[:places].objects.nil?
       article.relations[:places].objects.each do | place |
-
+        
         begin
           uri = fix_place_uri(place.uri)
 
@@ -84,10 +86,14 @@ class Builder
           place.relations[:learn].graph = place.graph
           place.relations[:learn].populate!
 
+          relations = 0
           place.relations[:learn].objects.each do | object |
+            break if relations >= maximum_about_relations
             begin
               object.load!
               object.populate!
+
+              relations = relations + 1
             rescue Exception => e
               log("Could not load #{object.uri}",e)
             end
@@ -116,10 +122,14 @@ class Builder
           agent.relations[:learn].graph = agent.graph
           agent.relations[:learn].populate!
 
+          relations = 0
           agent.relations[:learn].objects.each do | object |
+            break if relations >= maximum_about_relations
             begin
               object.load!
               object.populate!
+
+              relations = relations + 1
             rescue Exception => e
               log("Could not load #{object.uri}",e)
             end
