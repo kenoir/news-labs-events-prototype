@@ -67,7 +67,8 @@ nav.breadcrumb a:after {
 	color: #1F4F82;
 }
 .kl-generic ul.kl-generic-main h3 img {
-	width: 320px;	
+	width: 320px;
+	margin-top: 5px;	
 }
 .kl-generic ul.kl-generic-main h3.people-header img {
 	float: left;
