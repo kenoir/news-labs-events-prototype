@@ -23,15 +23,20 @@
         <li><b>Name:</b> <span class="name"><%=person.name%></span></li>
         <li><b>Description:</b> <%= person.abstract %></li>
       </ul>       
-      <% if not person.articles.empty? %>
+      <% if not person.relations[:articles].nil? and
+            not person.relations[:articles].objects.empty? %>
       <section class="articles">
       <header class="section">
       <h2>Latest Articles</h2>
       </header>
       <div class="content">
         <ol>
-          <% person.articles.each do | article | %>
-            <li><a href="/news/articles/<%=article["url"].split("-").last%>"><span><%= article["title"] %></span></a></li>
+          <% person.relations[:articles].objects.each do | article | %>
+            <% if article.populated %>
+              <li><a href="/news/articles/<%= article.id %>">
+                <%= article.title %>
+              </a></li>
+            <% end %>
           <% end%>
         </ol>
       </div>          
