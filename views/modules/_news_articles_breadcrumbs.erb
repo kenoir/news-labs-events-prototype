@@ -1,0 +1,9 @@
+<% if not @page[:events].empty? %>
+<nav class="breadcrumb">
+	<ul>
+<% @page[:events].each do | event | %>	
+		<li><a href="/news/events/<%= event.id %>"><%= event.name%></a></li>
+<% end %>
+	</ul>
+</nav>
+<% end %>

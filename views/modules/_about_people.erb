@@ -5,8 +5,7 @@
   <ul class="kl-generic-main">
     <%@page[:agents].each do | agent |%>
       <% if not agent.relations[:learn].nil? and
-            not agent.relations[:learn].objects.empty? %> 
-
+            not agent.relations[:learn].objects.empty? %>
       <li class="medium-image">
       <h3 class="agents-header">
         <a class="story" href="#">
@@ -14,8 +13,6 @@
           <%=agent.name%>
         </a>
       </h3>
-
-      <p>Small description about an agent</p>
      <hr>
       <!-- Articles related to a agent -->
       <div class="panel ">
@@ -23,8 +20,11 @@
           <% agent.relations[:learn].objects.each do | about | %>
           <% break if not about.populated %>
           <li>
-            <a href="<%=about.uri%>" class="story"><%=about.title%></a>
-            <span class="kl-article-description ellipsis"><%=about.description%></span>
+            <a href="<%=about.uri%>" class="story ellipsis">
+            	<%=about.title%>
+            	<br>
+            	<span class="kl-article-description"><%=about.description%></span>
+            </a>
           </li>
           <% end %>
        </ol>

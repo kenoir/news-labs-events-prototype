@@ -8,9 +8,11 @@
             not place.relations[:learn].objects.empty? %> 
       <li class="medium-image">
       <h3 class="places-header">
-        <a class="story" href="#"><img src="<%=place.relations[:learn].objects.first.image%>"><%=place.name%></a>
+        <a class="story" href="#">
+        	<img src="<%=place.relations[:learn].objects.first.image%>">
+        	<%=place.name%>
+        </a>
       </h3>
-      <p>Small description about a place</p>
      <hr>
       <!-- Articles related to a place -->
       <div class="panel ">

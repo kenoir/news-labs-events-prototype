@@ -1,3 +1,48 @@
+nav.breadcrumb {
+  font-size: 1em;;
+  margin-top: 6px;
+  margin-bottom: 6px;      
+}
+nav.breadcrumb ol {
+	margin: 0;
+	padding: 0;
+}
+nav.breadcrumb:after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+nav.breadcrumb li {
+  display: inline;
+}
+nav.breadcrumb a {
+  display: block;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #505050;	
+  background-color: #dcdcdc;
+  padding: 5px 0 4px 9px;
+  min-width: 80px;
+  width: 100px;
+  white-space: nowrap;
+  float: left;
+  border: 1px solid #fff;
+  margin-right: 13px;
+  text-overflow: ellipsis;
+}
+nav.breadcrumb a:after {
+  position: absolute;
+  top: 0;
+  left: 100%;	
+  content: ' ';
+  width: 0;
+  height: 0;		
+  border: 13px solid transparent;
+  border-left-color: #dcdcdc;
+}
 .ellipsis {
 	display: block;
 	width: 90%;
@@ -16,7 +61,14 @@
 }
 .kl-generic ul.kl-generic-main h3 {
 	margin:  10px 0 0 0;
-	font-size: 1.3em;
+	font-size: 1.3em;	
+}
+.kl-generic ul.kl-generic-main h3.agents-header, .kl-generic ul.kl-generic-main h3.places-header {
+	padding: 0;
+	color: #1F4F82;
+}
+.kl-generic ul.kl-generic-main h3 img {
+	width: 320px;	
 }
 .kl-generic ul.kl-generic-main h3.people-header img {
 	float: left;
@@ -55,6 +107,13 @@
 	display: inline;
 	width: 283px;
 	padding: 11px 29px 12px 8px;
+	
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+	
 }
 .kl-generic .panel li:first-child a {
 	padding-top: 12px;

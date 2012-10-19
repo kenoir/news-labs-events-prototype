@@ -42,6 +42,9 @@
               <div id="main-content" class="story blq-clearfix">
                 <div class="layout-block-a">
                   <div class="story-body">
+                    <!-- Breadcrumbs -->
+                    <%= erb :'modules/_news_articles_breadcrumbs' %>                    
+                    <!-- Breadcrumbs -->
                     <span class="story-date">
                       <span class="date">11 October 2012</span> <span class="time-text">Last updated at </span><span class="time">14:40</span></span>
                     <div id="page-bookmark-links-head" class="share-help">
@@ -86,19 +89,6 @@
                     </div>
                     <!-- end of the embedded player component -->										
                     <!-- Player embedded -->
-                    <div class="embedded-hyper">
-                      <a class="hidden" href="http://www.bbc.co.uk/news/world-europe-19906578#story_continues_1">Continue reading the main story</a>						
-                      <div class="hyperpuff">
-                        <!-- Non specific version -->
-                        <h2><a href="http://www.bbc.co.uk/news/world-middle-east-17258397">Syria conflict</a></h2>
-                        <ul>
-                          <li><a class="story" rel="published-1349733355231" href="http://www.bbc.co.uk/news/world-middle-east-19875393">No-man's land</a></li>
-                          <li><a class="story" rel="published-1349380281808" href="http://www.bbc.co.uk/news/world-europe-19837502">Turkey-Syria tensions</a></li>
-                          <li><a class="story" rel="published-1348483533158" href="http://www.bbc.co.uk/news/world-middle-east-19699446">Assad heartland</a></li>
-                          <li><a class="story" rel="published-1347854407479" href="http://www.bbc.co.uk/news/world-middle-east-19618777">Bombed from above</a></li>
-                        </ul>
-                      </div>
-                    </div>
                     <%=@page[:article].body%>
                   </div>
                   <!-- / story-body -->
@@ -351,9 +341,8 @@
                       </ul>
                     </div>
                     <!-- K and L modules -->
-		  <%= erb :'modules/_about_events' %>
-		  <%= erb :'modules/_about_people' %>
-		  <%= erb :'modules/_about_places' %>
+		  			<%= erb :'modules/_about_people' %>
+		  			<%= erb :'modules/_about_places' %>
                   <!-- K and L Modules -->
                 </div>
               </div>			
