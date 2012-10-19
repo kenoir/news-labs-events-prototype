@@ -69,7 +69,19 @@ class Builder
 
     article.load!
     article.populate!
-   
+
+    if not article.relations[:events].objects.nil?
+      article.relations[:events].objects.each do | event |
+      uri = fix_event_uri(event.uri)
+
+      unloaded_graph = RDF::Graph.new(uri)
+      event.unloaded_graph = unloaded_graph
+
+      event.load!
+      event.populate!
+      end
+    end
+
     if not article.relations[:places].objects.nil?
       article.relations[:places].objects.each do | place |
         

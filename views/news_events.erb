@@ -25,7 +25,19 @@
   <header class="section"><h1><%= @page[:event].name %></h1></header>
 
   <figure id="main">
-  <img src="<%= @page[:agents].first.thumbnail %>" alt="Event placeholder"/>
+
+  <% @image = "/images/event/event-placeholder.jpeg" %>
+  <% @page[:articles].each do | article | %> 
+    
+    <% if not article.image.nil? %>
+      <% @image = article.image %>
+      <% break %>
+    <% end %>
+
+  <% end %>
+  
+  <img src="<%= @image %>" alt="Event placeholder"/>
+
   <figcaption>Bombing in a Syrian city</a></figcaption>
   </figure>
 <p id="event-description"><%= @page[:event].description %></p>

@@ -1,0 +1,4 @@
+<h3> This article is part of the event: </h3>
+<% @page[:events].each do | event | %>
+  <p><a href="/news/events/<%= event.id %>"><%= event.name%></a></p>
+<% end %>
