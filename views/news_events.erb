@@ -29,7 +29,8 @@
   <% @image = "/images/event/event-placeholder.jpeg" %>
   <% @page[:articles].each do | article | %> 
     
-    <% if not article.image.nil? %>
+    <% if not article.image.nil? and
+          not article.image == "http://news-labs-events-prototype.herokuapp.com/images/event/event-placeholder.jpeg" %>
       <% @image = article.image %>
       <% break %>
     <% end %>
