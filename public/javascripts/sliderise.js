@@ -23,7 +23,6 @@ define(["jquery","./mustache","text!./templates/slider.html"],
         var updatedHead = $(template({title: sectionTitle}));
 
         $(head).replaceWith(updatedHead);
-
 				bindClick(updatedHead,content);
 				$(content).addClass('sliderised');
 				if (shouldSlide()){
@@ -36,8 +35,11 @@ define(["jquery","./mustache","text!./templates/slider.html"],
 			function globalOpen(){
 				if(shouldSlide()){
 					$('.sliderised').slideUp();
+					$('div#news-lab-events section').removeClass('no-slider');
+					$('div#news-lab-events section').removeClass('open');
 				} else {
 					$('.sliderised').slideDown();
+					$('div#news-lab-events section').addClass('no-slider');
 				}	
 			}
 
