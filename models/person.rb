@@ -2,6 +2,7 @@ require_relative './rdf_sourced_object'
 
 class Person < RDFSourcedObject
 
+  attr :id
   attr :name
   attr :thumbnail
   attr :abstract
@@ -27,37 +28,12 @@ class Person < RDFSourcedObject
 
     solution_hash = solutions.first.to_hash
 
+    @id = @uri.split('/').last
     @name = solution_hash[:name].to_s
     @abstract = solution_hash[:abstract].to_s
     @thumbnail = solution_hash[:thumbnail].to_s
 
     @populated = true
-  end
-
-  def load_related_articles_from_juicer
-    ontology = 'http://data.press.net/ontology/tag/mentions'
-    #query_uri = "#{Application.config['article_query_base_uri']}binding=article&limit=5&where=?article%20%3C#{ontology}%3E%20%3C#{@uri}%3E"
-    query_uri = "#{Application.config['article_query_json_path']}text=#{@name.gsub(" ","+")}&page_length=3&commit=Filter&format=json"
-
-    articles = Array.new
-
-    begin
-      parsed_json = cache(query_uri) {
-        response = RestClient.get query_uri, {:accept => :json}
-        parsed_json = JSON.parse(response)
-      }
-
-      if not parsed_json['articles'].nil? and parsed_json['articles'].instance_of? Array
-        articles.concat(parsed_json['articles'])
-      else 
-        raise "Articles not found for person"
-      end
-
-    rescue Exception => e
-      log("Exception raised trying to populate related articles for person",e)
-    end
-
-    @articles = articles 
   end
 
 end

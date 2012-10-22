@@ -4,15 +4,19 @@
   <h2 class="people-header">People</h2>
   <ul class="kl-generic-main">
     <%@page[:agents].each do | agent |%>
-      <% if not agent.relations[:learn].nil? and
-            not agent.relations[:learn].objects.empty? %>
+      <% if not agent.relations[:learn].nil? %> 
+           
       <li class="medium-image">
       <h3 class="agents-header">
-        <a class="story" href="#">
+        <a class="story" href="http://en.wikipedia.org/wiki/<%=agent.id%>" target="_blank">
           <%=agent.name%>
-          <img src="<%=agent.relations[:learn].objects.first.image%>">          
+          <% if not agent.relations[:learn].objects.empty? %>
+            <img src="<%=agent.relations[:learn].objects.first.image%>">          
+          <% end %>
         </a>
       </h3>
+
+     <% if not agent.relations[:learn].objects.empty? %>
      <hr>
       <!-- Articles related to a agent -->
       <div class="panel ">
@@ -29,6 +33,7 @@
           <% end %>
        </ol>
       </div>
+      <%end%>
       <%end%>
       <!-- Articles related to a agent -->
       </li>   

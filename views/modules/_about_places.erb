@@ -4,15 +4,17 @@
   <h2 class="places-header">Places</h2>
   <ul class="kl-generic-main">
       <%@page[:places].each do | place |%>
-      <% if not place.relations[:learn].nil? and
-            not place.relations[:learn].objects.empty? %> 
+        <% if not place.relations[:learn].nil? %>
       <li class="medium-image">
       <h3 class="places-header">
-        <a class="story" href="#">
-        	<%=place.name%>
-        	<img src="<%=place.relations[:learn].objects.first.image%>">        	
+        <a class="story" href="http://en.wikipedia.org/wiki/<%=place.id%>" target="_blank">
+          <%=place.name%>
+          <% if not place.relations[:learn].objects.empty? %>
+        	<img src="<%=place.relations[:learn].objects.first.image%>">              <% end %>
         </a>
       </h3>
+
+     <% if not place.relations[:learn].objects.empty? %>
      <hr>
       <!-- Articles related to a place -->
       <div class="panel ">
@@ -29,6 +31,7 @@
           <% end %>
        </ol>
       </div>
+      <% end %>
       <% end %>
       <!-- Articles related to a place -->
       </li>
