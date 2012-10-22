@@ -36,6 +36,7 @@ define(["jquery","./mustache","text!./templates/slider.html"],
 				if(shouldSlide()){
 					$('.sliderised').slideUp();
 					$('div#news-lab-events section').removeClass('no-slider');
+					$('div#news-lab-events section').removeClass('open');
 				} else {
 					$('.sliderised').slideDown();
 					$('div#news-lab-events section').addClass('no-slider');
