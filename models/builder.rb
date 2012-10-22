@@ -56,8 +56,14 @@ class Builder
     if not event.relations[:places].objects.nil?
       event.relations[:places].objects.each do | place |
         begin
+          place_uri = fix_place_uri(place.uri)
+
+          unloaded_graph = RDF::Graph.new(place_uri)
+          place.unloaded_graph = unloaded_graph
+
           place.load!
           place.populate!
+
         rescue Exception => e
           log("Could not load relation: #{place.inspect}",e)
         end
@@ -67,11 +73,16 @@ class Builder
     if not event.relations[:agents].objects.nil?
       event.relations[:agents].objects.take(4).each do | agent |
         begin
+          uri = fix_agent_uri(agent.uri)
+
+          unloaded_graph = RDF::Graph.new(uri)
+          agent.unloaded_graph = unloaded_graph
+
           agent.load!
           agent.populate!
 
           agent.relations[:articles] = ArticlesRelation.new
-          agent.relations[:articles].graph = event.graph
+          agent.relations[:articles].graph = agent.graph
           agent.relations[:articles].populate!
 
           agent.relations[:articles].objects.take(3).each do | object |
