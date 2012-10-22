@@ -14,7 +14,7 @@ class Application < Sinatra::Base
     ENV['MEMCACHE_SERVERS'], 
     :username => ENV['MEMCACHE_USERNAME'], 
     :password => ENV['MEMCACHE_PASSWORD'], 
-    :expires_in => 3600)
+    :expires_in => 864000)
 
   set :config, Proc.new {
     full_yaml_config = YAML.load_file("config/application.yml")

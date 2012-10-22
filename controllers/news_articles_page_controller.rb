@@ -1,10 +1,17 @@
+require_relative('../mixin/cacheable.rb')
 require_relative 'news_page_controller.rb'
 
 class NewsArticlesPageController < NewsPageController
 
+  include Cacheable
+
   def run!
-    article = Article.new(article_uri)
-    @builder.build_news_article(article)
+    article = cache(@id) { 
+      article = Article.new(article_uri)
+      @builder.build_news_article(article)
+
+      article
+    }
     page(:article,article)
   end
 
