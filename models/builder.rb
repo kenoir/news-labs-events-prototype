@@ -64,6 +64,18 @@ class Builder
           place.load!
           place.populate!
 
+          place.relations[:articles] = ArticlesRelation.new
+          place.relations[:articles].graph = place.graph
+          place.relations[:articles].populate!
+
+          place.relations[:articles].objects.take(3).each do | object |
+            begin
+              object.load!
+              object.populate!
+            rescue Exception => e
+              log("Could not load #{object.uri}",e)
+            end
+          end
         rescue Exception => e
           log("Could not load relation: #{place.inspect}",e)
         end
