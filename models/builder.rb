@@ -18,6 +18,12 @@ class Builder
     "#{Application.config['places_base_path']}#{dbpedia_id}"
   end
 
+  def fix_article_uri(uri)
+    article_id = uri.split('-').last
+
+    "#{Application.config['article_base_path']}#{article_id}"
+  end
+
   def build_news_event(event)
     uri = fix_event_uri(event.uri) 
 
@@ -34,6 +40,11 @@ class Builder
     if not event.relations[:articles].objects.nil?
       event.relations[:articles].objects.take(9).each do | article |
         begin
+          article_uri = fix_article_uri(article.uri)
+
+          unloaded_graph = RDF::Graph.new(article_uri)
+          article.unloaded_graph = unloaded_graph
+
           article.load!
           article.populate!
         rescue Exception => e

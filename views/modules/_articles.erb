@@ -7,7 +7,11 @@
     <ol>
       <% @page[:articles].each_with_index do | article,index | %>
         <% break if index == 9 %>
-        <li><a href="/news/articles/<%=article.id%>"><span><%=article.title%></span></a></li>
+        <li>
+          <a href="/news/articles/<%=article.id%>">
+            <span><%=article.title%></span>
+          </a>
+        </li>
       <% end %>
     </ol>
   </div>          
