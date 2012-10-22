@@ -59,6 +59,9 @@ div#news-lab-events section header.section h2 {
 div#news-lab-events section header.section h2 a {
   color: #505050;		
 }
+div#news-lab-events section.no-slider header h2 {
+  background: #dcdcdc !important;
+}
 div#news-lab-events section.open header h2 {	
   background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
 }
