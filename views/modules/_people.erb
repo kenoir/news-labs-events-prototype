@@ -33,9 +33,9 @@
         <ol>
           <% person.relations[:articles].objects.each do | article | %>
             <% if article.populated %>
-              <li><a href="/news/articles/<%= article.id %>">
+              <li><a href="/news/articles/<%= article.id %>"><span>
                 <%= article.title %>
-              </a></li>
+              </span></a></li>
             <% end %>
           <% end%>
         </ol>
