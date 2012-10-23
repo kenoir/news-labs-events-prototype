@@ -414,7 +414,7 @@ div#news-lab-events section.no-slider header h2 {
   background: #dcdcdc !important;
 }
 div#news-lab-events section.open header h2 {	
-  background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% 0; 
+  background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -5px; 
 }
 div#news-lab-events section header h2 {	
   background: #dcdcdc url('../images/event/icons-sprite.gif') no-repeat 95% -50px;

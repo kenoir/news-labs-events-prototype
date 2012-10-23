@@ -5,10 +5,14 @@ define(["jquery","./mustache","text!./templates/slider.html"],
       for(var i = 0; i < elements.length; i++){
         slider(elements[i]);
       }
-
-	  $(window).resize(function() {
-		  globalOpen();
-	  });
+      
+      var width = $(window).width();
+      $(window).resize(function(){
+         if($(this).width() != width){
+            width = $(this).width();
+            globalOpen();
+         }
+      });
 
       function slider(element){
     	// Check for a parent section element with id -- should do for now
@@ -57,9 +61,8 @@ define(["jquery","./mustache","text!./templates/slider.html"],
 	
 		function bindClick(clickElement,targetElement){
 
-        $(clickElement).bind('click',function(){
+        $(clickElement).bind('click',function(event){
         		if(!shouldSlide()) { return; }
-        		 
 		         $(targetElement).slideToggle();
 		         $('html,body').animate({"scrolltop": clickElement.offset().top - 5}, 750);
 		         $(this).parents().filter('section').toggleClass('open');
