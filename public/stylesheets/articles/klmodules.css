@@ -1,3 +1,4 @@
+
 nav.breadcrumb {
   font-size: 1em;;
   margin-top: 6px;
@@ -16,6 +17,7 @@ nav.breadcrumb:after {
 }
 nav.breadcrumb li {
   display: inline;
+  background: none;
 }
 nav.breadcrumb a {
   display: block;
@@ -129,4 +131,3 @@ nav.breadcrumb a:after {
   width: 303px;
   padding-bottom: 10px;
 }
-
