@@ -29,10 +29,6 @@ figcaption {
   max-width: 976px;
   margin: 0 auto;
 }
-/* Page layout */
-#news-lab-events {
-  font-size: 1rem;
-}
 .container {
   overflow: hidden;
   margin: 0;
