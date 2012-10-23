@@ -15,10 +15,18 @@
     </div>
 
     <script type="text/javascript">
-      var dummyListElement = '<li><a href="#">Article title</a>: Article description</li>';
       var locations = [
       <% @page[:places].each do | place | %>
-        ['<h3>Related articles for <strong><%= place.name %></strong></h3><ul>'+dummyListElement + dummyListElement+'</ul>',<%=place.lat%>, <%=place.long%>],
+        ['<h3>Related articles for <strong><%= place.name %></strong></h3>' 
+        <% if not place.relations[:articles].nil? and
+              not place.relations[:articles].objects.empty? %>
+        + '<ul>'
+        <% place.relations[:articles].objects.each do | article | %>
+          + "<li><a href='/news/articles/<%= article.id %>'><%= article.title %></a></li>"
+        <% end %>
+        + '</ul>'
+        <% end %>
+        ,<%=place.lat%>, <%=place.long%>],
       <% end %>
       ];
 

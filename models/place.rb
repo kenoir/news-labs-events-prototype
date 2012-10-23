@@ -2,6 +2,7 @@ require_relative './rdf_sourced_object'
 
 class Place < RDFSourcedObject
 
+  attr :id
   attr :name
   attr :lat
   attr :long
@@ -23,6 +24,7 @@ class Place < RDFSourcedObject
 
     solution_hash = solutions.first.to_hash
 
+    @id = @uri.split('/').last
     @name = solution_hash[:name]
     @lat = solution_hash[:lat]
     @long = solution_hash[:long]
