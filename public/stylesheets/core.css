@@ -78,13 +78,13 @@ div#news-lab-events nav.breadcrumb a:after {
   border-left-color: #dcdcdc;
 }
 div#news-lab-events h1 {
-  font-size: 2.8rem;
+  font-size: 2em;
   line-height: 3rem;
   font-weight: 800;
   padding: 4px 5px 0 10px;	
 }
 div#news-lab-events h2{
-  font-size: 1.8rem;
+  font-size: 1.3em;
   font-weight: 800;
 }
 div#news-lab-events section, div#news-lab-events article {
@@ -107,7 +107,7 @@ div#news-lab-events article.intro figure img {
     width: 100%;	
 }
 div#news-lab-events article.intro p {
-  font-size: 1.6rem;
+  font-size: 1.2em;
   line-height: 1.2;
   margin: 6px 0 0 10px;
   background-color: #ffffff;
@@ -144,7 +144,7 @@ div#news-lab-events section.people ul article div.figure img {
   width: 100%;	
 }
 div#news-lab-events section.people ul article ul {
-  font-size: 1.4rem;
+  font-size: 1em;
   padding: 0;
   float: left;
   margin-left: 15px;
@@ -161,7 +161,7 @@ div#news-lab-events section.people article a.profile {
   display: block;    
   width: 95px;
   height: 20px;
-  font-size: 1.2rem;
+  font-size: 1em;
   font-weight: 800;
   color: #ffffff;
   text-align: center;
@@ -181,7 +181,7 @@ div#news-lab-events section.articles ol li {
 }
 div#news-lab-events section.articles ol li a {
   display: block;
-  font-size: 1.15rem;
+  font-size: 1em;
   font-weight: 800;  
   background-color: #f0f0f0;	
   margin-bottom: 1px;
@@ -202,7 +202,7 @@ div#news-lab-events section.articles ol li:nth-child(n) a:after {
   position: absolute;
   top: 5px;
   right: 4%;
-  font-size: 2.4rem;
+  font-size: 2em;
   font-weight: 700;
   color: #f68b23;
 }
