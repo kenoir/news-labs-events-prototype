@@ -465,7 +465,7 @@ div#news-lab-events section.people ul section.articles ol li a {
 @media screen and (min-width: 720px) and (max-width: 1023px){    
     div#news-lab-events article.intro header h1 {
         width: 353px;
-        margin-top: 220px;
+        margin-top: 353px;
     }
     div#news-lab-events article.intro figure {
 	    width: 454px;
@@ -489,6 +489,23 @@ div#news-lab-events section.people ul section.articles ol li a {
 }
 /* iPad landscape (1024px) and beyond */
 @media screen and (min-width: 1024px) {
+	#blq-pre-mast, #blq-container-inner {
+	    margin: 0 auto;
+	    max-width: 976px;
+	}
+	#blq-main {
+	    min-width: 976px;
+	}
+	#header {
+	    width: 976px;
+	}
+	#nav {
+	    width: 976px;
+	}
+	#sub-nav {
+	    width: 976px;
+	}
+	
 	div#news-lab-events {
 	    margin: 6px auto;
 	    width: 976px;
