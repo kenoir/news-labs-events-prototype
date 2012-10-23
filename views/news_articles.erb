@@ -9,7 +9,6 @@
               <a rel="index" href="http://www.bbc.co.uk/news/"><img alt="BBC News" src="/images/articles/news-blocks.gif"></a>
               <span class="section-title">Europe</span>
             </h2>
-
             <div id="blq-local-nav">
               <ul id="nav" class="nav">
                 <li class="first-child "><a href="http://www.bbc.co.uk/news/">Home</a></li>
@@ -27,7 +26,6 @@
                 <li><a href="http://www.bbc.co.uk/news/technology/">Technology</a></li>
                 <li><a href="http://www.bbc.co.uk/news/entertainment_and_arts/">Entertainment &amp; Arts</a></li>
               </ul>
-
               <ul id="sub-nav" class="nav"> 
                 <li class="first-child "><a href="http://www.bbc.co.uk/news/world/africa/">Africa</a></li>
                 <li><a href="http://www.bbc.co.uk/news/world/asia/">Asia</a></li>
@@ -36,8 +34,7 @@
                 <li><a href="http://www.bbc.co.uk/news/world/middle_east/">Middle East</a></li>
                 <li><a href="http://www.bbc.co.uk/news/world/us_and_canada/">US &amp; Canada</a></li>
               </ul>
-            </div>			  			  
-
+            </div>
             <div id="content-wrapper" class="domestic">
               <div id="main-content" class="story blq-clearfix">
                 <div class="layout-block-a">
@@ -374,59 +371,8 @@
             </div>
           </div>
         </div>
-        <!-- close europe -->
-      
-      <!-- blq-foot -->
-      <div id="blq-foot" xml:lang="en-GB" class="blq-rst blq-clearfix blq-foot-transparent blq-foot-text-dark" role="contentinfo">
-        <div id="blq-footlinks">
-          <h2 class="blq-hide">BBC links</h2>
-          <ul>
-            <li class="blq-footlinks-row" role="presentation">
-            <ul class="blq-footlinks-row-list" role="presentation">
-              <li><a href="http://www.bbc.co.uk/news/mobile/" id="blq-footer-mobile">Mobile site</a></li>
-              <li><a href="http://www.bbc.co.uk/terms/">Terms of Use</a></li>
-              <li><a href="http://www.bbc.co.uk/aboutthebbc/">About the BBC</a></li>
-            </ul>
-            </li>
-            <li class="blq-footlinks-row" role="presentation">
-            <ul class="blq-footlinks-row-list" role="presentation">
-              <li><a href="http://www.bbc.co.uk/privacy/">Privacy</a></li>
-              <li><a href="http://www.bbc.co.uk/help/">BBC Help</a></li>
-            </ul>
-            </li>
-            <li class="blq-footlinks-row" role="presentation">
-            <ul class="blq-footlinks-row-list" role="presentation">
-              <li><a href="http://www.bbc.co.uk/privacy/bbc-cookies-policy.shtml">Cookies</a></li>
-              <li><a href="http://www.bbc.co.uk/accessibility/">Accessibility Help</a></li>
-            </ul>
-            </li>
-            <li class="blq-footlinks-row" role="presentation">
-            <ul class="blq-footlinks-row-list" role="presentation">
-              <li><a href="http://www.bbc.co.uk/guidance/">Parental Guidance</a></li>
-              <li><a href="http://news.bbc.co.uk/newswatch/ukfs/hi/feedback/default.stm">Contact Us</a></li>
-            </ul>
-            </li>
-          </ul>
-          <script type="text/javascript">
-            /*<![CDATA[*/ (function() { var mLink = document.getElementById('blq-footer-mobile'), stick = function() { var d = new Date (); d.setYear(d.getFullYear() + 1); d = d.toUTCString(); window.bbccookies.set('ckps_d=m;domain=.bbc.co.uk;path=/;expires=' + d ); window.bbccookies.set('ckps_d=m;domain=.bbc.com;path=/;expires=' + d ); }; if (mLink) {  if (mLink.addEventListener) { mLink.addEventListener('click', stick, false); } else if (mLink.attachEvent) { mLink.attachEvent('onclick', stick); } } })(); /*]]>*/
-          </script>
-        </div>
-        <div id="blq-foot-blocks" class="blq-footer-image-dark">
-          <img src="/images/articles/dark.png" width="84" height="24" alt="BBC">
-        </div>
-        <p id="blq-disclaim">
-        <span id="blq-copy">BBC &copy; 2012</span> 
-        <a href="http://www.bbc.co.uk/help/web/links/">The BBC is not responsible for the content of external sites. Read more.</a>
-        </p>
-        <div id="blq-obit">
-          <p>
-          <strong>This page is best viewed in an up-to-date web browser with style sheets (CSS) enabled. 
-            While you will be able to view the content of this page in your current browser, you will not be able 
-            to get the full visual experience. Please consider upgrading your browser software or enabling style 
-            sheets (CSS) if you are able to do so.</strong>
-          </p>
-        </div>
-      </div>
+        <!-- close europe -->      
+		<%= erb :'modules/_blq_footer' %>
       </div>
       <!-- close blq-main -->
     </div>

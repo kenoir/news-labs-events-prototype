@@ -1,24 +1,14 @@
-html {
-  font-size: 62.5%;
-}
-
 @media screen and (orientation:landscape) {
   html {
     -webkit-text-size-adjust: none;
   }
 }
-
 body {
   font-family: Helmet,Freesans,sans-serif;
   font-weight: 400;
   line-height: 1.4;
   background: none repeat scroll 0 0 #ffffff;
   margin: 0 auto;	
-}
-#blq-main {
-  clear: both;
-  margin-top: -1px;
-  position: relative;
 }
 a, a:hover {
   text-decoration: none;
@@ -39,58 +29,10 @@ figcaption {
   max-width: 976px;
   margin: 0 auto;
 }
-
-/* Page header */
-#global-header {
-  padding: 0.5em;
-}
-#global-header img {
-  display: block;
-}
-#events-header {
-  font-family: "Gill Sans", sans-serif;
-  text-transform: uppercase;
-}
-#events-header a {
-  font-size: 4em;
-}
-#events-header .location {
-  font-size: 2em;
-  margin-left: 0.5em;
-}
-
-/* Tabs */
-.tabs {
-  position: relative;
-  clear: both;
-  display: block;
-  overflow: hidden;
-}
-.tabs ul {
-  width: 100%;
-  display: table;
-  margin: 0 auto;
-  padding: 0 8px 0 4px;
-}
-.tabs li {
-  display: inline;
-  float: left;
-  margin:2px 2px 0px 0px;
-  padding:10px;
-}
-.tabs li a {
-  color:black;
-  font-size: 1.6rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.0425em;
-  -webkit-font-smoothing: antialiased;
-  padding-top: 0.4rem;
-}
-#tab-wrapper{
-  padding-top: 20px;
-}
 /* Page layout */
+#news-lab-events {
+  font-size: 1rem;
+}
 .container {
   overflow: hidden;
   margin: 0;
@@ -156,16 +98,11 @@ div#news-lab-events section, div#news-lab-events article {
 }
 div#news-lab-events article.intro {
   position: relative;
-  border-top: 1px solid #fff;
 }
 div#news-lab-events article.intro header h1{
   width: 276px;
 }
 div#news-lab-events article.intro figure {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
   width: 320px;
   height: 184px;
   overflow: hidden;
@@ -249,8 +186,7 @@ div#news-lab-events section.articles ol li {
 div#news-lab-events section.articles ol li a {
   display: block;
   font-size: 1.15rem;
-  font-weight: 800;
-  color: #156292;
+  font-weight: 800;  
   background-color: #f0f0f0;	
   margin-bottom: 1px;
   padding: 16px 0 11px 7px;
@@ -262,6 +198,7 @@ div#news-lab-events section.articles ol li a span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #156292;
 }
 div#news-lab-events section.articles ol li:nth-child(n) a:after {
   content: counter(li);
