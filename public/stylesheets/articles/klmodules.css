@@ -118,9 +118,6 @@ nav.breadcrumb a:after {
   display: block;
   padding:5px   
 }
-.kl-generic ul.kl-generic-main ol li:first-child a .kl-article-title{
-  font-size:30px;
-}
 .kl-generic ul.kl-generic-main ol li img {
   display:none;
 }
