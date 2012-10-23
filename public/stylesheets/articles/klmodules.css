@@ -4,8 +4,8 @@ nav.breadcrumb {
   margin-bottom: 6px;      
 }
 nav.breadcrumb ol {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 nav.breadcrumb:after {
   content: ' ';
@@ -22,7 +22,7 @@ nav.breadcrumb a {
   position: relative;
   font-size: 0.8rem;
   font-weight: 800;
-  color: #505050;	
+  color: #505050;       
   background-color: #dcdcdc;
   padding: 5px 0 4px 9px;
   min-width: 80px;
@@ -35,91 +35,98 @@ nav.breadcrumb a {
 nav.breadcrumb a:after {
   position: absolute;
   top: 0;
-  left: 100%;	
+  left: 100%;   
   content: ' ';
   width: 0;
-  height: 0;		
+  height: 0;            
   border: 13px solid transparent;
   border-left-color: #dcdcdc;
 }
 .ellipsis {
-	display: block;
-	width: 90%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  display: block;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .kl-generic {
-	clear: both;
-	position: relative;
-	overflow: hidden;
-	width: 320px;
-	margin: 0 0 16px;
-	padding: 8px 8px 8px;
-	background: #EDEDED;
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  margin: 0 0 16px;
+  padding: 8px 8px 8px;
+  background: #EDEDED;
 }
 .kl-generic ul.kl-generic-main h3 {
-	margin:  10px 0 0 0;
-	font-size: 1.3em;	
+  margin:  10px 0 0 0;
+  font-size: 1.3em;       
 }
 .kl-generic ul.kl-generic-main h3.agents-header, .kl-generic ul.kl-generic-main h3.places-header {
-	padding: 0;
-	color: #1F4F82;
-}
-.kl-generic ul.kl-generic-main h3 img {
-	width: 320px;
-	margin-top: 5px;	
-}
-.kl-generic ul.kl-generic-main h3.people-header img {
-	float: left;
-	margin-right: 10px;
-}
-.kl-generic ul.kl-generic-main h3.people-header span.people-name {
-	color: #1F4F82;
-	float: left;
-}
-.kl-generic ul.kl-generic-main p.people-description {
-	clear: both;
-	padding-top: 5px;
-	margin-bottom: 5px;
-}
-.kl-generic .panel {
-	position: relative;
-	overflow: hidden;
-	width: 320px;
-	background: white;
-}
-.kl-generic .panel li {
-	clear: both;
-	display: block;
-	overflow: hidden;
-	border-top: 1px solid #EEE;
-	position: relative;
-	zoom: 1;
-}
-.kl-generic .panel li:first-child {
-	border-top: none;
-}
-.kl-generic .panel li a {
-	position: relative;
-	overflow: visible;
-	float: left;
-	display: inline;
-	width: 283px;
-	padding: 11px 29px 12px 8px;
-	
-	width: 90%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	
-	
-}
-.kl-generic .panel li:first-child a {
-	padding-top: 12px;
-}
-.kl-generic span.kl-article-description {
-	font-weight: normal;
+  padding: 0;
+  color: #1F4F82;
 }
 
+.kl-generic ul.kl-generic-main h3.people-header span.people-name {
+  color: #1F4F82;
+  float: left;
+}
+.kl-generic ul.kl-generic-main p.people-description {
+  clear: both;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+.kl-generic .panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: white;
+}
+.kl-generic .panel li {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  border-top: 1px solid #EEE;
+  position: relative;
+  zoom: 1;
+}
+.kl-generic .panel li:first-child {
+  border-top: none;
+}
+.kl-generic .panel li a {
+  position: relative;
+  overflow: visible;
+  float: left;
+  display: inline;
+  width: 283px;
+  padding: 11px 29px 12px 8px;
+
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kl-generic .panel li:first-child a {
+  padding-top: 12px;
+}
+.kl-generic span.kl-article-description {
+  font-weight: normal;
+}
+.kl-generic ul.kl-generic-main h3 a {
+  background-color:lightgrey;
+  display: block;
+  padding:5px   
+}
+.kl-generic ul.kl-generic-main ol li img {
+  display:none;
+}
+.kl-generic ul.kl-generic-main .panel{
+  margin-top:10px
+}
+.kl-generic ul.kl-generic-main ol li:first-child img {
+  display:block;
+  width: 303px;
+
+}
 
