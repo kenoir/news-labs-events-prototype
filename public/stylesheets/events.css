@@ -472,7 +472,7 @@ div#news-lab-events section.people ul section.articles ol li a {
 @media screen and (min-width: 720px) and (max-width: 1023px){    
     div#news-lab-events article.intro header h1 {
         width: 353px;
-        margin-top: 206px;
+        margin-top: 210px;
     }
     div#news-lab-events article.intro figure {
 	    width: 454px;
@@ -566,7 +566,7 @@ div#news-lab-events section.people ul section.articles ol li a {
         margin-left: 0;
     }
     div#news-lab-events section.people ul li section.articles header h2{
-        background-color: #c0c0c0;
+        background-color: #7F7F7F;
         color: #ffffff;
     }
     div#news-lab-events section.places {
