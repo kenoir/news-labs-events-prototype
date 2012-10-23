@@ -9,8 +9,6 @@
       <h3 class="places-header">
         <a class="story" href="http://en.wikipedia.org/wiki/<%=place.id%>" target="_blank">
           <%=place.name%>
-          <% if not place.relations[:learn].objects.empty? %>
-        	<img src="<%=place.relations[:learn].objects.first.image%>">              <% end %>
         </a>
       </h3>
 
@@ -23,9 +21,11 @@
           <% break if not about.populated %>
           <li>
             <a href="<%=about.uri%>" class="story ellipsis">
-            	<%=about.title%>
+        	<img src="<%=about.image%>">
+                <br>
+                <span class="kl-article-title"><%=about.title%></span>
             	<br>
-            	<span class="kl-article-description"><%=about.description%></span>
+            	<span class="kl-article-description ellipsis"><%=about.description%></span>
             </a>
           </li>
           <% end %>
