@@ -1,4 +1,3 @@
-
 /* Default type */
 body #blq-container #blq-main {
    font-size: 67.5%;
@@ -303,3 +302,13 @@ a:active {
 ul.gelui-suggestionlist li.gelui-active em{
    color:#fff;
 }
+.summer-labs-disclaimer {
+	font-weight: bold !important;
+}
+.summer-labs-disclaimer a {
+	text-decoration: underline !important;
+}
+
+
+
+

@@ -39,6 +39,8 @@ var requirejs, require, define;
         globalDefQueue = [],
         useInteractive = false;
 
+    
+    
     function isFunction(it) {
         return ostring.call(it) === '[object Function]';
     }
