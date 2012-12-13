@@ -7,6 +7,8 @@ View [current features](https://www.relishapp.com/bbc-knowlearn/news-labs-events
 
 [![Build Status](https://secure.travis-ci.org/BBC-Knowlearn/news-labs-events-prototype.png?branch=master)](http://travis-ci.org/BBC-Knowlearn/news-labs-events-prototype)
 
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/BBC-Knowlearn/news-labs-events-prototype)
+
 Setup
 -----
 
